@@ -72,32 +72,29 @@ class Game:
                 else:
                         raise Exception
             except Exception:
-                print(incorrect_answer)
+                print(translation["incorrect_answer"])
                 
 
 ## Main Code
 
 def toggle_lang(): # Does what it says on the tin. Takes the defined globals and toggles them between versions
-    global eng_lang, rooms, incorrect_answer
+    global eng_lang, rooms, translation
     if eng_lang:
         eng_lang = False
         rooms = we_map.rooms
-        translation = en_translation.translation
+        translation = we_translation.translation
     else:
         eng_lang = True
         rooms = en_map.rooms
-        translation = we_translation.translation
-    return rooms
+        translation = en_translation.translation
 
 
 def main_menu(game, player):
     while True:
         print(translation["main_menu_one"] + translation["difficulty"][game.difficulty] + translation["main_menu_two"])
-
-
         choice = normalise_str_input(input())
         if choice == '1': break
-        elif choice == '2': rooms = toggle_lang()
+        elif choice == '2': toggle_lang()
         elif choice == '3': game.select_difficulty()
         elif choice == '0': sys.exit("DON'T EVER USE SYS.EXIT()")
         else: print(incorrect_answer)

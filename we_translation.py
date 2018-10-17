@@ -10,7 +10,7 @@ translation = {
 TEMP DDEWISLEN
 ----------
 Nodwch i:
-1. Play the game
+1. Chwarae'r gêm
 2. Togl: English \ Cymraeg
 3. Dewiswch anhawster (Ar hyn o bryd """,
 
