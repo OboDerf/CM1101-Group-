@@ -65,9 +65,19 @@ class Game:
 
     def select_difficulty(self):
         if eng_lang:
-            a = normalise_str_input(input("What difficulty would you like?\n - Easy\n - Medium\n - Hard\n - Impossible\n")) 
-            if a in ['easy', 'medium', 'hard', 'impossible']: self.difficulty = a
-            else: print(incorrect_answer)
+            a = normalise_str_input(input("What difficulty would you like?\n - 1. Easy\n - 2. Medium\n - 3. Hard\n - 4. Impossible\n"))
+            difficulties = ['easy', 'medium', 'hard', 'impossible']
+            if a in difficulties: self.difficulty = a
+
+            # Selecting the difficulty with a number in addition to typing
+            try:
+            	if int(a)-1 >= 0 and int(a) < len(difficulties):
+            		self.difficulty = difficulties[int(a)-1]
+            	else:
+            		raise Exception
+            except Exception:
+            	print(incorrect_answer)
+
         else:
             a = normalise_str_input(input("Pa anhawster yr hoffech chi?\n - Hawdd\n - Canolig\n - Caled\n - Amhosibl\n")) 
             if a in ['hawdd', 'canolig', 'caled', 'amhosibl']: self.difficulty = a
