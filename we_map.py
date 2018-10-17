@@ -1,36 +1,144 @@
-# These three are skeletons that I needed to create part of game.py. Expand at your leasure
-exit_room = {
-    "name": "Exit Room",
+from items import *
 
-    "description": "The game ending room, need to have the keys",
+room_exit = {
+    "name" : "ALLANFA"
 
-    "exits": {"west": "Reception"}
-}    
+    "description": "",
 
-reception = {
-    "name": "Derbynfa",
+    "exits" : {},
 
-    "exits": {"east": "Corridor West", "west": "Exit"}
+    "items" : [],
+
+    "completed" = False,
+
 }
 
-corridor_west = {
-    "name": "Coridor West",
+room_reception = {
+    "name": "Prif Derbynfa yr Ysbyty",
 
-    "exits": {"east": "Corridor East", "west": "Reception"}
-}
+    "description": "",
 
-corridor_east = {
-    "name": "Coridor East",
+    "exits": {"gogledd": "Fferyllfa", "de":"Caffi", "dwyrain":"Coridor", "gorllewin":"Allanfa",},
 
-    "exits": {"west": "Corridor West"}
-}
+    "items": [],
 
-
-
-rooms = { # When you append, make sure this is bot of the file
-    "Exit Room": exit_room,
-    "Reception": reception,
-    "Corridor West": corridor_west,
-    "Corridor East": corridor_east
+    "completed" = False,
     
 }
+
+room_hallway = {
+    "name": "Coridor",
+
+    "description":
+    """Hyn yw'r coridor o'r prif derbynfa. Mae'n eithaf tywyll, beth sydd lawr fan hyn?"""
+
+    "exits": {"gogledd":"Ystafell Archwiliad", "de":"Lolfa Doctoriaid", "gorllewin":"Prif Derbynfa", "dwyrain":"Ystafell Disgwyl",},
+
+    "items": [],
+
+    "completed" = False,
+
+}
+
+room_waiting_room = {
+    "name": "Ystafell Disgwyl",
+    
+    "description": "",
+
+    "exits": {"gogledd":"Ystafell Pelydr X", "de":"Ystafell Llawdriniaeth", "gorllewin":"Coridor", },
+
+    "items": [],
+
+    "completed" = False,
+    
+}
+
+room_surgery = {
+    "name" : "Ystafell Llawdriniaeth",
+
+    "description": "",
+
+    "exits": {"gogledd":"Ystafell Disgwyl"},
+
+    "items": [],
+
+    "completed" = False,
+}
+
+room_cafe = {
+    "name" : "Caffi",
+
+    "description": "",
+
+    "exits": {"gogledd" : "Prif Derbynfa",}
+
+    "items" : []
+
+    "completed" = False,
+
+}
+
+room_pharmacy = {
+    "name" : "Fferyllfa",
+
+    "description" : "",
+
+    "exits": {"de":"Prif Derbynfa",}
+
+    "items" : []
+
+    "completed" = False,
+
+}
+
+room_exam = {
+    "name" : "Ystafell Archwiliad",
+
+    "description" : "",
+
+    "exits" : {"de" : "Coridor",}
+
+    "items" : []
+
+    "completed" = False,
+
+}
+
+room_doctors_lounge = {
+    "name" : "Lolfa Doctoriaid",
+
+    "description" : "",
+
+    "exits" : {"gogledd":"Coridor",},
+
+    "items" : []
+
+    "completed" = False,
+}
+
+room_xray = {
+    "name" : "Ystafell Pelydr X",
+
+    "description" : "",
+
+    "exits" : {"de" : "Ystafell Disgwyl"}
+
+    "items" : []
+
+    "completed" = False,
+
+}
+
+rooms = {
+    "ALLANFA" : room_exit
+    "Prif Derbynfa yr Ysbyty" : room_reception,
+    "Coridor" : room_hallway,
+    "Ystafell Disgwyl" : room_waiting_room,
+    "Ystafell Llawdriniaeth" : room_surgery,
+    "Caffi" : room_cafe,
+    "Fferyllfa" : room_pharmacy,
+    "Ystafell Archwiliad" : room_pharmacy,
+    "Lolfa Doctoriaid" : room_doctors_lounge,
+    "Ystafell Peledr X" : room_xray,
+    }
+    
