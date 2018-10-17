@@ -24,7 +24,7 @@ translation = en_translation.translation
 class Player:
 
     def __init__(self, starting_room, max_attempts):
-        self.current_keys = 0
+        self.current_keys = 0 #player.current_keys
         self.inventory = []
         self.current_room = starting_room
         self.attempts_left = max_attempts
@@ -63,20 +63,17 @@ class Game:
         
 
     def select_difficulty(self):
-        a = normalise_str_input(input("What difficulty would you like?\n - 1. Easy\n - 2. Medium\n - 3. Hard\n - 4. Impossible\n"))
+        a = normalise_str_input(input(translation["difficulty_change"]))
         if a in translation["difficulty"]: self.difficulty = translation["difficulty"].index(a)
-
-        # Selecting the difficulty with a number in addition to typing
         else:
             try:
-                if int(a)-1 >= 0 and int(a) < len(difficulties):
-                        self.difficulty = difficulties[int(a)-1]
+                if int(a)-1 >= 0 and int(a) < len(translation["difficulty"]):
+                        self.difficulty = translation["difficulty"][int(a)-1]
                 else:
                         raise Exception
             except Exception:
                 print(incorrect_answer)
-#"Pa anhawster yr hoffech chi?\n - Hawdd\n - Canolig\n - Caled\n - Amhosibl\n"
-#['hawdd', 'canolig', 'caled', 'amhosibl']
+                
 
 ## Main Code
 
@@ -85,34 +82,18 @@ def toggle_lang(): # Does what it says on the tin. Takes the defined globals and
     if eng_lang:
         eng_lang = False
         rooms = we_map.rooms
-        incorrect_answer = "\nRhowch ateb dilys.\n"
+        translation = en_translation.translation
     else:
         eng_lang = True
         rooms = en_map.rooms
-        incorrect_answer = "\nPlease enter a valid answer\n"
+        translation = we_translation.translation
     return rooms
 
 
 def main_menu(game, player):
     while True:
-        if eng_lang:
-            print("----------")
-            print("TEMP MENU")
-            print("----------\n")
-            print("Enter _ to:\n")
-            print("1. To play game")
-            print("2. Toggle: English \ Cymraeg")
-            print("3. To pick difficulty (Currently " + translation["difficulty"][game.difficulty] + ")")
-            print("0. To exit\n")
-        else:
-            print("----------")
-            print("TEMP DDEWISLEN")
-            print("----------\n")
-            print("Nodwch _ i:\n")
-            print("1. I paly Gêm")
-            print("2. Toggle: English \ Cymraeg")
-            print("3. I dewiswch anhawster (Ar hyn o bryd " + game.difficulty + ")")
-            print("0. I ymadael\n")
+        print(translation["main_menu_one"] + translation["difficulty"][game.difficulty] + translation["main_menu_two"])
+
 
         choice = normalise_str_input(input())
         if choice == '1': break
@@ -125,7 +106,7 @@ def main_menu(game, player):
 def main():
     # When calling game and player, use the lowercase. Upper case is their pure versions, not what we work with
     game = Game() 
-    player = Player(rooms["Reception"], game.max_attempts)
+    player = Player(rooms["Hospital Reception"], game.difficulty_stats[game.difficulty]["attempts_max"])
     main_menu(game, player)
     while True:
         if game.game_won or game.game_lost:
