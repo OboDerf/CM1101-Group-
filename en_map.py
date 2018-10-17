@@ -9,12 +9,12 @@ room_exit = {
 
     "items" : [],
 
-    "completed" : False,
+    "completed" : False
 
 }
 
 room_reception = {
-    "name": "Hospital ReceptCoion",
+    "name": "Hospital Reception",
 
     "description": "",
 
@@ -22,7 +22,7 @@ room_reception = {
 
     "items": [],
 
-    "completed" : False,
+    "completed" : False
 
 }
 
@@ -36,7 +36,7 @@ room_hallway = {
 
     "items": [],
 
-    "completed" : False,
+    "completed" : False
 
 }
 
