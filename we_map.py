@@ -1,4 +1,4 @@
-from items import *
+#from items import *
 
 room_exit = {
     "name" : "ALLANFA",
@@ -9,7 +9,7 @@ room_exit = {
 
     "items" : [],
 
-    "completed" = False,=
+    "completed" : False
 
 }
 
@@ -22,7 +22,7 @@ room_reception = {
 
     "items": [],
 
-    "completed" = False,
+    "completed" : False
     
 }
 
@@ -30,13 +30,13 @@ room_hallway = {
     "name": "Coridor",
 
     "description":
-    """Hyn yw'r coridor o'r prif derbynfa. Mae'n eithaf tywyll, beth sydd lawr fan hyn?"""
+    """Hyn yw'r coridor o'r prif derbynfa. Mae'n eithaf tywyll, beth sydd lawr fan hyn?""",
 
-    "exits": {"gogledd":"Ystafell Archwiliad", "de":"Lolfa Doctoriaid", "gorllewin":"Prif Derbynfa", "dwyrain":"Ystafell Disgwyl",},
+    "exits": {"gogledd":"Ystafell Archwiliad", "de":"Lolfa Doctoriaid", "gorllewin":"Prif Derbynfa", "dwyrain":"Ystafell Disgwyl"},
 
     "items": [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
@@ -45,11 +45,11 @@ room_waiting_room = {
     
     "description": "",
 
-    "exits": {"gogledd":"Ystafell Pelydr X", "de":"Ystafell Llawdriniaeth", "gorllewin":"Coridor", },
+    "exits": {"gogledd":"Ystafell Pelydr X", "de":"Ystafell Llawdriniaeth", "gorllewin":"Coridor"},
 
     "items": [],
 
-    "completed" = False,
+    "completed" : False
     
 }
 
@@ -62,7 +62,7 @@ room_surgery = {
 
     "items": [],
 
-    "completed" = False,
+    "completed" : False
 }
 
 room_cafe = {
@@ -70,11 +70,11 @@ room_cafe = {
 
     "description": "",
 
-    "exits": {"gogledd" : "Prif Derbynfa",}
+    "exits": {"gogledd" : "Prif Derbynfa"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
@@ -83,11 +83,11 @@ room_pharmacy = {
 
     "description" : "",
 
-    "exits": {"de":"Prif Derbynfa",}
+    "exits": {"de":"Prif Derbynfa"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
@@ -96,11 +96,11 @@ room_exam = {
 
     "description" : "",
 
-    "exits" : {"de" : "Coridor",}
+    "exits" : {"de" : "Coridor"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
@@ -109,11 +109,11 @@ room_doctors_lounge = {
 
     "description" : "",
 
-    "exits" : {"gogledd":"Coridor",},
+    "exits" : {"gogledd":"Coridor"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 }
 
 room_xray = {
@@ -121,16 +121,16 @@ room_xray = {
 
     "description" : "",
 
-    "exits" : {"de" : "Ystafell Disgwyl"}
+    "exits" : {"de" : "Ystafell Disgwyl"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
 rooms = {
-    "ALLANFA" : room_exit
+    "ALLANFA" : room_exit,
     "Prif Derbynfa yr Ysbyty" : room_reception,
     "Coridor" : room_hallway,
     "Ystafell Disgwyl" : room_waiting_room,
