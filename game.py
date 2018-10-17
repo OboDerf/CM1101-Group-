@@ -3,9 +3,11 @@ from gameparser import *
 import sys
 
 import en_map
+import en_translation
 #import en_items - in case these are ever created
 #import en_function
 import we_map
+import we_translation
 #import we_items
 #import we_function
 
@@ -14,7 +16,7 @@ import we_map
 #Globals are considered dirty, but that isn't going to stop me using them!
 eng_lang = True
 rooms = en_map.rooms
-incorrect_answer = "\nPlease enter a valid answer\n"# For validation use 'incorrect_answer' as it's bilingual
+translation = en_translation.translation
 
 
 ## Classes
@@ -31,59 +33,50 @@ class Player:
 class Game:
 
     def __init__(self):
-        self.difficulty = 'medium' # This is setting all the default variables. I'm assuming medium until user says otherwise
-        self.max_attempts = 60
-        self.keys_max = 5
-        self.keys_avaliable = 5
-        self.keys_needed = 3
+        self.difficulty = 1 # This is setting all the default variables.I'm assuming medium until user says otherwise
+        self.difficulty_stats = {
+                0 : {
+                    'attempts_max': 100,
+                    'keys_max': 6,
+                    'keys_avaliable': 6,
+                    'keys_needed': 2},
+                1 : {
+                    'attempts_max': 80,
+                    'keys_max': 5,
+                    'keys_avaliable': 5,
+                    'keys_needed': 3},
+                
+                2 : {
+                    'attempts_max': 60,
+                    'keys_max': 4,
+                    'keys_avaliable': 4,
+                    'keys_needed': 4},
+
+                3 : {
+                    'attempts_max': 50,
+                    'keys_max': 6,
+                    'keys_avaliable': 6,
+                    'keys_needed': 6}        
+            }
         self.game_lost = False
         self.game_won = False
         
-    def difficulty_calc(self): # If the difficulty is 'e', 'm', 'h', or 'i' it edits the game settings
-        # Note: I know there's a better way of doing this, but this is easy so bugger it
-        if self.difficulty == 'easy' or self.difficulty == 'hawdd':
-            self.max_attempts = 100
-            self.keys_max = 6
-            self.keys_avaliable = 6
-            self.keys_needed = 2
-        elif self.difficulty == 'medium' or self.difficulty == 'canolig':
-            self.max_attempts = 80
-            self.keys_max = 5
-            self.keys_avaliable = 5
-            self.keys_needed = 3
-        elif self.difficulty == 'hard' or self.difficulty == 'caled':
-            self.max_attempts = 60
-            self.keys_max = 4
-            self.keys_avaliable = 4
-            self.keys_needed = 4
-        elif self.difficulty == 'impossible' or self.difficulty == 'amhosibl':
-            self.max_attempts = 50
-            self.keys_max = 6
-            self.keys_avaliable = 6
-            self.keys_needed = 6
-        else: print("If you ever see this, Kai's an idiot")
 
     def select_difficulty(self):
-        if eng_lang:
-            a = normalise_str_input(input("What difficulty would you like?\n - 1. Easy\n - 2. Medium\n - 3. Hard\n - 4. Impossible\n"))
-            difficulties = ['easy', 'medium', 'hard', 'impossible']
-            if a in difficulties: self.difficulty = a
+        a = normalise_str_input(input("What difficulty would you like?\n - 1. Easy\n - 2. Medium\n - 3. Hard\n - 4. Impossible\n"))
+        if a in translation["difficulty"]: self.difficulty = translation["difficulty"].index(a)
 
-            # Selecting the difficulty with a number in addition to typing
-            try:
-            	if int(a)-1 >= 0 and int(a) < len(difficulties):
-            		self.difficulty = difficulties[int(a)-1]
-            	else:
-            		raise Exception
-            except Exception:
-            	print(incorrect_answer)
-
+        # Selecting the difficulty with a number in addition to typing
         else:
-            a = normalise_str_input(input("Pa anhawster yr hoffech chi?\n - Hawdd\n - Canolig\n - Caled\n - Amhosibl\n")) 
-            if a in ['hawdd', 'canolig', 'caled', 'amhosibl']: self.difficulty = a
-            else: print(incorrect_answer)
-        self.difficulty_calc()
-
+            try:
+                if int(a)-1 >= 0 and int(a) < len(difficulties):
+                        self.difficulty = difficulties[int(a)-1]
+                else:
+                        raise Exception
+            except Exception:
+                print(incorrect_answer)
+#"Pa anhawster yr hoffech chi?\n - Hawdd\n - Canolig\n - Caled\n - Amhosibl\n"
+#['hawdd', 'canolig', 'caled', 'amhosibl']
 
 ## Main Code
 
@@ -109,7 +102,7 @@ def main_menu(game, player):
             print("Enter _ to:\n")
             print("1. To play game")
             print("2. Toggle: English \ Cymraeg")
-            print("3. To pick difficulty (Currently " + game.difficulty + ")")
+            print("3. To pick difficulty (Currently " + translation["difficulty"][game.difficulty] + ")")
             print("0. To exit\n")
         else:
             print("----------")

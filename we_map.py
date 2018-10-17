@@ -1,7 +1,7 @@
 from items import *
 
 room_exit = {
-    "name" : "ALLANFA"
+    "name" : "ALLANFA",
 
     "description": "",
 
@@ -9,7 +9,7 @@ room_exit = {
 
     "items" : [],
 
-    "completed" = False,
+    "completed" = False,=
 
 }
 
@@ -18,7 +18,7 @@ room_reception = {
 
     "description": "",
 
-    "exits": {"gogledd": "Fferyllfa", "de":"Caffi", "dwyrain":"Coridor", "gorllewin":"Allanfa",},
+    "exits": {"gogledd": "Fferyllfa", "de":"Caffi", "dwyrain":"Coridor", "gorllewin":"Allanfa"},
 
     "items": [],
 

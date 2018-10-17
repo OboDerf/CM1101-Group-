@@ -1,15 +1,15 @@
-from items import *
+#from items import *
 
 room_exit = {
-    "name" : "EXIT"
+    "name" : "EXIT",
 
-    "description": "",
+    "description" : "",
 
     "exits" : {},
 
     "items" : [],
 
-    "completed" = False,
+    "completed" : False,
 
 }
 
@@ -22,7 +22,7 @@ room_reception = {
 
     "items": [],
 
-    "completed" = False,
+    "completed" : False,
 
 }
 
@@ -30,13 +30,13 @@ room_hallway = {
     "name": "Hallway",
 
     "description":
-    """This is the hallway leading from the reception. I wonder what's down here?"""
+    """This is the hallway leading from the reception. I wonder what's down here?""",
 
     "exits": {"north":"Examination room", "south":"Doctors Lounge", "west":"Reception", "east":"Waiting Room",},
 
     "items": [],
 
-    "completed" = False,
+    "completed" : False,
 
 }
 
@@ -49,7 +49,7 @@ room_waiting_room = {
 
     "items": [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
@@ -61,7 +61,7 @@ room_surgery = {
 
     "items": [],
 
-    "completed" = False
+    "completed" : False
     
 }
 
@@ -70,11 +70,11 @@ room_cafe = {
 
     "description": "",
 
-    "exits": {"north" : "Reception",}
+    "exits": {"north" : "Reception"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
@@ -83,11 +83,11 @@ room_pharmacy = {
 
     "description" : "",
 
-    "exits": {"south":"Reception",}
+    "exits": {"south":"Reception"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
@@ -96,11 +96,11 @@ room_exam = {
 
     "description" : "",
 
-    "exits" : {"south" : "Hallway",}
+    "exits" : {"south" : "Hallway"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
@@ -109,11 +109,11 @@ room_doctors_lounge = {
 
     "description" : "",
 
-    "exits" : {"north":"Hallway",},
+    "exits" : {"north":"Hallway"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 }
 
 room_xray = {
@@ -121,16 +121,16 @@ room_xray = {
 
     "description" : "",
 
-    "exits" : {"south" : "Waiting Room"}
+    "exits" : {"south" : "Waiting Room"},
 
-    "items" : []
+    "items" : [],
 
-    "completed" = False,
+    "completed" : False
 
 }
 
 rooms = {
-    "EXIT" : room_exit
+    "EXIT" : room_exit,
     "Hospital Reception" : room_reception,
     "Hallway" : room_hallway,
     "Waiting Room" : room_waiting_room,
@@ -139,7 +139,7 @@ rooms = {
     "Pharmacy" : room_pharmacy,
     "Examination Room" : room_pharmacy,
     "Doctors Lounge" : room_doctors_lounge,
-    "X-Ray Room" : room_xray,
+    "X-Ray Room" : room_xray
     }
     
     
