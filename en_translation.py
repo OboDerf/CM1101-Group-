@@ -15,6 +15,17 @@ Enter to:
 3. To pick difficulty (Currently """,
 
     "main_menu_two": """)
-0. To exit\n"""
+0. To exit\n""",
+	
+
+	# main game prints - corridor -- needs to be added to welsh translation
+	"side": "side",
+	"corridor_Entry_Message": "You are in the corridor, on the ",
+	"helpCommand": "1 - Help",
+	"keysCommand": "2 - Keys",
+	"turnLeft": "Turn left to ",
+	"turnRight": "Turn right to ",
+	"turnUp": "Go up to ",
+	"turnDown": "Go down to ",
     
 }

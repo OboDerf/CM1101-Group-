@@ -1,18 +1,5 @@
 #from items import *
 
-room_exit = {
-    "name" : "EXIT",
-
-    "description" : "",
-
-    "exits" : {},
-
-    "items" : [],
-
-    "completed" : False
-
-}
-
 room_reception = {
     "name": "Hospital Reception",
 
@@ -130,7 +117,6 @@ room_xray = {
 }
 
 rooms = {
-    "EXIT" : room_exit,
     "Hospital Reception" : room_reception,
     "Hallway" : room_hallway,
     "Waiting Room" : room_waiting_room,
@@ -143,6 +129,56 @@ rooms = {
     }
     
     
+
+# Corridors - needs to be added to welsh map
+west_Corridor = {
+	"name": "west corridor",
+	"left": "exit",
+	"right": "center",
+	"up": room_hallway,
+	"down": room_waiting_room
+}
+
+center_Corridor = {
+	"name": "center corridor",
+	"left": "west",
+	"right": "east",
+	"up": room_reception,
+	"down": room_xray
+}
+
+east_Corridor = {
+	"name": "east corridor",
+	"left": "center",
+	"up": room_pharmacy,
+	"down": room_doctors_lounge
+}
+
+exit_Corridor = {
+	"name" : "exit",
+	"right": "west"
+}
+
+
+corridors = {
+	"west": west_Corridor,
+	"center": center_Corridor,
+	"east": east_Corridor,
+	"exit": exit_Corridor
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
