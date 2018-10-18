@@ -19,7 +19,7 @@ room_hallway = {
     "description":
     """This is the hallway leading from the reception. I wonder what's down here?""",
 
-    "exits": {"north":"Examination room", "south":"Doctors Lounge", "west":"Reception", "east":"Waiting Room",},
+    "exits": {"north":"Examination room", "south":"Doctors Lounge", "west":"Reception", "east":"Waiting Room",}
 
     "items": [],
 
@@ -132,7 +132,7 @@ rooms = {
 
 # Corridors - needs to be added to welsh map
 west_Corridor = {
-	"name": "west corridor",
+	"name": "west corridor", # translate this value
 	"left": "exit",
 	"right": "center",
 	"up": room_hallway,

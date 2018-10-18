@@ -30,7 +30,6 @@ class Player:
         self.current_room = starting_room
         self.attempts_left = max_attempts
 
-
 class Game:
 
     def __init__(self):
@@ -61,7 +60,6 @@ class Game:
             }
         self.game_lost = False
         self.game_won = False
-        self.corridorSide = "west"
         
 
     def select_difficulty(self):
@@ -104,12 +102,13 @@ def main_menu(game, player):
         else: print(incorrect_answer)
 
 
+
 # -------------- MAIN GAME --------------
 # Controls the corridor
 def corridor_Menu(game, player):
 	# Prints the side of the corridor the user is in at the moment (west, center, east)
-	print();print()
-	print(translation["corridor_Entry_Message"] + corridors[game.corridorSide]["name"])
+	print()
+	print(translation["corridor_Entry_Message"] + player.current_room["name"])
 
 	# Print the commands
 	# 1 - Help
@@ -117,25 +116,49 @@ def corridor_Menu(game, player):
 	# 2 - Keys
 	print(translation["keysCommand"])
 	# 3... - Left/Right/Exit/Enter Aroom
-	print_Corridor_Directions(game.corridorSide)
+	print_Corridor_Directions(player.current_room)
+	userInput = input("< ")
+	# needs to normalise it, parse it, try-except it
+	if userInput == "1": # help
+		print_help(player.current_room)
+		corridor_Menu(game, player)
+	elif userInput == "2": # keys
+		print_keys(game,player)
+		corridor_Menu(game,player)
+	elif userInput == "3": # up
+		print("go to a room up")
+	elif userInput == "4": # down
+		print("go to a room down")
+	elif userInput == "5" and player.current_room != corridors["west"]: # Go left and to the left is a corridor
+		player.current_room = corridors[player.current_room["left"]]
+		corridor_Menu(game, player)
+	elif userInput == "5": # go left and to the left is the exit
+		try_Exit(game, player)
+		corridor_Menu(game, player)
 
+	# check if user can go right
+	elif "right" in player.current_room and userInput == "6":
+		player.current_room = corridors[player.current_room["right"]]
+		corridor_Menu(game, player)
+
+
+def room_Menu(game, player):
+	print()
 	
 
 
-def print_Corridor_Directions(currentCorridorSide):
-	currentCorridorDict = corridors[currentCorridorSide]
-
+def print_Corridor_Directions(currentRoom):
 	# Printing up
-	print("1. " + translation["turnUp"] + currentCorridorDict["up"]["name"]) # up is a room
+	print("3 - " + translation["turnUp"] + currentRoom["up"]["name"]) # up is a room
 	# Printing down
-	print("2. " + translation["turnDown"] + currentCorridorDict["down"]["name"]) # down is a room
+	print("4 - " + translation["turnDown"] + currentRoom["down"]["name"]) # down is a room
 
 	# Printing left
-	print("3. " + translation["turnLeft"] + corridors[currentCorridorDict["left"]]["name"]) # left is a room/exit
+	print("5 - " + translation["turnLeft"] + corridors[currentRoom["left"]]["name"]) # left is a room/exit
 
-	if "right" in currentCorridorDict: # east corridor doesn't have a right corridor
+	if "right" in currentRoom: # east corridor doesn't have a right corridor
 		# Printing right
-		print("4. " + translation["turnRight"] + corridors[currentCorridorDict["right"]]["name"]) # right is a corridor
+		print("6 - " + translation["turnRight"] + corridors[currentRoom["right"]]["name"]) # right is a corridor
 
 
 
@@ -144,30 +167,49 @@ def move_From_Corridor_To_Room():
 
 
 def try_Exit(game, player):
-	if player.current_keys >= difficulty_stats[difficulty]:
-		didUserWin(True)
+	if player.current_keys >= game.difficulty_stats[game.difficulty]["keys_needed"]:
+		did_User_Win(True)
 	else:
-		didUserWin(False)
+		did_User_Win(False)
 
 
 
 def did_User_Win(isWinner):
 	if isWinner:
-		print()
+		print("Good job you won! game is over!")
+		# maybe show the main menu instead of quitting the game just make sure to reset the variables
+		sys.exit()
 		# Good job you won
 		# needs to reset the game variables such as keys and get back to main menu
 	else:
-		print()
+		print("Sorry you don't have enough keys yet")
 		# Sorry, you lost
 		# send user back to west side of corridor
 
+def print_help(currentRoom):
+	# we need to print some help based on what room the user is in, needs to be translated
+	if currentRoom in corridors.values():
+		print("trying to help: You're in a corridor!")
+	else:
+		print("trying to help: You are not in a corridor, in a room maybe?")
 
+
+def print_keys(game, player):
+	# needs to be translated
+	playerKeys = player.current_keys # the number of keys the user has at the moment
+	neededKeys = game.difficulty_stats[game.difficulty]["keys_needed"] # the number of keys the user still needs to collect
+
+	print("You currently have " + str(playerKeys) + " keys")
+	if playerKeys >= neededKeys:
+		print("Congrats! You found all the keys. You can exit the game")
+	else:
+		print("You still need to find " + str(neededKeys- playerKeys ) + " keys to win")
 
 
 def main():
     # When calling game and player, use the lowercase. Upper case is their pure versions, not what we work with
     game = Game() 
-    player = Player(rooms["Hospital Reception"], game.difficulty_stats[game.difficulty]["attempts_max"])
+    player = Player(corridors["west"], game.difficulty_stats[game.difficulty]["attempts_max"])
     main_menu(game, player)
     while True:
         if game.game_won or game.game_lost:
