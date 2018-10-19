@@ -29,7 +29,7 @@ translation = {
     # commands (Needs translation)
     "go": "go",
     "help": "help",
-    "combine": "combine",
+    "combine": "cyfuno",
     "take": "take",
     "drop": "drop",
     "use": "use",
