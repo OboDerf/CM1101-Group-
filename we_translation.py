@@ -27,16 +27,16 @@ translation = {
     "west": "gorllewin",
 
     # commands (Needs translation)
-    "go": "go",
+    "go": "mynd i'r",
     "help": "help",
     "combine": "cyfuno",
-    "take": "take",
-    "drop": "drop",
-    "use": "use",
-    "inventory": "inventory",
-    "keys": "keys",
-    "inspect": "inspect",
-    "move": "move",
+    "take": "cymryd",
+    "drop": "gollwng",
+    "use": "defnyddio",
+    "inventory": "rhestr eiddo",
+    "keys": "allweddi",
+    "inspect": "archwilio",
+    "move": "symud",
 
     # menu_main's (Completed)
     "main_menu_one": """
@@ -52,73 +52,73 @@ Nodwch i:
 0. I ymadael\n""",
 
     # menu_print's (Needs translation)
-    "entry_message": "You are now in ",
-    "command_message": "If you're ever unsure of avalible commands, use HELP\n",
+    "entry_message": "Rydych o fewn ",
+    "command_message": "Os rydych yn ansicr o'r gorchmynion posib, teipiwch HELP\n",
 
     # print_exit's (Needs translation)
-    "exit_one": "GO ",
-    "exit_two": " to ",
+    "exit_one": "Mynd i'r ",
+    "exit_two": " i fynd i'r ",
 
     # print_room_items' (Needs translation)
-    "room_print_items_one": "There is:",
-    "room_print_items_two": "In this room.\n",
-    "or": " or ",
+    "room_print_items_one": "Mae yna:",
+    "room_print_items_two": "yn yr ystafell hon.\n",
+    "or": " neu ",
 
     # print_inventory's (Needs translation)
-    "player_print_inventory_one": "You have:",
-    "player_print_inventory_none": "You have no items",
+    "player_print_inventory_one": "Mae gennych:",
+    "player_print_inventory_none": "Does gennych ddim eitemau.",
 
     # key_print's (Needs translation)
-    "current_keys_one": "You currently have ",
-    "current_keys_two": " keys.",
-    "keys_full": "Congrats! You found all the keys. You can exit the game!",
-    "keys_need_one": "You still need to find ",
-    "keys_need_two": " keys to win.",
+    "current_keys_one": "Rydych efo ",
+    "current_keys_two": " allwedd.",
+    "keys_full": "Llongyfarchiadau! Rydych wedi dod o hyd i bob goriad! Rydych yn gallu gadael y gêm!",
+    "keys_need_one": "Rydych dal angen ddod o hyd i ",
+    "keys_need_two": " allweddau i ennill.",
 
     # help_print's (Needs translation)
     "help_print" :
     """--------------------
-                   HELP - Displays a list of all commands and functions,
-              INVENTORY - Lists all items currently in your inventory,
-                   KEYS - Displays how many keys you have and how many you need,
-              GO <EXIT> - Moves the player to a valid location,
-COMBINE <ITEMX> <ITEMY> - Attempts to combine two items together,
-           TAKE <ITEMX> - Attempts to take the item and put it in your inventory,
-           DROP <ITEMX> - Drops the item on the room's floor,
-    USE <ITEMX> <ITEMY> - Uses one item on another or the room (Leave ITEMY empty),
-        INSPECT <ITEMX> - Gives you a description of the selected item,
-           MOVE <ITEMX> - Moves items you can't pick up. Only works on items in room
+                       HELP - Yn dangos y rhestr o orchmynion posib,
+                      EIDDO - Yn rhestru pob eitem sydd yn eich rhestr eiddo,
+                  Allweddau - Yn dangos faint o goriadau sydd gennych ac faint sydd angen i ennill,
+            MYND I'R <EXIT> - Yn symyd yr chwaraewr i lleoliad dilys,
+     CYFUNO <ITEMX> <ITEMY> - Yn gwneud ymgais i gyfuno dwy eitem efo'i gilydd,
+             CYMRYD <ITEMX> - Yn gwneud ymgais i cymryd eitem ac wedyn rhoi yn eich rhestri eiddo,
+            GOLLWNG <ITEMX> - Yn gollwng yr eitem ar y llawr,
+  DEFNYDDIO <ITEMX> <ITEMY> - Uses one item on another or the room (Leave ITEMY empty),
+          ARCHWILIO <ITEMX> - Gives you a description of the selected item,
+            SYMYD Y <ITEMX> - Moves items you can't pick up. Only works on items in room
 --------------------""",
 
     # process_move's (Needs translation)
-    "cannot_move": "You cannot go there",
-    "already_completed": "This room is already completed",
+    "cannot_move": "Dydych fethu mynd i fana",
+    "already_completed": "Mae'r ystafell yma wedi cael ei gwblhau yn barod",
 
     # process_take's (Needs translation)
-    "cannot_take": "You cannot take that",
-    "cannot_take_two": "This item isn't in this room",
+    "cannot_take": "Dydych methu cymryd hwnna",
+    "cannot_take_two": "Dydy'r eitem yna ddim yn yr ystafell hon",
 
     # process_drop's (Needs translation)
-    "cannot_drop": "This item isn't in your inventory",
+    "cannot_drop": "Nid oes gennych yr eitem yna",
 
     # process_inspect's (Needs translation)
-    "cannot_inspect": "This item couldn't be found",
+    "cannot_inspect": "Doedd yr eitem yna methu cael ei ddarganfod",
 
     # process_move_item's (Needs translation)
-    "moving_item": "You have moved ",
-    "item_already_moved": "This item has already been moved",
-    "cannot_move_item": "You cannot move this item",
-    "cannot_find_move": "Cannot find this item to move",
+    "moving_item": "Rydych wedi symyd ",
+    "item_already_moved": "Mae'r eitem yma wedi cael ei symyd yn barod",
+    "cannot_move_item": "Dydych methu'r symyd yr eitem hon",
+    "cannot_find_move": "Methu ddod o hyd i'r eitem i symyd",
 
     # process_combine's (Needs translation)
-    "combine_succ_one": "You successfully combined ",
-    "combine_succ_two": " with ",
-    "combine_succ_three": " to make ",
-    "combine_same": "You cannot combine an item with itself",
-    "combine_fail": "You can't combine those two items",
-    "combine_no_item": "Couldn't find those items",
+    "combine_succ_one": "Rydych wedi cyfuno'r eitemau yn llwyddianus ",
+    "combine_succ_two": " efo ",
+    "combine_succ_three": " i greu ",
+    "combine_same": "Dydych methu cyfuno'r eitem efo ei hun",
+    "combine_fail": "Dydych methu cyfuno'r ddwy eitem yma",
+    "combine_no_item": "Mathu ddod o hyd i'r eitemau yna",
     
     # did_user_win's (Needs translation)
-    "game_won": "Well done you won!", ## Lackluster as hell, content pls fix this
-    "game_not_won": "You don't have enough <<KEYS>> yet." ## Again, fix this to fit the story
+    "game_won": "Llongyfarchiadau! Rydych wedi ennill!!!", ## Lackluster as hell, content pls fix this
+    "game_not_won": "Dydych ddim efo digon o <<KEYS>> eto." ## Again, fix this to fit the story
 }
