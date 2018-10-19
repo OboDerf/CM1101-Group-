@@ -1,4 +1,4 @@
-#from items import *
+from we_items import *
 
 room_exit = {
     "name" : "ALLANFA",
@@ -18,7 +18,7 @@ room_reception = {
 
     "description": "",
 
-    "exits": {"gogledd": "Fferyllfa", "de":"Caffi", "dwyrain":"Coridor", "gorllewin":"Allanfa"},
+    "exits": {"gogledd": "Fferyllfa", "de":"Caffi", "dwyrain":"Coridor", "gorllewin":"ALLANFA"},
 
     "items": [],
 
@@ -32,7 +32,7 @@ room_hallway = {
     "description":
     """Hyn yw'r coridor o'r prif derbynfa. Mae'n eithaf tywyll, beth sydd lawr fan hyn?""",
 
-    "exits": {"gogledd":"Ystafell Archwiliad", "de":"Lolfa Doctoriaid", "gorllewin":"Prif Derbynfa", "dwyrain":"Ystafell Disgwyl"},
+    "exits": {"gogledd":"Ystafell Archwiliad", "de":"Lolfa Doctoriaid", "gorllewin":"Prif Derbynfa yr Ysbyty", "dwyrain":"Ystafell Disgwyl"},
 
     "items": [],
 
@@ -70,7 +70,7 @@ room_cafe = {
 
     "description": "",
 
-    "exits": {"gogledd" : "Prif Derbynfa"},
+    "exits": {"gogledd" : "Prif Derbynfa yr Ysbyty"},
 
     "items" : [],
 
@@ -83,7 +83,7 @@ room_pharmacy = {
 
     "description" : "",
 
-    "exits": {"de":"Prif Derbynfa"},
+    "exits": {"de":"Prif Derbynfa yr Ysbyty"},
 
     "items" : [],
 
@@ -137,7 +137,7 @@ rooms = {
     "Ystafell Llawdriniaeth" : room_surgery,
     "Caffi" : room_cafe,
     "Fferyllfa" : room_pharmacy,
-    "Ystafell Archwiliad" : room_pharmacy,
+    "Ystafell Archwiliad" : room_exam,
     "Lolfa Doctoriaid" : room_doctors_lounge,
     "Ystafell Peledr X" : room_xray,
     }

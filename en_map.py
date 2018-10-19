@@ -1,4 +1,17 @@
-#from items import *
+from en_items import *
+
+room_exit = {
+    "name" : "EXIT",
+
+    "description": "",
+
+    "exits" : {},
+
+    "items" : [],
+
+    "completed" : False
+
+}
 
 room_reception = {
     "name": "Hospital Reception",
@@ -7,7 +20,7 @@ room_reception = {
 
     "exits": {"north": "Pharmacy", "south":"Cafe", "east":"Hallway", "west" : "EXIT",},
 
-    "items": [],
+    "items": [item_example, item_example_two],
 
     "completed" : False
 
@@ -19,7 +32,7 @@ room_hallway = {
     "description":
     """This is the hallway leading from the reception. I wonder what's down here?""",
 
-    "exits": {"north":"Examination room", "south":"Doctors Lounge", "west":"Reception", "east":"Waiting Room",}
+    "exits": {"north":"Examination room", "south":"Doctors Lounge", "west":"Hospital Reception", "east":"Waiting Room"},
 
     "items": [],
 
@@ -57,7 +70,7 @@ room_cafe = {
 
     "description": "",
 
-    "exits": {"north" : "Reception"},
+    "exits": {"north" : "Hospital Reception"},
 
     "items" : [],
 
@@ -70,7 +83,7 @@ room_pharmacy = {
 
     "description" : "",
 
-    "exits": {"south":"Reception"},
+    "exits": {"south":"Hospital Reception"},
 
     "items" : [],
 
@@ -117,19 +130,19 @@ room_xray = {
 }
 
 rooms = {
+    "EXIT" : room_exit,
     "Hospital Reception" : room_reception,
     "Hallway" : room_hallway,
     "Waiting Room" : room_waiting_room,
     "Surgery Room" : room_surgery,
     "Cafe" : room_cafe,
     "Pharmacy" : room_pharmacy,
-    "Examination Room" : room_pharmacy,
+    "Examination room" : room_exam,
     "Doctors Lounge" : room_doctors_lounge,
     "X-Ray Room" : room_xray
     }
     
     
-
 # Corridors - needs to be added to welsh map
 west_Corridor = {
 	"name": "west corridor", # translate this value
@@ -166,19 +179,3 @@ corridors = {
 	"east": east_Corridor,
 	"exit": exit_Corridor
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
