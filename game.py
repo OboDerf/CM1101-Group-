@@ -67,8 +67,8 @@ class Game:
         if a in translation["difficulty"]: self.difficulty = translation["difficulty"].index(a)
         else:
             try:
-                if int(a)-1 >= 0 and int(a) < len(translation["difficulty"]):
-                        self.difficulty = translation["difficulty"][int(a)-1]
+                if int(a)-1 >= 0 and int(a)-1 < len(translation["difficulty"]):
+                        self.difficulty = int(a)-1
                 else:
                         raise Exception
             except Exception:
@@ -94,6 +94,8 @@ def toggle_lang(player): # Does what it says on the tin. Takes the defined globa
 
 def menu_start(game, player):
     while True:
+        #print(translation["main_menu_one"] + translation["difficulty"][game.difficulty] + translation["main_menu_two"])
+        print(game.difficulty)
         print(translation["main_menu_one"] + translation["difficulty"][game.difficulty] + translation["main_menu_two"])
         choice = normalise_str_input(input())
         if choice == '1': break

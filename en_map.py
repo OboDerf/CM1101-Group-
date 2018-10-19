@@ -20,7 +20,7 @@ room_reception = {
 
     "exits": {"north": "Pharmacy", "south":"Cafe", "east":"Hallway", "west" : "EXIT",},
 
-    "items": [item_example, item_example_two],
+    "items": [],
 
     "completed" : False
 
@@ -85,7 +85,7 @@ room_pharmacy = {
 
     "exits": {"south":"Hospital Reception"},
 
-    "items" : [],
+    "items" : [item_example, item_example_two],
 
     "completed" : False
 

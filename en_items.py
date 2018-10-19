@@ -66,3 +66,36 @@ items_combinations = {
     }
 
 }
+
+
+puzzle_pharmacy{
+    puzzle1 = False # combination of itemx and itemx
+    puzzle2 = True
+
+
+
+}
+
+def puzzel3(args*, kwargs**):
+    if room["puzzle1"] and item == item_combined_example and player.current_room["name"] == "pharmacy"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
