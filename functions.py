@@ -1,3 +1,9 @@
+import en_puzzles.surgery
+import en_puzzles.patients
+import en_puzzles.pharmacy
+import en_puzzles.exam
+import en_puzzles.doctors
+import en_puzzles.xray
 import we_puzzles.surgery
 import we_puzzles.patients
 import we_puzzles.pharmacy
@@ -6,8 +12,8 @@ import we_puzzles.doctors
 import we_puzzles.xray
 
 
-from we_map import rooms
-import we_items
+from en_map import rooms
+import en_items
 
             
 
@@ -73,8 +79,7 @@ class example:
         else:
             return True
 
-
-puzzles = {
+we_puzzles = {
     
     "example": example(),
 
@@ -89,4 +94,21 @@ puzzles = {
     "doctors": we_puzzles.doctors.doctors(),
 
     "xray": we_puzzles.xray.xray()
+}
+
+en_puzzles = {
+    
+    "example": example(),
+
+    "surgery": en_puzzles.surgery.surgery(),
+
+    "patients": en_puzzles.patients.patients(),
+
+    "pharmacy": en_puzzles.pharmacy.pharmacy(),
+
+    "exam": en_puzzles.exam.exam(),
+
+    "doctors": en_puzzles.doctors.doctors(),
+
+    "xray": en_puzzles.xray.xray()
 }

@@ -1,15 +1,14 @@
 ## Imports
 from gameparser import *
 from random import random
+import functions
 
 import en_map
 import en_translation
 import en_items
-#import en_functions
 import we_map
 import we_translation
 import we_items
-#import we_functions
 
 ## Globals
 
@@ -18,7 +17,7 @@ eng_lang = True
 rooms = en_map.rooms
 translation = en_translation.translation
 items_combinations = en_items.items_combinations
-#puzzles = en_functions.puzzles
+puzzles = functions.en_puzzles
 
 
 ## Classes
@@ -98,17 +97,19 @@ class Game:
 ## Main Code
 
 def toggle_lang(player): # Does what it says on the tin. Takes the defined globals and toggles them between versions
-    global eng_lang, rooms, translation
+    global eng_lang, rooms, translation, puzzles
     if eng_lang:
         eng_lang = False
         rooms = we_map.rooms
         translation = we_translation.translation
         items_combinations = we_items.items_combinations
+        puzzles = functions.we_puzzles
     else:
         eng_lang = True
         rooms = en_map.rooms
         translation = en_translation.translation
         items_combinations = en_items.items_combinations
+        puzzles = functions.en_puzzles
     player.current_room = rooms[translation[player.current_room["name"]]]
 
 
@@ -278,7 +279,7 @@ def process_use(itemx, itemy, player, game):
     itemx = item_id_to_item(itemx, player)
     if itemy != "none":
         itemy = item_id_to_item(itemy, player)
-    puzzles[player.current_room["puzzle"]].puzzle_process(itemx, itemy, player, game)
+    puzzles[player.current_room["puzzle"]].puzzle_process(itemx, itemy, translation["use"], player, game)
     
 
 def print_turns(game):
