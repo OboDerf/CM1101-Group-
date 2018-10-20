@@ -18,7 +18,7 @@ translation = {
     "Hallway" : "Hallway",
     "Waiting Room" : "Waiting Room",
     "Surgery Room" : "Surgery Room",
-    "Cafe" : "Cafe",
+    "Patients Room" : "Patients Room",
     "Pharmacy" : "Pharmacy",
     "Examination Room" : "Examination Room",
     "Doctors Lounge" : "Doctors Lounge",

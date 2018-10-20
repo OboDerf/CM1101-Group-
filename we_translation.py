@@ -7,7 +7,7 @@ translation = {
 
     "difficulty_change": "Pa anhawster yr hoffech chi?\n - Hawdd\n - Canolig\n - Anodd\n - Amhosibl\n",
 
-    # add_key's (Needs translation)
+    # add_key's
     "key_gained": "Mae eich ymdrech wedi bod yn werth o! Dyma goriad!",
     "key_not_gained": "Yn anffodus, doedd yna dim goriad i ennill ar ol yr tasg yma",
 
@@ -18,7 +18,7 @@ translation = {
     "Hallway" : "Coridor",
     "Waiting Room" : "Ystafell Disgwyl",
     "Surgery Room" : "Ystafell Llawdriniaeth",
-    "Cafe" : "Caffi",
+    "Patients Room" : "Ystafell Claf",
     "Pharmacy" : "Fferyllfa",
     "Examination Room" : "Ystafell Archwiliad",
     "Doctors Lounge" : "Lolfa Doctoriaid",
@@ -30,7 +30,7 @@ translation = {
     "south": "de",
     "west": "gorllewin",
 
-    # commands (Needs translation)
+    # commands
     "go": "mynd i'r",
     "help": "help",
     "combine": "cyfuno",
@@ -72,7 +72,7 @@ Nodwch i:
     "player_print_inventory_one": "Mae gennych:",
     "player_print_inventory_none": "Does gennych ddim eitemau.",
 
-    # print_turns' (Needs translating)
+    # print_turns'
     "turns_one": "Mae gennych ",
     "turns_two": " gweithredoedd ar ol.\n",
 
@@ -86,7 +86,7 @@ Nodwch i:
     "keys_need_one": "Rydych dal angen ddod o hyd i ",
     "keys_need_two": " allweddau i ennill.",
 
-    # help_print's (Needs Translation)
+    # help_print's
     "help_print" :
     """--------------------
                        HELP - Yn dangos y rhestr o orchmynion posib,
