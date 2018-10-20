@@ -8,8 +8,8 @@ translation = {
     "difficulty_change": "Pa anhawster yr hoffech chi?\n - Hawdd\n - Canolig\n - Anodd\n - Amhosibl\n",
 
     # add_key's (Needs translation)
-    "key_gained": "You obtained a key for your efforts",
-    "key_not_gained": "Unfortunately this puzzle paid out no keys",
+    "key_gained": "Mae eich ymdrech wedi bod yn werth o! Dyma goriad!",
+    "key_not_gained": "Yn anffodus, doedd yna dim goriad i ennill ar ol yr tasg yma",
 
     # locations  ### KEEP THIS UPDATED
     "Prif Derbynfa yr Ysbyty": "Prif Derbynfa yr Ysbyty",
@@ -41,7 +41,7 @@ translation = {
     "keys": "allweddi",
     "inspect": "archwilio",
     "move": "symud",
-    "turns": "turns",
+    "turns": "twrn",
 
     # menu_main's 
     "main_menu_one": """
@@ -63,13 +63,9 @@ Nodwch i:
     # print_exit's 
     "exit_one": "Mynd i'r ",
     "exit_two": " i fynd i'r ",
-
-    #print directions
-    "directions_available": "The following directions are available:",
     
     # print_room_items' 
-    "room_print_items_one": "Mae yna:",
-    "room_print_items_two": "yn yr ystafell hon.\n",
+    "room_print_items": "Mae'r eitemau canlynol o fewn yr ystafell yma. I cymryd yr eitem, teipich CYMRYD + ID o'r eitem. E.g:",
     "or": " neu ",
 
     # print_inventory's 
@@ -77,8 +73,11 @@ Nodwch i:
     "player_print_inventory_none": "Does gennych ddim eitemau.",
 
     # print_turns' (Needs translating)
-    "turns_one": "You have ",
-    "turns_two": " actions left.\n",
+    "turns_one": "Mae gennych ",
+    "turns_two": " gweithredoedd ar ol.\n",
+
+    #print directions
+    "directions_available": "Mae'r cyfeiriadau yma ar gael:",
 
     # key_print's 
     "current_keys_one": "Rydych efo ",

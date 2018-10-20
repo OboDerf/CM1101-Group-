@@ -20,7 +20,7 @@ room_reception = {
 
     "description": "",
 
-    "exits": {"north": "Pharmacy", "south":"Patients Room", "east":"Hallway", "west" : "EXIT",},
+    "exits": {"north": "Pharmacy", "south":"Examination Room", "east":"Hallway", "west" : "EXIT"},
 
     "items": [],
 
@@ -36,7 +36,7 @@ room_hallway = {
     "description":
     """This is the hallway leading from the reception. I wonder what's down here?""",
 
-    "exits": {"north":"Examination Room", "south":"Doctors Lounge", "west":"Hospital Reception", "east":"Waiting Room"},
+    "exits": {"north":"Patients Room", "south":"Doctors Lounge", "west":"Hospital Reception", "east":"Waiting Room"},
 
     "items": [],
 
@@ -80,7 +80,7 @@ room_patients = {
 
     "description": "",
 
-    "exits": {"north" : "Hospital Reception"},
+    "exits": {"north" : "Hallway"},
 
     "items" : [],
 
@@ -110,7 +110,7 @@ room_exam = {
 
     "description" : "",
 
-    "exits" : {"south" : "Hallway"},
+    "exits" : {"North" : "Hospital Reception"},
 
     "items" : [],
 

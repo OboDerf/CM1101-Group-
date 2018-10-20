@@ -20,7 +20,7 @@ room_reception = {
 
     "description": "",
 
-    "exits": {"gogledd": "Fferyllfa", "de":"PATIENTS ROOM", "dwyrain":"Coridor", "gorllewin":"ALLANFA"},
+    "exits": {"gogledd": "Fferyllfa", "de":"Ystafell Archwiliad", "dwyrain":"Coridor", "gorllewin":"ALLANFA"},
 
     "items": [],
 
@@ -36,7 +36,7 @@ room_hallway = {
     "description":
     """Hyn yw'r coridor o'r prif derbynfa. Mae'n eithaf tywyll, beth sydd lawr fan hyn?""",
 
-    "exits": {"gogledd":"Ystafell Archwiliad", "de":"Lolfa Doctoriaid", "gorllewin":"Prif Derbynfa yr Ysbyty", "dwyrain":"Ystafell Disgwyl"},
+    "exits": {"gogledd":"Ystafell Claf", "de":"Lolfa Doctoriaid", "gorllewin":"Prif Derbynfa yr Ysbyty", "dwyrain":"Ystafell Disgwyl"},
 
     "items": [],
 
@@ -76,11 +76,11 @@ room_surgery = {
 }
 
 room_patients = {
-    "name" : "PATIENTS ROOM",
+    "name" : "Ystafell Claf",
 
     "description": "",
 
-    "exits": {"gogledd" : "Prif Derbynfa yr Ysbyty"},
+    "exits": {"de" : "Coridor"},
 
     "items" : [],
 
@@ -110,7 +110,7 @@ room_exam = {
 
     "description" : "",
 
-    "exits" : {"de" : "Coridor"},
+    "exits" : {"gogledd" : "Ptif Derbynfa yr Ysbyty"},
 
     "items" : [],
 
@@ -155,7 +155,7 @@ rooms = {
     "Coridor" : room_hallway,
     "Ystafell Disgwyl" : room_waiting_room,
     "Ystafell Llawdriniaeth" : room_surgery,
-    "PATIENTS ROOM" : room_patients,
+    "Ystafell Claf" : room_patients,
     "Fferyllfa" : room_pharmacy,
     "Ystafell Archwiliad" : room_exam,
     "Lolfa Doctoriaid" : room_doctors_lounge,
