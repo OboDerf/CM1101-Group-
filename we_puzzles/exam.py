@@ -46,7 +46,7 @@ from we_translation import translation
 class exam:
 
     def __init__(self):
-        self.linked_rooms = [rooms["Examination Room"]]
+        self.linked_rooms = [rooms[translation["Examination Room"]]]
         self.completed = False
 
         ## Any progress checks would go here EG:

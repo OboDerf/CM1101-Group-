@@ -128,7 +128,7 @@ def menu_start(game, player):
 # -------------- MAIN GAME --------------
 def room_print_items(items):
     if items:
-        print(translation["room_print_items"] + "TAKE + " + items[0]["id"])
+        print(translation["room_print_items"] + translation["take"].upper() + " + " + items[0]["id"])
         for a in items: print(" - " + a["id"] + ", " + a["name"] + " - " + a["description"])
         print()
 
@@ -143,7 +143,7 @@ def exit_leads_to(exits, direction):
 
 
 def print_exit(direction, leads_to):
-    print("- GO " + direction.upper() + " to " + leads_to + ".")
+    print("- " + translation["exit_one"] + direction.upper() + translation["exit_two"] + leads_to + ".")
     
 
 def menu_print(game, player):
@@ -181,7 +181,7 @@ def drop_all_items(player):
 def print_inventory(player):
     if player.inventory:
         print(translation["player_print_inventory_one"])
-        for a in player.inventory:  print(" - " + a["id"] + ", " + a["name"] + " - " + a["description"])
+        for a in player.inventory:  print(" - " + a["id"] + ", " + a["name"])
     else: print(translation["player_print_inventory_none"])
     
 
