@@ -76,7 +76,7 @@ room_surgery = {
 }
 
 room_patients = {
-    "name" : "PATIENTS ROOM",
+    "name" : "Ystafell Claf",
 
     "description": "",
 
