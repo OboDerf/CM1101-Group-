@@ -1,15 +1,15 @@
 ## Imports
 from gameparser import *
-import sys
+from random import random
 
 import en_map
 import en_translation
 import en_items
-#import en_function
+#import en_functions
 import we_map
 import we_translation
 import we_items
-#import we_function
+#import we_functions
 
 ## Globals
 
@@ -18,6 +18,7 @@ eng_lang = True
 rooms = en_map.rooms
 translation = en_translation.translation
 items_combinations = en_items.items_combinations
+#puzzles = en_functions.puzzles
 
 
 ## Classes
@@ -26,9 +27,22 @@ class Player:
 
     def __init__(self, starting_room, max_attempts):
         self.current_keys = 0 #player.current_keys
+        self.rooms_rewarded = 0
         self.inventory = []
         self.current_room = starting_room
         self.attempts_left = max_attempts
+
+    def add_key(self, game):
+        if game.difficulty_stats[game.difficulty]["keys_avaliable"]/(6 - self.rooms_rewarded) >= random():
+            game.difficulty_stats[game.difficulty]["keys_avaliable"] -= 1
+            self.rooms_rewarded += 1
+            self.current_keys +=1
+            print(translation["key_gained"])
+        else:
+            self.rooms_rewarded += 1
+            print(translation["key_not_gained"])
+            
+        
 
 class Game:
 
@@ -73,6 +87,12 @@ class Game:
                         raise Exception
             except Exception:
                 print(translation["incorrect_answer"])
+
+    def turn_ticker(self):
+        self.difficulty_stats[self.difficulty]["attempts_max"] -= 1
+        if self.difficulty_stats[self.difficulty]["attempts_max"] == 0:
+            self.game_lost = True
+            print(translation["game_lost"])
                 
 
 ## Main Code
@@ -94,8 +114,6 @@ def toggle_lang(player): # Does what it says on the tin. Takes the defined globa
 
 def menu_start(game, player):
     while True:
-        #print(translation["main_menu_one"] + translation["difficulty"][game.difficulty] + translation["main_menu_two"])
-        print(game.difficulty)
         print(translation["main_menu_one"] + translation["difficulty"][game.difficulty] + translation["main_menu_two"])
         choice = normalise_str_input(input())
         if choice == '1': break
@@ -115,7 +133,8 @@ def room_print_items(items):
               
 
 def room_print(current_room):
-    print("\n" + translation["entry_message"] + current_room["name"] + "\n" + current_room["description"] + "\n")
+    print("\n" + translation["entry_message"] + current_room["name"] + "\n\n"
+          + current_room["description"] + "\n--------------------\n")
     room_print_items(current_room["items"])
 
 
@@ -128,9 +147,9 @@ def print_exit(direction, leads_to):
     
 
 def menu_print(game, player):
-    print(translation["command_message"])
     for direction in player.current_room["exits"]:
         print_exit(direction, exit_leads_to(player.current_room["exits"], direction))
+    print(translation["command_message"])
         
 
 def move(exits, direction):
@@ -164,6 +183,7 @@ def process_take(item, player):
     needed = True
     for a in player.current_room["items"]:
         if item in a["id"] and a["pick_up"]:
+            if game.difficulty != 3: game.turn_ticker()
             needed = False
             player.inventory.append(a)
             player.current_room["items"].remove(a)
@@ -172,10 +192,11 @@ def process_take(item, player):
     if needed: print(translation["cannot_take_two"])
 
 
-def process_drop(item, player):
+def process_drop(item, player, game):
     needed = True
     for a in player.inventory:
         if item in a["id"]:
+            if game.difficulty != 3: game.turn_ticker()
             needed = False
             player.inventory.remove(a)
             player.current_room["items"].append(a)
@@ -195,13 +216,15 @@ def process_inspect(item, player):
     if needed: print(translation["cannot_inspect"])
 
 
-def process_move_item(item, player):
+def process_move_item(item, player, game):
     needed = True
     for a in player.current_room["items"]:
         if item in a["id"] and a["move"] and not a ["moved"]:
+            if game.difficulty != 3: game.turn_ticker()
             needed = False
             a["moved"] = True
             print(translation["moving_item"] + a["name"])
+            puzzles[player.current_room["puzzle"]].puzzle_process(item_id_to_item(item, player), "none", player, game)
             break
         elif item in a["id"] and a["move"] and a ["moved"]:
             needed = False
@@ -221,12 +244,12 @@ def item_id_to_item(item_id, player):
         if item_id == b["id"]: return b
     
 
-
-def process_combine(itemx, itemy, player):
+def process_combine(itemx, itemy, player, game):
     needed = True
     if itemx != itemy and itemx in player.inventory and itemy in player.inventory:
         for a in items_combinations:
             if itemx in items_combinations[a]["components"] and itemy in items_combinations[a]["components"]:
+                if game.difficulty != 3: game.turn_ticker()
                 needed = False
                 player.inventory.remove(itemx)
                 player.inventory.remove(itemy)
@@ -239,31 +262,39 @@ def process_combine(itemx, itemy, player):
     else: print(translation["combine_no_item"])
         
 
-def process_use(itemx, itemy, player):
-    if itemy == "none":
-        pass ## SPEAK TO MARTON ABOUT HOW THIS BIT WILL WORK
-    else:
-        pass ## SAME STORY HERE
+def process_use(itemx, itemy, player, game):
+    if game.difficulty != 3: game.turn_ticker()
+    itemx = item_id_to_item(itemx, player)
+    if itemy != "none":
+        itemy = item_id_to_item(itemy, player)
+    puzzles[player.current_room["puzzle"]].puzzle_process(itemx, itemy, player, game)
     
+
+def print_turns(game):
+    print(translation["turns_one"] + str(game.difficulty_stats[game.difficulty]["attempts_max"]) + translation["turns_two"])
+
 
 def menu_process(game, player):
     user_input = normalise_input(input("\n> "))
+    #print("--------------------")
     if user_input:
-        if user_input[0] == translation["help"]: print(translation["help_print"]) # Done
-        elif user_input[0] == translation["inventory"]: print_inventory(player) # Done
-        elif user_input[0] == translation["keys"]: print_keys(game, player) # Done
-        elif len(user_input) > 1:  
-            if user_input[0] == translation["go"]: process_move(user_input[1], player, game) # Done
-            elif user_input[0] == translation["take"]: process_take(user_input[1], player) # Done
-            elif user_input[0] == translation["drop"]: process_drop(user_input[1], player) # Done
-            elif user_input[0] == translation["use"] and len(user_input) == 2: process_use(user_input[1], "none", player) 
-            elif user_input[0] == translation["inspect"]: process_inspect(user_input[1], player) # Done
-            elif user_input[0] == translation["move"]: process_move_item(user_input[1], player) # Done
+        if user_input[0] == translation["help"]: print(translation["help_print"]) 
+        elif user_input[0] == translation["inventory"]: print_inventory(player) 
+        elif user_input[0] == translation["keys"]: print_keys(game, player)
+        elif user_input[0] == translation["turns"]: print_turns(game)
+        elif len(user_input) > 1:
+            if game.difficulty == 3: game.turn_ticker()
+            if user_input[0] == translation["go"]: process_move(user_input[1], player, game) 
+            elif user_input[0] == translation["take"]: process_take(user_input[1], player, game) 
+            elif user_input[0] == translation["drop"]: process_drop(user_input[1], player, game) 
+            elif user_input[0] == translation["use"] and len(user_input) == 2: process_use(user_input[1], "none", player, game) 
+            elif user_input[0] == translation["inspect"]: process_inspect(user_input[1], player) 
+            elif user_input[0] == translation["move"]: process_move_item(user_input[1], player, game) 
             elif len(user_input) > 2:
                 if user_input[0] == translation["combine"]:
                       process_combine(item_id_to_item(user_input[1], player),
-                                      item_id_to_item(user_input[2], player), player) # Done
-                elif user_input[0] == translation["use"]: process_use(user_input[1], user_input[2], player)
+                                      item_id_to_item(user_input[2], player), player, game) 
+                elif user_input[0] == translation["use"]: process_use(user_input[1], user_input[2], player, game)
         else: print(translation["incorrect_answer"])
     else: print(translation["incorrect_answer"])
 
