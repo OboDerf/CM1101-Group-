@@ -9,7 +9,9 @@ room_exit = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "N/A"
 
 }
 
@@ -18,11 +20,13 @@ room_reception = {
 
     "description": "",
 
-    "exits": {"north": "Pharmacy", "south":"Cafe", "east":"Hallway", "west" : "EXIT",},
+    "exits": {"north": "Pharmacy", "south":"Patients Room", "east":"Hallway", "west" : "EXIT",},
 
     "items": [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "N/A"    
 
 }
 
@@ -32,11 +36,13 @@ room_hallway = {
     "description":
     """This is the hallway leading from the reception. I wonder what's down here?""",
 
-    "exits": {"north":"Examination room", "south":"Doctors Lounge", "west":"Hospital Reception", "east":"Waiting Room"},
+    "exits": {"north":"Examination Room", "south":"Doctors Lounge", "west":"Hospital Reception", "east":"Waiting Room"},
 
     "items": [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "N/A"
 
 }
 
@@ -45,11 +51,13 @@ room_waiting_room = {
     
     "description": "",
 
-    "exits": {"north":"X-Ray Room", "south":"Surgery Room", "west":"Hallway", },
+    "exits": {"north":"X-Ray Room", "south":"Surgery Room", "west":"Hallway", "east": "Example Room"},
 
     "items": [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "N/A"
 
 }
 
@@ -61,12 +69,14 @@ room_surgery = {
 
     "items": [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "surgery"
     
 }
 
-room_cafe = {
-    "name" : "Cafe",
+room_patients = {
+    "name" : "Patients Room",
 
     "description": "",
 
@@ -74,7 +84,9 @@ room_cafe = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "cafe"
 
 }
 
@@ -85,9 +97,11 @@ room_pharmacy = {
 
     "exits": {"south":"Hospital Reception"},
 
-    "items" : [item_example, item_example_two],
+    "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "pharmacy"
 
 }
 
@@ -100,7 +114,9 @@ room_exam = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "exam"
 
 }
 
@@ -113,7 +129,9 @@ room_doctors_lounge = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "doctors"
 }
 
 room_xray = {
@@ -125,7 +143,29 @@ room_xray = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "xray"
+
+}
+
+room_example = { # A temp room for a temp puzzle
+    "name" : "Example Room",
+
+    "description" : """This is a test room with three simple puzzle.
+First you must move examplemove,
+Then you must combine example and exampletwo,
+Then you must use examplecombine on the room,
+You'll notice there's still an exampletwo. User example combine on it for the key
+""",
+
+    "exits" : {"west" : "Waiting Room"},
+
+    "items" : [item_example, item_example_two, item_example_move],
+
+    "completed" : False,
+
+    "puzzle" : "example"
 
 }
 
@@ -135,47 +175,10 @@ rooms = {
     "Hallway" : room_hallway,
     "Waiting Room" : room_waiting_room,
     "Surgery Room" : room_surgery,
-    "Cafe" : room_cafe,
+    "Patients Room" : room_patients,
     "Pharmacy" : room_pharmacy,
-    "Examination room" : room_exam,
+    "Examination Room" : room_exam,
     "Doctors Lounge" : room_doctors_lounge,
-    "X-Ray Room" : room_xray
+    "X-Ray Room" : room_xray,
+    "Example Room" : room_example
     }
-    
-    
-# Corridors - needs to be added to welsh map
-west_Corridor = {
-	"name": "west corridor", # translate this value
-	"left": "exit",
-	"right": "center",
-	"up": room_hallway,
-	"down": room_waiting_room
-}
-
-center_Corridor = {
-	"name": "center corridor",
-	"left": "west",
-	"right": "east",
-	"up": room_reception,
-	"down": room_xray
-}
-
-east_Corridor = {
-	"name": "east corridor",
-	"left": "center",
-	"up": room_pharmacy,
-	"down": room_doctors_lounge
-}
-
-exit_Corridor = {
-	"name" : "exit",
-	"right": "west"
-}
-
-
-corridors = {
-	"west": west_Corridor,
-	"center": center_Corridor,
-	"east": east_Corridor,
-	"exit": exit_Corridor
-}

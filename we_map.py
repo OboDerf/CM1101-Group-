@@ -9,7 +9,9 @@ room_exit = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "N/A"
 
 }
 
@@ -18,11 +20,13 @@ room_reception = {
 
     "description": "",
 
-    "exits": {"gogledd": "Fferyllfa", "de":"Caffi", "dwyrain":"Coridor", "gorllewin":"ALLANFA"},
+    "exits": {"gogledd": "Fferyllfa", "de":"PATIENTS ROOM", "dwyrain":"Coridor", "gorllewin":"ALLANFA"},
 
     "items": [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "N/A"
     
 }
 
@@ -36,7 +40,9 @@ room_hallway = {
 
     "items": [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "N/A"
 
 }
 
@@ -49,7 +55,9 @@ room_waiting_room = {
 
     "items": [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "N/A"
     
 }
 
@@ -62,11 +70,13 @@ room_surgery = {
 
     "items": [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "surgery"
 }
 
-room_cafe = {
-    "name" : "Caffi",
+room_patients = {
+    "name" : "PATIENTS ROOM",
 
     "description": "",
 
@@ -74,7 +84,9 @@ room_cafe = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "patients"
 
 }
 
@@ -87,7 +99,9 @@ room_pharmacy = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "pharmacy"
 
 }
 
@@ -100,7 +114,9 @@ room_exam = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "pharmacy"
 
 }
 
@@ -113,7 +129,9 @@ room_doctors_lounge = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "doctors"
 }
 
 room_xray = {
@@ -125,7 +143,9 @@ room_xray = {
 
     "items" : [],
 
-    "completed" : False
+    "completed" : False,
+
+    "puzzle" : "xray"
 
 }
 
@@ -135,7 +155,7 @@ rooms = {
     "Coridor" : room_hallway,
     "Ystafell Disgwyl" : room_waiting_room,
     "Ystafell Llawdriniaeth" : room_surgery,
-    "Caffi" : room_cafe,
+    "PATIENTS ROOM" : room_patients,
     "Fferyllfa" : room_pharmacy,
     "Ystafell Archwiliad" : room_exam,
     "Lolfa Doctoriaid" : room_doctors_lounge,
