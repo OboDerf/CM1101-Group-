@@ -20,6 +20,8 @@ Group project for the first task
  - EVERYONE SHOULD COME PLEASE
  - DISCUSS HOW TO ADD CONTENT TO THE GAME
  
+# FRAMEWORK - A BRIEF AND LOOSE EXPLAINATION ON THE PUZZLES
+
    Key:
 
  - self: This means you're using a variable or function defined within the class. It's an easy way of carrying 
