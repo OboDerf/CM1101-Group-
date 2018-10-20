@@ -20,9 +20,7 @@ item_example = {
     
     "name": "an example item",
 
-    "description":
-    """Wait, hang on, you shouldn't be seeing this.
-Hmmm... Try telling Kai he's an idiot. That normally fixes these things.""",
+    "description": "The description of the example item",
 
     "pick_up": True,
 
@@ -37,8 +35,7 @@ item_example_two = {
 
     "name": "the second example item",
 
-    "description":
-    """This is getting out of hand, now there's two of them!""",
+    "description": "The description of the exampletwo item",
 
     "pick_up": True,
 

@@ -64,6 +64,9 @@ Nodwch i:
     "exit_one": "Mynd i'r ",
     "exit_two": " i fynd i'r ",
 
+    #print directions
+    "directions_available": "The following directions are available:",
+    
     # print_room_items' 
     "room_print_items_one": "Mae yna:",
     "room_print_items_two": "yn yr ystafell hon.\n",

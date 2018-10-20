@@ -127,10 +127,9 @@ def menu_start(game, player):
 # -------------- MAIN GAME --------------
 def room_print_items(items):
     if items:
-        print(translation["room_print_items_one"])
-        for a in items: print(" - " + a["name"] + translation["or"] + "'" + a["id"] + "'")
-        print(translation["room_print_items_two"])
-              
+        print(translation["room_print_items"] + "TAKE + " + items[0]["id"])
+        for a in items: print(" - " + a["id"] + ", " + a["name"] + " - " + a["description"])
+        print()
 
 def room_print(current_room):
     print("\n" + translation["entry_message"] + current_room["name"] + "\n\n"
@@ -143,10 +142,11 @@ def exit_leads_to(exits, direction):
 
 
 def print_exit(direction, leads_to):
-    print("GO " + direction.upper() + " to " + leads_to + ".")
+    print("- GO " + direction.upper() + " to " + leads_to + ".")
     
 
 def menu_print(game, player):
+    print(translation["directions_available"])
     for direction in player.current_room["exits"]:
         print_exit(direction, exit_leads_to(player.current_room["exits"], direction))
     print(translation["command_message"])
@@ -162,14 +162,25 @@ def process_move(direction, player, game):
             try_Exit(game, player)
         elif move(player.current_room["exits"], direction)["completed"]:
             print(translation["already_completed"])
-        else: player.current_room = move(player.current_room["exits"], direction)
+        else:
+            # drop all item if players goes back to corridor
+            playerGoingToRoom = player.current_room["exits"][direction]
+            if playerGoingToRoom == "Hospital Reception" or playerGoingToRoom == "Hallway" or playerGoingToRoom == "Hallway":
+                print("We are dropping all the items here")
+                drop_all_items(player)
+
+            player.current_room = move(player.current_room["exits"], direction)
     else: print(translation["cannot_move"])
             
+
+def drop_all_items(player):
+    player.current_room["items"] += player.inventory
+    del player.inventory[:]
 
 def print_inventory(player):
     if player.inventory:
         print(translation["player_print_inventory_one"])
-        for a in player.inventory: print(" - " + a["name"] + translation["or"] + "'" + a["id"] + "'")
+        for a in player.inventory:  print(" - " + a["id"] + ", " + a["name"] + " - " + a["description"])
     else: print(translation["player_print_inventory_none"])
     
 

@@ -66,17 +66,19 @@ Enter to:
     "exit_two": " to ",
 
     # print_room_items'
-    "room_print_items_one": "There is:",
-    "room_print_items_two": "In this room.\n",
+    "room_print_items": "The following items are in the room. To pick up an item, type TAKE + ID of the item. E.g.: ",
     "or": " or ",
 
     # print_inventory's 
-    "player_print_inventory_one": "You have:",
+    "player_print_inventory_one": "You have the following items:",
     "player_print_inventory_none": "You have no items",
 
     # print_turns'
     "turns_one": "You have ",
     "turns_two": " actions left.\n",
+
+    #print directions
+    "directions_available": "The follwing directions are avalible:",
 
     # key_print's 
     "current_keys_one": "You currently have ",
