@@ -169,7 +169,6 @@ def process_move(direction, player, game):
             if playerGoingToRoom == "Hospital Reception" or playerGoingToRoom == "Hallway" or playerGoingToRoom == "Hallway":
                 print("We are dropping all the items here")
                 drop_all_items(player)
-
             player.current_room = move(player.current_room["exits"], direction)
     else: print(translation["cannot_move"])
             
@@ -236,7 +235,7 @@ def process_move_item(item, player, game):
             needed = False
             a["moved"] = True
             print(translation["moving_item"] + a["name"])
-            puzzles[player.current_room["puzzle"]].puzzle_process(item_id_to_item(item, player), "none", player, game)
+            puzzles[player.current_room["puzzle"]].puzzle_process(item_id_to_item(item, player), "none", translation["move"], player, game)
             break
         elif item in a["id"] and a["move"] and a ["moved"]:
             needed = False
