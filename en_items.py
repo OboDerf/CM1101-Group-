@@ -1,3 +1,20 @@
+## ITEM TEMPLATE AS FOLLOWS
+
+##item_template = {
+##    "id": "",
+##
+##    "name": "",
+##
+##    "description":
+##    """TEXT HERE""",
+##
+##    "pick_up": True / False, (Can it be picked up?)
+##
+##    "move": True / False, (Can it be picked up?)
+##
+##    "moved": False
+##}
+
 item_example = {
     "id": "example",
     
@@ -51,13 +68,14 @@ item_example_move = {
 
     "description": "The floor boards bend at how heavy this is, but not enough to stop you moving it.",
 
-    "pick_up": True,
+    "pick_up": False,
 
     "move": True,
 
     "moved": False
 }
 
+# Any new item combinations are added here in this format
 items_combinations = {
     "example_combined": {
         "components": [item_example, item_example_two],
@@ -66,36 +84,3 @@ items_combinations = {
     }
 
 }
-
-
-puzzle_pharmacy{
-    puzzle1 = False # combination of itemx and itemx
-    puzzle2 = True
-
-
-
-}
-
-def puzzel3(args*, kwargs**):
-    if room["puzzle1"] and item == item_combined_example and player.current_room["name"] == "pharmacy"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-

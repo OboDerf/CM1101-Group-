@@ -51,7 +51,7 @@ item_example_move = {
 
     "description": "The floor boards bend at how heavy this is, but not enough to stop you moving it.",
 
-    "pick_up": True,
+    "pick_up": False,
 
     "move": True,
 
