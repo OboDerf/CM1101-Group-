@@ -86,7 +86,7 @@ room_patients = {
 
     "completed" : False,
 
-    "puzzle" : "cafe"
+    "puzzle" : "patients"
 
 }
 
