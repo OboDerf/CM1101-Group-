@@ -12,7 +12,7 @@
 Please work on the rooms, you don't have to code anything yet, just make the rooms in text first. Use the example below as a guide for help
  
 # An exmaple of a room in text format by Jack for the Patient's room- 
--   
+<img src="https://raw.githubusercontent.com/OboDerf/CM1101-Group-/master/44566116_523872921417263_7686415275561844736_n.png">
 
 
 # Github Help
