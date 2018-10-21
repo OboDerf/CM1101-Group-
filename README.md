@@ -3,7 +3,7 @@
 # Tasks to do 
 - Kai and Jack will finish <b>Patient's</b>room
 - Conor will do <b>Pharmacy</b> in text -> and attempt to code it
-- Sohaib will do in <b>X-ray<b/> in text
+- Sohaib will do in <b>X-ray</b> in text
 - Leo will need to do <b>Dr. Lounge</b>
 - Njabulo will need to do <b>Exam room</b>
 - Kkolis will need to do <b>Surgery</b> in text
