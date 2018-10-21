@@ -166,10 +166,11 @@ def process_move(direction, player, game):
         else:
             # drop all item if players goes back to corridor
             playerGoingToRoom = player.current_room["exits"][direction]
-            if playerGoingToRoom == "Hospital Reception" or playerGoingToRoom == "Hallway" or playerGoingToRoom == "Hallway":
-                print("We are dropping all the items here")
+            if playerGoingToRoom == translation["Hospital Reception"] or playerGoingToRoom == translation["Hallway"] or playerGoingToRoom == translation["Waiting Room"]:
                 drop_all_items(player)
             player.current_room = move(player.current_room["exits"], direction)
+            if game.difficulty != 3: game.turn_ticker()
+
     else: print(translation["cannot_move"])
             
 
@@ -190,7 +191,7 @@ def print_keys(game, player):
     else: print(translation["keys_need_one"] + str(game.difficulty_stats[game.difficulty]["keys_needed"] - player.current_keys ) + translation["keys_need_two"])
 
 
-def process_take(item, player):
+def process_take(item, player, game):
     needed = True
     for a in player.current_room["items"]:
         if item in a["id"] and a["pick_up"]:

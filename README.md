@@ -1,24 +1,18 @@
 # CM1101-Group-
-Group project for the first task
 
-# Tasks to do for 
- - KAI - finish it by saturday 11AM
- - MARTON - finish it by Saturday 2PM
- 
-## FINISH THIS FIRST - PRGRAMMING - User is in the room
-- Format list of items print - MARTON
-  - The following items are in the room. To pick up an item, use the TAKE + ID of the item. E.g.: TAKE GAME
-   - GAME, a computer game - a lovely game to play with
-- Format Inventory command - MARTON
-- Build sample puzzle classes and give explanations here in read me - KAI
-- Drop all items on leaving a puzzle  - MARTON
-- Tick down trun timer by one on success (Or on fail if impossible) - KAI
-- Process keys adding to player / removing from game - KAI
-- KEYS MATHS - KAI
+# Tasks to do 
+- Kai and Jack will finish Patient's room
+- Conor will do Pharmacy in text -> and attempt to code it
+- Sohaib will do in X-ray in text
+- Leo, Njabulo, Kkolis will need to do a room
 
-# ROOMS - MEETING ON HOW TO ADD CONTENT - SATURDAY AFTERNOON/EVENING
- - EVERYONE SHOULD COME PLEASE
- - DISCUSS HOW TO ADD CONTENT TO THE GAME
+
+# Github Help
+1. Whenever you want to work on the project, make sure to pull the latest version by typing: "git pull"
+2. Once you've made some changes in the code, run git status to see which files you've modified by typing: "git status"
+3. Add your modified files by typing: "git add file.py"
+3. Commit your changes to your local repository by typing: "git commit -m "commit message"
+4. Push your changes by typing: "git push"
  
 # FRAMEWORK - A BRIEF AND LOOSE EXPLAINATION ON THE PUZZLES
 

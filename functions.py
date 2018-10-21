@@ -30,7 +30,7 @@ class example:
         self.puzzle_part_two = False
 
 
-    def puzzle_process(self, itemx, itemy, player, game):
+    def puzzle_process(self, itemx, itemy, command, player, game):
         #There will only be two functions that call puzzle_process: Use and Move.
         #If you want anything else, speak to me but be quick about it
         try:
