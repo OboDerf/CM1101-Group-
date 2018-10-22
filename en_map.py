@@ -91,9 +91,9 @@ quiet murmur, a repeated line “I told them, I tried to warn them”. The woman
 have gotten used to the smell of this forsaken place.
 """,
 
-    "exits": {"north" : "Hallway"},
+    "exits": {"south" : "Hallway"},
 
-    "items" : [],
+    "items" : [item_lamp, item_bookshelf],
 
     "completed" : False,
 

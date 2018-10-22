@@ -215,16 +215,18 @@ def process_drop(item, player, game):
     if needed: print(translation["cannot_drop"])
 
 
-def process_inspect(item, player):
+def process_inspect(item, player, game):
     needed = True
     for a in player.inventory:
         if item in a["id"]:
             needed = False
             print(a["description"])
+            puzzles[player.current_room["puzzle"]].puzzle_process(item_id_to_item(item, player), "none", translation["inspect"], player, game)
     for b in player.current_room["items"]:
         if item in b["id"]:
             needed = False
             print(b["description"])
+            puzzles[player.current_room["puzzle"]].puzzle_process(item_id_to_item(item, player), "none", translation["inspect"], player, game)
     if needed: print(translation["cannot_inspect"])
 
 
@@ -300,7 +302,7 @@ def menu_process(game, player):
             elif user_input[0] == translation["take"]: process_take(user_input[1], player, game) 
             elif user_input[0] == translation["drop"]: process_drop(user_input[1], player, game) 
             elif user_input[0] == translation["use"] and len(user_input) == 2: process_use(user_input[1], "none", player, game) 
-            elif user_input[0] == translation["inspect"]: process_inspect(user_input[1], player) 
+            elif user_input[0] == translation["inspect"]: process_inspect(user_input[1], player, game) 
             elif user_input[0] == translation["move"]: process_move_item(user_input[1], player, game) 
             elif len(user_input) > 2:
                 if user_input[0] == translation["combine"]:

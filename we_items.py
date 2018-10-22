@@ -58,6 +58,60 @@ item_example_move = {
     "moved": False
 }
 
+item_book_1 = {
+    "id" : "book1", # needs translating
+    "name" : "First book", # needs translating
+    "description" : "This book looks like the first of a series?", # needs translating
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_book_2 = {
+    "id" : "book2", # needs translating
+    "name" : "Second book", # needs translating
+    "description" : "This book looks like the second of a series?", # needs translating
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_book_3 = {
+    "id" : "book3", # needs translating
+    "name" : "Third book", # needs translating
+    "description" : "This book looks like the third of a series?", # needs translating
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_book_4 = {
+    "id" : "book4", # needs translating
+    "name" : "Fourth book", # needs translating
+    "description" : "This book looks like the final book of a series?", # needs translating
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_lamp = { 
+    "id" : "Lamp", # needs translating
+    "name" : "Heavy metalic lamp", # needs translating
+    "description" : "A heavy silver lamp that you found on the floor", # needs translating
+    "pick_up" : True,
+    "move" : False,
+    "moved" : False
+}
+
+item_bookshelf = {
+    "id" : "Bookshelf", # needs translating
+    "name" : "A dusty bookshelf", # needs translating
+    "description" : "Here you see an array of books, all covered in cobwebs.. apart from 4?", # needs translating
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
 items_combinations = {
     "example_combined": {
         "components": [item_example, item_example_two],
