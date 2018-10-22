@@ -2,7 +2,7 @@
 
 # Tasks to do 
 - Kai and Jack is coding the <b>patient's</b> room
-- Connor is coding <b>Doctor's Lounge</b> room
+- Leo is coding <b>Doctor's Lounge</b> room
 - Marton is coding <b>X-ray</b> room
 - Marton is coding <b>Surgery</b> room
 - Kai is coding <b>Pharmacy</b>
