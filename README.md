@@ -1,12 +1,12 @@
 # CM1101-Group-
 
 # Tasks to do 
-- Kai and Jack will finish <b>Patient's</b>room
-- Conor will do <b>Pharmacy</b> in text -> and attempt to code it
-- Sohaib will do in <b>X-ray</b> in text
-- Leo will need to do <b>Dr. Lounge</b>
-- Njabulo will need to do <b>Exam room</b>
-- Kkolis will need to do <b>Surgery</b> in text
+- Kai and Jack is coding the <b>patient's</b> room
+- Connor is coding <b>Doctor's Lounge</b> room
+- Marton is coding <b>X-ray</b> room
+- Marton is coding <b>Surgery</b> room
+- Kai is coding <b>Pharmacy</b>
+- Someone will code <b>Exam</b> room
  
  
 Please work on the rooms, you don't have to code anything yet, just make the rooms in text first. Use the example below as a guide for help
