@@ -41,6 +41,7 @@ import sys # Credit to Reddit user /u/cpt_fwiffo
 sys.path.append('..')
 from en_map import rooms
 from en_translation import translation
+from en_items import *
 
 
 class exam:
@@ -48,39 +49,82 @@ class exam:
     def __init__(self):
         self.linked_rooms = [rooms["Examination Room"]]
         self.completed = False
+        self.needed = True
 
-        ## Any progress checks would go here EG:
-        self.puzzle_one = False
+        ## Any MANDATORY progress checks would go here EG:
+        self.chair_puzzle = False
+        self.hammer_puzzle = False
+        self.table_puzzle = False
+        self.fluid_puzzle = False
 
         self.temp = False
 
         
 
-    def puzzle_process(self, itemx, itemy, command, player, game): # The more if statements here, the more parts to the puzzle there are
-        needed = True
-        if not self.puzzle_one:
-            puzzle_one(self, itemx, command, player)
-        # Add in more 'if' statements here for each part of the puzzle
-
-
-        
-        elif self.temp and self.puzzle_one and needed == True: # This check should be your last
-            puzzle_final(self, itemx, command, game, player)
-        if needed: print("That had no effect") # This is just an error message
-
-    def puzzle_one(self, itemx, command, player):
-        if itemx["id"] == "example" and command == translation["use"]: # How do they complete the task? 
-            print("Some fluff about how well they're doing, tell them what they just did")
-            self.puzzle_one = True #(Or whatever you end up calling it)
-            return False # This means you no longer need to tell the user they did nothing
+    def puzzle_process(self, itemx, itemy, command, player, game): 
+        if not self.completed:
+            if not self.chair_puzzle:
+                self.puzzle_one(itemx, game, command, player)
+            if self.chair_puzzle and not self.hammer_puzzle:
+                self.puzzle_two(itemx, game, command, player)
+            if not self.table_puzzle:
+                self.puzzle_three(itemx, game, command, player)
+            if self.table_puzzle and not self.fluid_puzzle:
+                self.puzzle_four(itemx, game, command, player) 
+            if self.fluid_puzzle:
+                self.puzzle_final(itemx, game, command, player)
         else:
-            # If you want a custom error message, put a print here and return False
-            return True # This means they failed the check and may still need a message saying 'did nothing'
-    
+            print("Nothing to see here...")
+        
 
-    def puzzle_final(self, game, player): # This is the final part of the puzzle. After this the player will be awarded a key.
-        if command == translation["example"] and itemx == example and player.current_room in self.linked_rooms: # Another example of what a room condition looks like
+    def puzzle_one(self, itemx, game, command, player):
+        if itemx["id"] == "chair" and command == "inspect": # How do they complete the task? 
+            print("""Inspecting the tools you notice that there is a bonesaw, hammer, some kind of metal wedge and a spanner...How can that be helpful?
+                  """)
+            player.current_room["items"].extend([item_hammer, item_saw, item_wedge])
+            player.current_room["items"].remove(item_chair)
+            self.chair_puzzle = True 
+        else:
+            print("I don't know what you were trying to do... but it didn't work")
+            
+    
+    def puzzle_two(self, itemx, game, command, player):
+        if itemx["id"] == "hammerwedge" and command == "use":
+            print("Using your fancy new hammerwedge you attempt to pry and bash the locked drawer and...it opens! but wait is that a human head?")
+            player.current_room["items"].append(item_head)
+            self.hammer_puzzle = True
+        else:
+            print("hmmm..try something else")
+            
+    def puzzle_three(self, itemx, game, command, player):
+        if itemx["id"] == "table" and command == "inspect":
+            print("Hmmm… at first glance the examination table looked clean but now you can see it’s coated in some weird liquid")
+            item_table["pick_up"] = True
+            self.table_puzzle  = True
+        else:
+            print("what was that?")
+            
+    def puzzle_four(self, itemx, game, command, player):
+        if itemx["id"] == "jar" and command == "use":
+            if item_table in player.inventory:
+                print("You struggle but manage so fill the jar with the strangely warm liquid from the chair")
+                player.inventory.remove(item_jar)
+                player.inventory.remove(item_table)
+                player.inventory.append(item_full_jar)
+                self.fluid_puzzle = True
+            else:
+                print("You can't do that...yet")
+        else:
+            print("What were you thinking")
+            
+        
+
+    def puzzle_final(self, itemx, game, command, player):# This is the final part of the puzzle. After this the player will be awarded a key.
+        if command == "use" and itemx["id"] == "fluid": # Another example of what a room condition looks like
             self.completed = True # These are all important. One tells the puzzle that it's completed
-            player.current_room["complete"] = True # This tells the rooms it's completed
-            needed = False # This keeps an error message from appearing
+            player.current_room["completed"] = True # This tells the rooms it's completed
+            print("You notice some of the top of the head melting so decide to pour all of it onto the head and look inside...It’s a key!")
+            player.inventory.remove(item_full_jar)
             player.add_key(game) # Finally, this adds the key
+            player.current_room = rooms[translation["Hospital Reception"]]
+            return False
