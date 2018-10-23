@@ -18,7 +18,7 @@ room_exit = {
 room_reception = {
     "name": "Hospital Reception",
 
-    "description": "Even in its with its lights cold and facilities, \nthere still glows the faintest amount of hope",
+    "description": "Even with the dim lights of the ruined hospital facilities,\nthere still glows the faintest amount of hope",
 
     "exits": {"north": "Pharmacy", "south":"Examination Room", "east":"Hallway", "west" : "EXIT"},
 
@@ -82,10 +82,12 @@ room_patients = {
     """
 You walk in to a room, it looks like it belongs to a child. The room’s a mess like the rest of the hospital.
 Papers, files, lamps and broken glass all over the floor. Moss forming on the dirty floor. The walls painted
-blue with pink pen markings along it. A chalk window marked above a low metal bed. 
+blue with pink pen markings along it. A chalk window marked above a low metal bed.
+
 On the left of the room you see a small bookshelf. Above the bookshelf are a few paintings sellotaped to the wall,
 all pictures of different buildings, something about an outbreak?  All paintings have 2431 painted on the bottom
-right corner. 
+right corner.
+
 In the far-right corner of the room, you see an old woman sat on the floor, her head in her hands. You hear a
 quiet murmur, a repeated line “I told them, I tried to warn them”. The woman, wearing a black necklace, seems to
 have gotten used to the smell of this forsaken place.

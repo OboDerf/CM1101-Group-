@@ -35,90 +35,90 @@ item_bandaged_cane = {
 }
 
 item_scissors = {
-    "id": "scissors",# needs translating
-    "name": "A pair of scissors",# needs translating
-    "description": """Stainless steel. The bright, reflective gleam not representing its troubled history.""",# needs translating
+    "id": "sisyrnau",
+    "name": "Par o sisiyrnau",
+    "description": """Dur gwrthstean. Mae'n edrych fel bod nhw wedi bod yma am byth.""",
     "pick_up": True, 
     "move": False, 
     "moved": False
 }
 
 item_hammer_head = {
-    "id": "hammerhead",# needs translating
-    "name": "The head of a hammer",# needs translating
-    "description": """Serperation from purpose. Rusted with age. From it some might see greater meaning.""",# needs translating
+    "id": "penmorthwyl",
+    "name": "Pen o morthwryl",
+    "description": """Wedi cael ei gwahanu o bwrpas. Rhydlyd efo oed. O hyn bydd rhai yn gweld pwrpas newydd.""",
     "pick_up": True, 
     "move": False, 
     "moved": False
 }
 
 item_bandages = {
-    "id": "bandages",# needs translating
-    "name": "A roll of bandages",# needs translating
-    "description": """Knotted together for a reason lost to madness.""",# needs translating
+    "id": "rhwymynnau",
+    "name": "Rol o rhwymynnau",
+    "description": """Wedi cael ei gylmu efo'i gilydd am dim rheswm o gwbl.""",
     "pick_up": True, 
     "move": False, 
     "moved": False
 }
 
 item_walking_cane = {
-    "id": "cane",# needs translating
-    "name": "A walking cane",# needs translating
-    "description": """Broken under the weight of self-preservation.""",# needs translating
+    "id": "ffon",
+    "name": "Ffon cerdded",
+    "description": """Wedi cael ei dorri yn hanner, efallai oedd y gwasgedd yn gormod""",
     "pick_up": True, 
     "move": False, 
     "moved": False
 }
 
 item_book_1 = {
-    "id" : "book1", # needs translating
-    "name" : "First book", # needs translating
-    "description" : "This book looks like the first of a series?", # needs translating
+    "id" : "llyfr1", 
+    "name" : "Llyfr cyntaf", 
+    "description" : "Mae'r llyfr yma yn edrych fel yr un cyntaf mewn cyfres?", 
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
 item_book_2 = {
-    "id" : "book2", # needs translating
-    "name" : "Second book", # needs translating
-    "description" : "This book looks like the second of a series?", # needs translating
+    "id" : "llyfr2", 
+    "name" : "Ail llyfr", 
+    "description" : "Mae'r llyfr yma yn edrych fel yr un ail mewn cyfres?", 
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
 item_book_3 = {
-    "id" : "book3", # needs translating
-    "name" : "Third book", # needs translating
-    "description" : "This book looks like the third of a series?", # needs translating
+    "id" : "llyfr3", 
+    "name" : "Trydydd llyfr", 
+    "description" : "Mae'r llyfr yma yn edrych fel yr un trydydd mewn cyfres?", 
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
 item_book_4 = {
-    "id" : "book4", # needs translating
-    "name" : "Fourth book", # needs translating
-    "description" : "This book looks like the final book of a series?", # needs translating
+    "id" : "llyfr4", 
+    "name" : "Pedwerydd llyfr", 
+    "description" : "Mae'r llyfr yma yn edrych fel yr un olaf mewn cyfres??", 
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
 item_lamp = { 
-    "id" : "Lamp", # needs translating
-    "name" : "Heavy metalic lamp", # needs translating
-    "description" : "A heavy silver lamp that you found on the floor", # needs translating
+    "id" : "lamp", 
+    "name" : "Lamp metal trwm", 
+    "description" : "Lamp trwm arian a ddarganfodwyd ar y llawr.",
     "pick_up" : True,
     "move" : False,
     "moved" : False
 }
 
 item_bookshelf = {
-    "id" : "Bookshelf", # needs translating
-    "name" : "A dusty bookshelf", # needs translating
-    "description" : "Here you see an array of books, all covered in cobwebs.. apart from 4?", # needs translating
+    "id" : "silff",
+    "name" : "Silff lyfrau llychlyd",
+    "description" : "Rydych yn archwilio’r sielff lyfrau, mae yna niferoedd o lyfrau yno. Pob un efo gweoedd corynnod arnynt… heb law am 4?",
     "pick_up" : False,
     "move" : False,
     "moved" : False

@@ -18,7 +18,8 @@ room_exit = {
 room_reception = {
     "name": "Prif Derbynfa yr Ysbyty",
 
-    "description": "Even in its with its lights cold and facilities, \nthere still glows the faintest amount of hope",# Needs Translation
+    "description":
+    """Hyd yn oed efo'r goleuadau yn tywyllu,\n mae yna dal gobaith llesmair.""",
 
     "exits": {"gogledd": "Fferyllfa", "de":"Ystafell Archwiliad", "dwyrain":"Coridor", "gorllewin":"ALLANFA"},
 
@@ -78,11 +79,22 @@ room_surgery = {
 room_patients = {
     "name" : "Ystafell Claf",
 
-    "description": "",
+    "description": """
+Rydych yn cerdded mewn i ystafell, mae’n edrych fel un plentyn. Mae’r ystafell yn hynod o flêr, union fel gweddill yr ysbyty.
+Efo papur, ffeiliau, lampiau a gwydr ar hyd y llawr. Moss yn tyfu ar hyd y llawr. Mae’r waliau wedi cael ei beintio’n las efo
+marc pinc (fel un allan o ben ffelt) ar hyd y waliau. Uwch ben gwely mhetal, mae yno ffenestr smal wedi cael ei ddylunio yn sialc.
+
+I’r chwith o’r ystafell, rydych yn gweld silff lyfrau bach, efo paentiadau wedi cael ei sticio i’r wal efo selotep. Mae’r lluniau
+yn cynnwys adeiladau wedi eu difetha, rhywbeth am gychwyn firws? Mae pob llun efo’r rhifau 2431 ar y cornel gwaelod.
+
+Yn yr ochr arall o’r ystafell rydych yn gweld hen ddynas yn eistedd ar y llawr, efo’i wyneb yn ei ddulo. Rydych yn clywed hi’n sibrwd
+yn ailadroddus “Dywedais wrthyn, nes i drio rhybuddio nhw”. Mae’r ddynas, sydd yn gwisgo cadwyn du, yn edrych fel bod hi wedi arfer i
+fyw yn yr arogl drewchyd yma.
+""",
 
     "exits": {"de" : "Coridor"},
 
-    "items" : [],
+    "items" : [item_lamp, item_bookshelf],
 
     "completed" : False,
 
@@ -93,18 +105,17 @@ room_patients = {
 room_pharmacy = {
     "name" : "Fferyllfa",
 
-    "description" : """As you enter the pharmacy you are greeted by a gigantic mass of plastic containers that had clearly been emptied
-in a hurry. The room is dark and dirty, with a single lightbulb flickering occasionally. Broken shelves on both
-sides of the room hold the remains of the merchandise that was previously sold at the pharmacy. A snapped pair
-of scissors hold up a sign that reads. “NO LOOTING”. This sign had obviously been ignored at the start of the
-outbreak. You take note of the ALARM system, which looks to not yet have been triggered. Tread cautious. 
+    "description" :"""
+Fel rydych yn cerdded mewn i’r fferyllfa, rydych yn gweld llwythi o gynhwysyddion plastig sydd wedi cael eu gwagio mewn brys.
+Mae’r ystafell yn dywyll ac yn fudr, efo un bwlb yn fflicio ar adegau. Mae yna silffoedd wedi torri ar y ddwy ochr o’r ystafell
+yn dal y gweddillion o’r cynhyrchion oedd yn cael ei werthu yma. Mae yno siswrn sydd yn dal arwydd i fyny sydd yn dweud “PAID DWYN”.
+Mae’r arwydd yma wedi cael ei anwybyddu ers y cychwyn o’r firws. Mae yna system larwm yma, dydy’r system heb di cael ei setio eto.
+Felly bydd angen bod yn ddiogel iawn wrth fynd cwmpas yr ystafell.
 
-Across the room from the sign was the pharmacy counter, on the counter is a small roll of bandages that look like
-they’ve been knotted together. Beyond the counter is where the containers for the pharmacy’s prescription
-medicines were stored. All but one of the plastic boxes have been broken into using the head of a hammer that
-lies on the floor next in the remnants of the boxes.  A single half of a walking cane lies on a hook behind the
-counter, shards of wood pepper the flood around the counter.  
-""", # Needs Translation
+Ar yr ochr arall o’r ystafell, mae yna gownter sydd efo rhwymynnau arno. Tŷ ôl i’r cownter oedd y feddygaeth oedd yn cael eu darnodi.
+Oedd pob un o’r bocsys plastig wedi cael ei dorri heb law am un? Mae’n edrych fel cafodd pob un ei dorri gan ddefnyddio'r pen o
+forthwyl sydd ar y llawr o flaenach. Mae yna un hanner o ffon cerdded sydd yn hongian o’r bachau sydd tŷ ôl i’r cownter.
+""",
 
     "exits": {"de":"Prif Derbynfa yr Ysbyty"},
 
