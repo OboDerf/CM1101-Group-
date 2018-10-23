@@ -39,6 +39,7 @@
 ##
 import sys # Credit to Reddit user /u/cpt_fwiffo
 sys.path.append('..')
+from we_items import *
 from we_map import rooms
 from we_translation import translation
 
@@ -46,41 +47,115 @@ from we_translation import translation
 class patients:
 
     def __init__(self):
-        self.linked_rooms = [rooms[translation["Patients Room"]]]
+        self.linked_rooms = [rooms["Ystafell Claf"]]
         self.completed = False
+        self.needed = True
 
         ## Any progress checks would go here EG:
-        self.puzzle_one = False
+        self.puzzle_inspect = False
+        self.puzzle_book1= False
+        self.puzzle_book2 = False
+        self.puzzle_book3 = False
+        self.puzzle_lamphit = False
 
-        self.temp = False
+        self.attempts = 2
 
+    #2431
         
 
     def puzzle_process(self, itemx, itemy, command, player, game): # The more if statements here, the more parts to the puzzle there are
-        needed = True
-        if not self.puzzle_one:
-            puzzle_one(self, itemx, command, player)
-        # Add in more 'if' statements here for each part of the puzzle
-
-
+        self.needed = True
+        if not self.puzzle_inspect:
+            self.puzzle_one(itemx, command, player)
+        if self.puzzle_inspect and self.attempts > 0 and self.needed:
+            if not self.puzzle_book1 and self.needed:
+                self.puzzle_two(itemx, command, player)
+            if not self.puzzle_book2 and self.puzzle_book1 and self.needed:
+                self.puzzle_three(itemx, command, player)
+            if not self.puzzle_book3 and self.puzzle_book2 and self.needed:
+                self.puzzle_four(itemx, command, player)
+            if not self.completed and self.puzzle_book3 and self.needed:
+                self.puzzle_final(itemx, game, command, player)
+        elif self.puzzle_inspect and self.attempts <= 0 and  not self.completed:
+            self.error_safe (itemx, game, command, player)
+        if self.needed: print("Gwnaeth dim byd digwydd")
+            
         
-        elif self.temp and self.puzzle_one and needed == True: # This check should be your last
-            puzzle_final(self, itemx, command, game, player)
-        if needed: print("That had no effect") # This is just an error message
+
+
+    def error_safe(self, itemx, game, command, player):
+        if item_lamp in player.inventory and command == "use" and  itemx == item_lamp:
+            print ("Rydych yn hitio'r person yn anymwybodol!")
+            self.needed = False
+            self.completed = True 
+            player.current_room["completed"] = True
+            player.add_key(game)
+        else:
+            print("Rydych yn rhedeg allan o'r ystafell. Mae'r drws yn cloi tŷ ôl i chi.")
+            self.completed = True
+            player.current_room["completed"] = True
+            player.current_room = rooms[translation["Hallway"]]
+            
 
     def puzzle_one(self, itemx, command, player):
-        if itemx["id"] == "example" and command == translation["use"]: # How do they complete the task? 
-            print("Some fluff about how well they're doing, tell them what they just did")
-            self.puzzle_one = True #(Or whatever you end up calling it)
-            return False # This means you no longer need to tell the user they did nothing
+        if command == "archwilio" and itemx["id"] == "silff": # How do they complete the task? 
+            player.current_room["items"].extend([item_book_1, item_book_2, item_book_3, item_book_4])
+            player.current_room["items"].remove(item_bookshelf)
+            self.needed = False
+            self.puzzle_inspect = True 
         else:
-            # If you want a custom error message, put a print here and return False
-            return True # This means they failed the check and may still need a message saying 'did nothing'
-    
+            self.needed = False
+            print("Doedd yna dim effaith") 
 
-    def puzzle_final(self, game, player): # This is the final part of the puzzle. After this the player will be awarded a key.
-        if command == translation["example"] and itemx == example and player.current_room in self.linked_rooms: # Another example of what a room condition looks like
-            self.completed = True # These are all important. One tells the puzzle that it's completed
-            player.current_room["complete"] = True # This tells the rooms it's completed
-            needed = False # This keeps an error message from appearing
+    def puzzle_two(self, itemx, command, player):
+        if (command == "archwilio" or command == "defnyddio") and itemx["id"] == "llyfr2":
+            self.needed = False
+            self.puzzle_book1 = True
+            print ("Rydych yn darllen yr ail lyfr, mae’r ddynas yn y cornel yn codi ei phen allan o’i dulo.")
+        else:
+            self.needed = False
+            self.attempts -=  1
+            if self.attempts == 1:            
+                print("Mae’r ddynas yn edrych ato chi, dydy hi ddim yn edrych yn hapus.")
+            elif self.attempts == 0:
+                print("Mae’r ddynas yn rhedeg yn eich cyfeiriad. Rydych yn:")
+
+    def puzzle_three(self, itemx, command, player):
+        if (command == "archwilio" or command == "defnyddio") and itemx["id"] == "llyfr4":
+            self.needed = False
+            self.puzzle_book2 = True
+            print ("Rydych yn darllen yr pedwerydd lyfr, mae’r dynas yn sefych i fyny ac yn gwenu arnych chi.")
+        else:
+            self.needed = False
+            self.puzzle_book1 = False
+            self.attempts -=  1
+            if self.attempts == 1:            
+                print("Mae’r ddynas yn edrych ato chi, dydy hi ddim yn edrych yn hapus.")
+            elif self.attempts == 0:
+                print("Mae’r ddynas yn rhedeg yn eich cyfeiriad. Rydych yn:")
+
+    def puzzle_four(self, itemx, command, player):
+        if (command == "archwilio" or command == "defnyddio") and itemx["id"] == "llyfr3":
+            self.needed = False
+            self.puzzle_book3 = True
+            print ("Rydych yn darllen yr trydydd lyfr, mae’r dynas yn cerdded ar draws yr ystafell ac yn gorfadd yn ei gwely.")
+        else:
+            self.needed = False
+            self.puzzle_book1 = False
+            self.puzzle_book2 = False
+            self.attempts -=  1
+            if self.attempts == 1:            
+                print("Mae’r ddynas yn edrych ato chi, dydy hi ddim yn edrych yn hapus.")
+            elif self.attempts == 0:
+                print("Mae’r ddynas yn rhedeg yn eich cyfeiriad. Rydych yn:")
+        
+    
+    def puzzle_final(self, itemx, game, command, player):
+        if (command == "defnyddio" or command == "archwilio") and itemx["id"] == "llyfr1":
+            print ("Rydych yn darllen yr llyfr cyntaf, mae’r dynas yn cymryd ei cadwyn du ac yn rhoi ar ei silf gwely. Mae’r ffiol ar ei cadwyn!")
+            self.needed = False
+            self.completed = True 
+            player.current_room["completed"] = True # This tells the rooms it's completed
+            
             player.add_key(game) # Finally, this adds the key
+            return False 

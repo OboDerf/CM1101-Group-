@@ -8,8 +8,8 @@ translation = {
     "difficulty_change": "Pa anhawster yr hoffech chi?\n - Hawdd\n - Canolig\n - Anodd\n - Amhosibl\n",
 
     # add_key's
-    "key_gained": "\nYou obtained a vial for your efforts.\n", # Needs Translation
-    "key_not_gained": "\nUnfortunately the vial turned out the be a dud.\n", # Needs Translation
+    "key_gained": "\nRydych wedi cael ffiol am eich gwaith.\n",
+    "key_not_gained": "\nYn anffodus, doedd yna ddim ffiol yma.\n",
 
     # locations  ### KEEP THIS UPDATED
     "Prif Derbynfa yr Ysbyty": "Prif Derbynfa yr Ysbyty",
@@ -38,12 +38,12 @@ translation = {
     "drop": "gollwng",
     "use": "defnyddio",
     "inventory": "rhestr eiddo",
-    "keys": "allweddi",
+    "keys": "ffiolau",
     "inspect": "archwilio",
     "move": "symud",
     "turns": "twrn",
-    "room": "room", # Needs Translation
-    "input": "input", # Needs Translation
+    "room": "ystafell",
+    "input": "mewnbwn",
 
     # menu_main's 
     "main_menu_one": """
@@ -83,27 +83,27 @@ Nodwch i:
 
     # key_print's 
     "current_keys_one": "Rydych efo ",
-    "current_keys_two": " vials.", # Needs Translation
-    "keys_full": "Congrats! You found all the vials. With these you can create the cure and save humanity!", # Needs Translation
+    "current_keys_two": " ffiolau.",
+    "keys_full": "Llongyfarchiadau! Rydych wedi ddod o hyd i pob ffiol. Efo rhain bydd yn bosib i achub dynoliaeth!",
     "keys_need_one": "Rydych dal angen ddod o hyd i ",
-    "keys_need_two": " working vials before you can leave this cursed place.", # Needs Translation
+    "keys_need_two": " ffiolau (sy'n gweithio) cyn gadael yr ysbyty melltigedig.",
 
-    # help_print's   (Needs Translation)
+    # help_print's
     "help_print" : 
     """
                        HELP - Yn dangos y rhestr o orchmynion posib,
                       EIDDO - Yn rhestru pob eitem sydd yn eich rhestr eiddo,
-                      VIALS - Displays how many vials you have and how many you need, 
+                      VIALS - Dangos faint o ffiolau sydd gennych ac faint sydd angen, 
                       TURNS - Allows you to see how many actions you have left before loss,
-                       ROOM - Prints the description of the room and the items within it,
+                       ROOM - Yn argraggu yr disgrifiad o'r ystafell ac yr eitemau sydd ynddo,
             MYND I'R <EXIT> - Yn symyd yr chwaraewr i lleoliad dilys,
-               INPUT <TEXT> - Inputs text for those times when hitting items together isn't enough,
+               INPUT <TEXT> - Yn mewnbynnu testyn ar gyfer yr adegoedd lle dydy hitio eitemau efo'i gilydd ddim yn gweithio,
      CYFUNO <ITEMX> <ITEMY> - Yn gwneud ymgais i gyfuno dwy eitem efo'i gilydd,
              CYMRYD <ITEMX> - Yn gwneud ymgais i cymryd eitem ac wedyn rhoi yn eich rhestri eiddo,
             GOLLWNG <ITEMX> - Yn gollwng yr eitem ar y llawr,
-  DEFNYDDIO <ITEMX> <ITEMY> - Uses one item on another or the room (Leave ITEMY empty),
-          ARCHWILIO <ITEMX> - Gives you a description of the selected item,
-            SYMYD Y <ITEMX> - Moves items you can't pick up. Only works on items in room
+  DEFNYDDIO <ITEMX> <ITEMY> - Yn defnyddio un eitem ar un arall, neu ar yr ystafell (Gadael ITEMY yn gwag),
+          ARCHWILIO <ITEMX> - Yn rhoi disgrifiad o'r eitem yna,
+            SYMYD Y <ITEMX> - yn symyd yr eitem nad ydych yn gallu codi. Ond yn gweithio ar eitemau o fewn ystafell
 -------------------------------------------------------""",
 
     # process_move's 
@@ -138,47 +138,47 @@ Nodwch i:
     "intro": """
 -------------------------------------------------------
 
-Everyone in the world is affected by a the CM1101
-virus a.k.a Krillian. You have been sent on a mission
-to an abandoned hospital in the hope of finding a cure.
-Rumour has it they were close, bottling potential
-remedies in vials. You seek to obtain these at any cost.
+Mae pawb yn y byd wedi cael ei effeithio gan y firws
+CM1101 a.k.a Krillian. Rydych wedi cael eich gyrru ar
+cenhadaeth i ysbyty gwag i drio darganfod iachiâd. Yn
+ôl beth mae pawb yn dweud, roeddynt yn agos. Mae rhaid
+ddod o hyd i'r ffiolau, arhoswch yna tan iddych gorffen
+eich cenhadaeth.
 
-Your preperation was swift, to the point where you now
-rely upon a defective gas mask as key to your survival.
-There are a total of 6 rooms in the hospital that may
-contain vials, within these rooms are items that can
-be picked up and used to help you collect the vials.
-Items can be both used on their own or with another
-appropriate item.
+Doedd genych ddim digon o amser i baratoi ar gyfer eich
+trip, nawr rydych yn dibynnu ar fwgwd nwy diffygiol fel
+eich unig ffordd o anadlu. Mae yna 6 ystafell sydd yn
+gallu dal y ffiolau. Tŷ fewn i'r ystafelloedd yma, mae
+yna eitemau sydd yn gallu cael ei ddefnyddio i helpu
+chi cwblhau eich tasg. Bydd eitemau yn gallu cael ei
+ddefnyddio ar ben ei hun neu efo un arall.
 
-Your time is limited. The way is lit. The path is clear.
-We require only the strength to follow it.
+Mae eich amser yn gyfyngedig. Bydd angen i chi gwblhau
+y dasg efo prysurdeb. Neu efallai byddych yn rhy hwyr.
 
 -------------------------------------------------------""",
     "game_won": """"
--------------------------------------------------------
+                    -------------------------------------------------------
 
-██╗   ██╗██╗ ██████╗████████╗ ██████╗ ██████╗ ██╗   ██╗
-██║   ██║██║██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗╚██╗ ██╔╝
-██║   ██║██║██║        ██║   ██║   ██║██████╔╝ ╚████╔╝ 
-╚██╗ ██╔╝██║██║        ██║   ██║   ██║██╔══██╗  ╚██╔╝  
- ╚████╔╝ ██║╚██████╗   ██║   ╚██████╔╝██║  ██║   ██║   
-  ╚═══╝  ╚═╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝   ╚═╝
+██████╗ ██╗   ██╗██████╗ ██████╗ ██╗   ██╗ ██████╗  ██████╗ ██╗     ██╗ █████╗ ███████╗████████╗██╗  ██╗
+██╔══██╗██║   ██║██╔══██╗██╔══██╗██║   ██║██╔════╝ ██╔═══██╗██║     ██║██╔══██╗██╔════╝╚══██╔══╝██║  ██║
+██████╔╝██║   ██║██║  ██║██║  ██║██║   ██║██║  ███╗██║   ██║██║     ██║███████║█████╗     ██║   ███████║
+██╔══██╗██║   ██║██║  ██║██║  ██║██║   ██║██║   ██║██║   ██║██║     ██║██╔══██║██╔══╝     ██║   ██╔══██║
+██████╔╝╚██████╔╝██████╔╝██████╔╝╚██████╔╝╚██████╔╝╚██████╔╝███████╗██║██║  ██║███████╗   ██║   ██║  ██║
+╚═════╝  ╚═════╝ ╚═════╝ ╚═════╝  ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝
 
--------------------------------------------------------
+                    -------------------------------------------------------
 
-You escape the forgotten tomb, vials clutched in hand.
-You withdraw you cracked mask to view your own heroics.
-Many fall in the face of chaos; but not this one, not
-today. With this you can create the cure, the promise 
-of safety! A moment of valour shines brightest against
-the backdrop of dispair. As the light gains purchase,
-spirits are lifted and purpose is made clear.
+                    Rydych wedi ddianc o'r ysbyty, ffiolau yn eich dwylo
+                    ac yn cymryd eich mwgwd nwy ac yn taflu ar yr llawr.
+                    Nawr mae'n bosib iddych edrych ar eich gweithredoedd
+                    arwrol. Mae nifer o bobl yn torri odan y gwasgedd; ond
+                    dim chi, dim heddiw. Efo hyn mae'n bosib i greu yr
+                    iachiâd, yr gaddo i rhoi ddiogelwch i bawb.
 
--------------------------------------------------------
+                    -------------------------------------------------------
 
 """,
-    "game_not_won": "You don't have enough vials yet. To leave would be to surrender hope.",
-    "game_lost": "Slowly. Gently. This is how a life is taken."
+    "game_not_won": "Does gennych dim digon o ffiolau eto. I adael byddych yn gadael pawb lawr.",
+    "game_lost": "Ac oedd pawb yn dibynu arnoch chi..."
 }

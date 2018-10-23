@@ -1,34 +1,34 @@
 item_make_shift_hammer = {
-    "id": "makeshift",# needs translating
-    "name": "Make shift hammer",# needs translating
-    "description": """A deadly weapon, were its head any sturdier.""",# needs translating
+    "id": "drosdro",
+    "name": "Morthwyl dros dro",
+    "description": """Arf angheuol, mae'r pen o'r morthwyl yma yn caled iawn.""",
     "pick_up": True, 
     "move": False, 
     "moved": False
 }
 
 item_bandaged_hammer = {
-    "id": "bandagedhammer",# needs translating
-    "name": "Bandaged hammer head",# needs translating
-    "description": """A blow softened. The purpose is lost on you.""",# needs translating
+    "id": "morthwylrhwymyn",
+    "name": "Pen morthwyl rhwymyn",
+    "description": """Ydy'r eitem hyn yn ddibwynt?""",
     "pick_up": True, 
     "move": False, 
     "moved": False
 }
 
 item_improvised_hammer = {
-    "id": "improvhammer",# needs translating
-    "name": "Improvised Hammer",# needs translating
-    "description": """The right tool to forge the path.""",# needs translating
+    "id": "morthwylbyrfyfyr",
+    "name": "Morthwyl byrfyfyr",
+    "description": """Yr offer cywir i greu yr llwybr cywir.""",
     "pick_up": True, 
     "move": False, 
     "moved": False
 }
 
 item_bandaged_cane = {
-    "id": "bandagedcane",# needs translating
-    "name": "Bandages walking cane",# needs translating
-    "description": """Given new life. A step towards hope.""",# needs translating
+    "id": "ffonrhwymyn",
+    "name": "Ffon cerdded a rhwymynnau",
+    "description": """Efo pwrpas newydd, efallai bydd yr eitem yma yn gallu cael ei ddefnyddio unwaith eto.""",
     "pick_up": True, 
     "move": False, 
     "moved": False
