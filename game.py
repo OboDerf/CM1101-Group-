@@ -32,14 +32,17 @@ class Player:
         self.attempts_left = max_attempts
 
     def add_key(self, game):
-        if game.difficulty_stats[game.difficulty]["keys_avaliable"]/(6 - self.rooms_rewarded) >= random():
-            game.difficulty_stats[game.difficulty]["keys_avaliable"] -= 1
-            self.rooms_rewarded += 1
-            self.current_keys +=1
-            print(translation["key_gained"])
-        else:
-            self.rooms_rewarded += 1
-            print(translation["key_not_gained"])
+        try:
+            if game.difficulty_stats[game.difficulty]["keys_avaliable"]/(6 - self.rooms_rewarded) >= random():
+                game.difficulty_stats[game.difficulty]["keys_avaliable"] -= 1
+                self.rooms_rewarded += 1
+                self.current_keys +=1
+                print(translation["key_gained"])
+            else:
+                self.rooms_rewarded += 1
+                print(translation["key_not_gained"])
+        except ZeroDivisionError:
+            print("For some reason the game is trying to give you more keys then there are possible. This is troubling.\n")
             
         
 
@@ -129,12 +132,19 @@ def menu_start(game, player):
 def room_print_items(items):
     if items:
         print(translation["room_print_items"] + translation["take"].upper() + " + " + items[0]["id"])
-        for a in items: print(" - " + a["id"] + ", " + a["name"] + " - " + a["description"])
+        for a in items: print(" - " + a["id"] + " - " + a["name"])
         print()
+
+
+def room_print_items_no_entry(items):
+    print("\n" + current_room["name"] + "\n\n"
+          + current_room["description"] + "\n-------------------------------------------------------n")
+    room_print_items(current_room["items"])
+        
 
 def room_print(current_room):
     print("\n" + translation["entry_message"] + current_room["name"] + "\n\n"
-          + current_room["description"] + "\n--------------------\n")
+          + current_room["description"] + "\n-------------------------------------------------------\n")
     room_print_items(current_room["items"])
 
 
@@ -164,13 +174,12 @@ def process_move(direction, player, game):
         elif move(player.current_room["exits"], direction)["completed"]:
             print(translation["already_completed"])
         else:
-            # drop all item if players goes back to corridor
             playerGoingToRoom = player.current_room["exits"][direction]
             if playerGoingToRoom == translation["Hospital Reception"] or playerGoingToRoom == translation["Hallway"] or playerGoingToRoom == translation["Waiting Room"]:
                 drop_all_items(player)
             player.current_room = move(player.current_room["exits"], direction)
+            room_print(player.current_room)
             if game.difficulty != 3: game.turn_ticker()
-
     else: print(translation["cannot_move"])
             
 
@@ -183,6 +192,7 @@ def print_inventory(player):
         print(translation["player_print_inventory_one"])
         for a in player.inventory:  print(" - " + a["id"] + ", " + a["name"])
     else: print(translation["player_print_inventory_none"])
+    print("-------------------------------------------------------\n")
     
 
 def print_keys(game, player): 
@@ -288,17 +298,24 @@ def print_turns(game):
     print(translation["turns_one"] + str(game.difficulty_stats[game.difficulty]["attempts_max"]) + translation["turns_two"])
 
 
+def process_input_command(item, player, game):
+    if game.difficulty != 3: game.turn_ticker()
+    puzzles[player.current_room["puzzle"]].puzzle_process(item, 'none', translation["input"], player, game)
+
+
 def menu_process(game, player):
     user_input = normalise_input(input("\n> "))
-    #print("--------------------")
+    print("-------------------------------------------------------")
     if user_input:
         if user_input[0] == translation["help"]: print(translation["help_print"]) 
         elif user_input[0] == translation["inventory"]: print_inventory(player) 
         elif user_input[0] == translation["keys"]: print_keys(game, player)
         elif user_input[0] == translation["turns"]: print_turns(game)
+        elif user_input[0] == translation["room"]: room_print_no_entry(player.current_room)
         elif len(user_input) > 1:
             if game.difficulty == 3: game.turn_ticker()
-            if user_input[0] == translation["go"]: process_move(user_input[1], player, game) 
+            if user_input[0] == translation["go"]: process_move(user_input[1], player, game)
+            elif user_input[0] == translation["input"]: process_take(user_input[1], player, game)
             elif user_input[0] == translation["take"]: process_take(user_input[1], player, game) 
             elif user_input[0] == translation["drop"]: process_drop(user_input[1], player, game) 
             elif user_input[0] == translation["use"] and len(user_input) == 2: process_use(user_input[1], "none", player, game) 
@@ -311,41 +328,6 @@ def menu_process(game, player):
                 elif user_input[0] == translation["use"]: process_use(user_input[1], user_input[2], player, game)
         else: print(translation["incorrect_answer"])
     else: print(translation["incorrect_answer"])
-
-# needs to normalise it, parse it, try-except it
-##    if userInput == "1": # help
-##            print_help()
-##    elif userInput == "2": # keys
-##            print_keys(game, player)
-##    elif userInput == "3": # up
-##            print("go to a room up")
-##    elif userInput == "4": # down
-##            print("go to a room down")
-##    elif userInput == "5" and player.current_room != corridors["west"]: # Go left and to the left is a corridor
-##            player.current_room = corridors[player.current_room["left"]]
-##            corridor_Menu(game, player)
-##    elif userInput == "5": # go left and to the left is the exit
-##            try_Exit(game, player)
-##            corridor_Menu(game, player)
-##    # check if user can go right
-##    elif "right" in player.current_room and userInput == "6":
-##            player.current_room = corridors[player.current_room["right"]]
-##            corridor_Menu(game, player)
-##
-##
-##def print_Corridor_Directions(currentRoom):
-##    # Printing up
-##    print("3 - " + translation["turnUp"] + currentRoom["up"]["name"]) # up is a room
-##    # Printing down
-##    print("4 - " + translation["turnDown"] + currentRoom["down"]["name"]) # down is a room
-##
-##    # Printing left
-##    print("5 - " + translation["turnLeft"] + corridors[currentRoom["left"]]["name"]) # left is a room/exit
-##
-##    if "right" in currentRoom: # east corridor doesn't have a right corridor
-##        # Printing right
-##        print("6 - " + translation["turnRight"] + corridors[currentRoom["right"]]["name"]) # right is a corridor
-
 
 
 def try_Exit(game, player):
@@ -366,8 +348,9 @@ def main():
         game = Game() 
         player = Player(rooms[translation["Hospital Reception"]], game.difficulty_stats[game.difficulty]["attempts_max"])
         if menu_start(game, player): break
+        print(translation["intro"])
+        room_print(player.current_room)
         while True:
-            room_print(player.current_room)
             menu_print(game, player)
             command = menu_process(game, player)
             if game.game_won or game.game_lost:
