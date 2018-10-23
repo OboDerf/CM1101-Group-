@@ -15,6 +15,8 @@
 ##    "moved": False
 ##}
 
+## Pharmacy
+
 item_make_shift_hammer = {
     "id": "makeshift",
     "name": "Make shift hammer",
@@ -87,6 +89,7 @@ item_walking_cane = {
     "moved": False
 }
 
+## Patients Room
 
 item_book_1 = {
     "id" : "book1",
@@ -142,7 +145,8 @@ item_bookshelf = {
     "moved" : False
 }
 
-# X-ray room
+## X-ray room
+
 item_Cabinet = {
     "id" : "cabinet",
     "name" : "A cabinet",
@@ -211,146 +215,92 @@ item_xray_key = {
     "moved" : False
 }
 
-
+## Examination Room
 
 item_jar = {
     "id": "jar",
-    
     "name": "A small jar",
-
     "description": "An empty vial like glass jar, looks like something a chemist would use",
-
     "pick_up": True,
-
     "move": False,
-
     "moved": False
-    
 }
 
 item_head = {
     "id": "head",
-    
     "name": "A human head",
-
     "description": "a severed human head...someone really didn’t like him",
-
     "pick_up": True,
-
     "move": False,
-
     "moved": False
-    
 }
 
 item_hammer = {
     "id": "hammer",
-    
     "name": "A hammer",
-
     "description": "a regular hammer with a wooden handle and a shiny big head",
-
     "pick_up": True,
-
     "move": False,
-
     "moved": False
-    
 }
 
 item_saw = {
     "id": "saw",
-    
     "name": "A bonesaw",
-
     "description": "a saw for cutting bones, strangely the only old, rusty thing in the room",
-
     "pick_up": True,
-
     "move": False,
-
     "moved": False
-    
 }
 
 item_wedge = {
     "id": "wedge",
-    
     "name": "A doorwedge",
-
     "description": "A small metal wedge, usually used for wedging doors open",
-
     "pick_up": True,
-
     "move": False,
-
     "moved": False
-    
 }
 
 item_table = {
     "id": "table",
-    
     "name": "An examination table",
-
     "description": "An old fashioned doctors examination table for patients while the doctor worked",
-
     "pick_up": False,
-
     "move": False,
-
     "moved": False
-    
 }
 
 item_chair = {
     "id": "chair",
-    
     "name": "A chair",
-
     "description": "A small chair with some tools placed on it",
-
     "pick_up": False,
-
     "move": False,
-
     "moved": False
-    
 }
 
 
 item_hammerwedge = {
     "id": "hammerwedge",
-    
     "name": "A hammerwedge",
-
     "description": "Your weird looking creation...sounds helpful",
-
     "pick_up": True,
-
     "move": False,
-
     "moved": False
-    
 }
 
 item_full_jar = {
     "id": "fluid",
-    
     "name": "A full jar",
-
     "description": "A jar filled with some strange fluid",
-
     "pick_up": True,
-
     "move": False,
-
     "moved": False
-    
 }
 
+## Surgery
 
-# items for surgery
 item_patient = {
     "id" : "patient",
     "name" : "The patient",
@@ -389,7 +339,7 @@ item_needle = {
 }
 
 item_staffPass = {
-    "id" : "passCard",
+    "id" : "passcard",
     "name" : "Pass card",
     "description" : "You can use it to open doors",
     "pick_up" : True,
@@ -407,8 +357,8 @@ item_lockers = {
     "moved" : False
 }
 
+## Combonations
 
-# Any new item combinations are added here in this format
 items_combinations = {
     "bandaged walking cane": {
         "components": [item_walking_cane, item_bandages],

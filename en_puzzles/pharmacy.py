@@ -18,12 +18,12 @@ class pharmacy:
         try:
             if itemx == item_scissors and itemy == item_bandaged_hammer and command == translation["use"]:
                 player.inventory.remove(item_bandaged_hammer)
-                player.inventory.append(item_bandages, item_hammer_head)
+                player.inventory.extend([item_bandages, item_hammer_head])
                 print("A few cuts has freed the head from it's enprisonment.")# needs translating
                 self.needed = False
             elif itemx == item_scissors and itemy == item_bandaged_cane and command == translation["use"]:
                 player.inventory.remove(item_bandaged_cane)
-                player.inventory.append(item_bandages, item_walking_cane)
+                player.inventory.extend([item_bandages, item_walking_cane])
                 print("With the bandages removed, the cane's wounds are left to fester.")# needs translating
                 self.needed = False
         except:
@@ -45,4 +45,4 @@ The hammer head launches, breaking a breaker vital to the alarm.
 You dash out the room as the automatic security doors wake from their slumber.
 The box, and with it a shred of hope, is lost to history.
 """)# needs translating
-            #if needed and command != translation["inspect"]: print("This action has no effect") # needs translating
+            if self.needed and command != translation["inspect"]: print("This action has no effect") # needs translating
