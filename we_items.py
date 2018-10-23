@@ -1,60 +1,72 @@
-item_example = {
-    "id": "example",
-    
-    "name": "an example item",
-
-    "description":
-    """Wait, hang on, you shouldn't be seeing this.
-Hmmm... Try telling Kai he's an idiot. That normally fixes these things.""",
-
-    "pick_up": True,
-
-    "move": True,
-
-    "moved": False
-    
-}
-
-item_example_two = {
-    "id": "exampletwo",
-
-    "name": "the second example item",
-
-    "description":
-    """This is getting out of hand, now there's two of them!""",
-
-    "pick_up": True,
-
-    "move": False,
-
+item_make_shift_hammer = {
+    "id": "makeshift",# needs translating
+    "name": "Make shift hammer",# needs translating
+    "description": """A deadly weapon, were its head any sturdier.""",# needs translating
+    "pick_up": True, 
+    "move": False, 
     "moved": False
 }
 
-item_combined_example = {
-    "id": "examplecombined",
-
-    "name": "a combination of the two example items",
-
-    "description": "Purely for test purposes.",
-
-    "pick_up": True,
-
-    "move": True,
-
+item_bandaged_hammer = {
+    "id": "bandagedhammer",# needs translating
+    "name": "Bandaged hammer head",# needs translating
+    "description": """A blow softened. The purpose is lost on you.""",# needs translating
+    "pick_up": True, 
+    "move": False, 
     "moved": False
 }
 
-item_example_move = {
-    "id": "examplemove",
+item_improvised_hammer = {
+    "id": "improvhammer",# needs translating
+    "name": "Improvised Hammer",# needs translating
+    "description": """The right tool to forge the path.""",# needs translating
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
 
-    "name": "something to test the move function",
+item_bandaged_cane = {
+    "id": "bandagedcane",# needs translating
+    "name": "Bandages walking cane",# needs translating
+    "description": """Given new life. A step towards hope.""",# needs translating
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
 
-    "description": "The floor boards bend at how heavy this is, but not enough to stop you moving it.",
+item_scissors = {
+    "id": "scissors",# needs translating
+    "name": "A pair of scissors",# needs translating
+    "description": """Stainless steel. The bright, reflective gleam not representing its troubled history.""",# needs translating
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
 
-    "pick_up": False,
+item_hammer_head = {
+    "id": "hammerhead",# needs translating
+    "name": "The head of a hammer",# needs translating
+    "description": """Serperation from purpose. Rusted with age. From it some might see greater meaning.""",# needs translating
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
 
-    "move": True,
+item_bandages = {
+    "id": "bandages",# needs translating
+    "name": "A roll of bandages",# needs translating
+    "description": """Knotted together for a reason lost to madness.""",# needs translating
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
 
+item_walking_cane = {
+    "id": "cane",# needs translating
+    "name": "A walking cane",# needs translating
+    "description": """Broken under the weight of self-preservation.""",# needs translating
+    "pick_up": True, 
+    "move": False, 
     "moved": False
 }
 
@@ -113,10 +125,27 @@ item_bookshelf = {
 }
 
 items_combinations = {
-    "example_combined": {
-        "components": [item_example, item_example_two],
+    "bandaged walking cane": {
+        "components": [item_walking_cane, item_bandages],
 
-        "output": item_combined_example,
-    }
+        "output": item_bandaged_cane,
+    },
 
+    "improvised hammer": {
+        "components": [item_bandaged_cane, item_hammer_head],
+
+        "output": item_improvised_hammer,
+    },
+
+    "bandaged hammer head": {
+        "components": [item_bandages, item_hammer_head],
+
+        "output": item_bandaged_hammer,
+    },
+
+    "make shift hammer": {
+        "components": [item_bandaged_hammer, item_walking_cane],
+
+        "output": item_make_shift_hammer,
+    },
 }

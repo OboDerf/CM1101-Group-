@@ -15,62 +15,78 @@
 ##    "moved": False
 ##}
 
-item_example = {
-    "id": "example",
-    
-    "name": "an example item",
-
-    "description": "The description of the example item",
-
-    "pick_up": True,
-
-    "move": True,
-
-    "moved": False
-    
-}
-
-item_example_two = {
-    "id": "exampletwo",
-
-    "name": "the second example item",
-
-    "description": "The description of the exampletwo item",
-
-    "pick_up": True,
-
-    "move": False,
-
+item_make_shift_hammer = {
+    "id": "makeshift",
+    "name": "Make shift hammer",
+    "description": """A deadly weapon, were its head any sturdier.""",
+    "pick_up": True, 
+    "move": False, 
     "moved": False
 }
 
-item_combined_example = {
-    "id": "examplecombined",
-
-    "name": "a combination of the two example items",
-
-    "description": "Purely for test purposes.",
-
-    "pick_up": True,
-
-    "move": True,
-
+item_bandaged_hammer = {
+    "id": "bandagedhammer",
+    "name": "Bandaged hammer head",
+    "description": """A blow softened. The purpose is lost on you.""",
+    "pick_up": True, 
+    "move": False, 
     "moved": False
 }
 
-item_example_move = {
-    "id": "examplemove",
-
-    "name": "something to test the move function",
-
-    "description": "The floor boards bend at how heavy this is, but not enough to stop you moving it.",
-
-    "pick_up": False,
-
-    "move": True,
-
+item_improvised_hammer = {
+    "id": "improvhammer",
+    "name": "Improvised Hammer",
+    "description": """The right tool to forge the path.""",
+    "pick_up": True, 
+    "move": False, 
     "moved": False
 }
+
+item_bandaged_cane = {
+    "id": "bandagedcane",
+    "name": "Bandages walking cane",
+    "description": """Given new life. A step towards hope.""",
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
+
+item_scissors = {
+    "id": "scissors",
+    "name": "A pair of scissors",
+    "description": """Stainless steel. The bright, reflective gleam not representing its troubled history.""",
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
+
+item_hammer_head = {
+    "id": "hammerhead",
+    "name": "The head of a hammer",
+    "description": """Serperation from purpose. Rusted with age. From it some might see greater meaning.""",
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
+
+item_bandages = {
+    "id": "bandages",
+    "name": "A roll of bandages",
+    "description": """Knotted together for a reason lost to madness.""",
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
+
+item_walking_cane = {
+    "id": "cane",
+    "name": "A walking cane",
+    "description": """Broken under the weight of self-preservation.""",
+    "pick_up": True, 
+    "move": False, 
+    "moved": False
+}
+
 
 item_book_1 = {
     "id" : "book1",
@@ -126,12 +142,31 @@ item_bookshelf = {
     "moved" : False
 }
 
+
+
 # Any new item combinations are added here in this format
 items_combinations = {
-    "example_combined": {
-        "components": [item_example, item_example_two],
+    "bandaged walking cane": {
+        "components": [item_walking_cane, item_bandages],
 
-        "output": item_combined_example,
-    }
+        "output": item_bandaged_cane,
+    },
 
+    "improvised hammer": {
+        "components": [item_bandaged_cane, item_hammer_head],
+
+        "output": item_improvised_hammer,
+    },
+
+    "bandaged hammer head": {
+        "components": [item_bandages, item_hammer_head],
+
+        "output": item_bandaged_hammer,
+    },
+
+    "make shift hammer": {
+        "components": [item_bandaged_hammer, item_walking_cane],
+
+        "output": item_make_shift_hammer,
+    },
 }
