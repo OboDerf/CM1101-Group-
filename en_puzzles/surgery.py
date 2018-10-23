@@ -53,18 +53,18 @@ class surgery:
 
     	try:
     		if command == translation["inspect"] and itemx == item_patient:
-    			print("You just received a needle!")
+    			print(translation["surgery_patient"])
     			player.inventory.append(item_needle)
     		if command == translation["use"] and itemx == item_needle and item_needle in player.inventory:
-    			print("You just unlocked the lockers. You got a medicine now")
+    			print(translation["surgery_needle"])
     			player.inventory.append(item_medicine)
 
     		if command == translation["use"] and itemx == item_medicine:
-    			print("You just brought the doctor back to life. He gave you his pass card")
+    			print(translation["surgery_medicine"])
     			player.inventory.append(item_staffPass)
 
     		if command == translation["use"] and itemx == item_staffPass:
-    			print("Congrats, you solved the puzzle, you got the key now!")
+    			print(translation["surgery_pass"])
     			self.completed = True
     			player.add_key(game)
 

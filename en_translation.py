@@ -135,6 +135,12 @@ COMBINE <ITEMX> <ITEMY> - Attempts to combine two items together,
     "combine_fail": "You can't combine those two items",
     "combine_no_item": "Couldn't find those items",
 
+    # surgery
+    "surgery_patient": "You just received a needle!",
+    "surgery_needle": "You just unlocked the lockers. You got a medicine now",
+    "surgery_medicine": "You just brought the doctor back to life. He gave you his pass card",
+    "surgery_pass": "Congrats, you solved the puzzle, you got the key now!",
+
     # did_user_win's
     "intro": """
 -------------------------------------------------------

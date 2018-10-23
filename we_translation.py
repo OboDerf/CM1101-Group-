@@ -45,6 +45,12 @@ translation = {
     "room": "ystafell",
     "input": "mewnbwn",
 
+    # surgery
+    "surgery_patient": "You just received a needle!",
+    "surgery_needle": "You just unlocked the lockers. You got a medicine now",
+    "surgery_medicine": "You just brought the doctor back to life. He gave you his pass card",
+    "surgery_pass": "Congrats, you solved the puzzle, you got the key now!",
+
     # menu_main's 
     "main_menu_one": """
 -------------------------------------------------------
