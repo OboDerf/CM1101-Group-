@@ -132,11 +132,20 @@ counter, shards of wood pepper the flood around the counter.
 room_exam = {
     "name" : "Examination Room",
 
-    "description" : "",
+    "description" : 
+    """
+Walking into the dimly lit exam room you are surprised to see it looking almost as if it were new.
+The room is small but neatly packed and tidied, it could be used by a doctor right now… with a bit of dusting.
+The examination table in the center of the room appears dusty but not dirty or damaged and there is a table
+of medieval looking tools in perfect condition laid out over a small chair next to you, weird.
+As you move into the room you see a counter with a shelf above it that has a small glass jar and somehow notice
+a rancid smell through your gas mask coming from a locked drawer below it, it smells like rotting flesh.
+Something can’t be right here…
+""",
 
-    "exits" : {"North" : "Hospital Reception"},
+    "exits" : {"north" : "Hospital Reception"},
 
-    "items" : [],
+    "items" : [item_jar, item_chair, item_table],
 
     "completed" : False,
 
