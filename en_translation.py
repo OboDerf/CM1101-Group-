@@ -8,8 +8,8 @@ translation = {
     "difficulty_change": "What difficulty would you like?\n - 1. Easy\n - 2. Medium\n - 3. Hard\n - 4. Impossible\n",
 
     # add_key's 
-    "key_gained": "You obtained a key for your efforts",
-    "key_not_gained": "Unfortunately this puzzle paid out no keys",
+    "key_gained": "\nYou obtained a vial for your efforts.\n",
+    "key_not_gained": "\nUnfortunately the vial turned out the be a dud.\n",
 
     # locations ### KEEP THIS UPDATED
     "Prif Derbynfa yr Ysbyty": "Hospital Reception",
@@ -42,13 +42,15 @@ translation = {
     "inspect": "inspect",
     "move": "move",
     "turns": "turns",
+    "room": "room",
+    "input": "input",
 
 
     # menu_main's 
     "main_menu_one": """
-----------
-TEMP MENU
-----------
+-------------------------------------------------------
+Main Menu
+-------------------------------------------------------
 Enter to:
 1. Play the game
 2. Toggle: English \ Cymraeg
@@ -82,26 +84,28 @@ Enter to:
 
     # key_print's 
     "current_keys_one": "You currently have ",
-    "current_keys_two": " keys.",
-    "keys_full": "Congrats! You found all the keys. You can exit the game!",
+    "current_keys_two": " vials.",
+    "keys_full": "Congrats! You found all the vials. With these you can create the cure and save humanity!",
     "keys_need_one": "You still need to find ",
-    "keys_need_two": " keys to win.",
+    "keys_need_two": " working vials before you can leave this cursed place.",
 
     # help_print's 
     "help_print" :
-    """--------------------
+    """
                    HELP - Displays a list of all commands and functions,
               INVENTORY - Lists all items currently in your inventory,
-                   KEYS - Displays how many keys you have and how many you need,
-                  TURNS - Allows you to see how many actions you have left before loss,
+                  VIALS - Displays how many vials you have and how many you need,
+                  TURNS - Allows you to see how many actions you have left before the mask breaks,
+                   ROOM - Prints the description of the room and the items within it,
               GO <EXIT> - Moves the player to a valid location,
+           INPUT <TEXT> - Inputs text for those times when hitting items together isn't enough,
 COMBINE <ITEMX> <ITEMY> - Attempts to combine two items together,
            TAKE <ITEMX> - Attempts to take the item and put it in your inventory,
            DROP <ITEMX> - Drops the item on the room's floor,
     USE <ITEMX> <ITEMY> - Uses one item on another or the room (Leave ITEMY empty),
         INSPECT <ITEMX> - Gives you a description of the selected item,
            MOVE <ITEMX> - Moves items you can't pick up. Only works on items in room
---------------------""",
+-------------------------------------------------------""",
     
     # process_move's 
     "cannot_move": "You cannot go there",
@@ -131,8 +135,51 @@ COMBINE <ITEMX> <ITEMY> - Attempts to combine two items together,
     "combine_fail": "You can't combine those two items",
     "combine_no_item": "Couldn't find those items",
 
-    # did_user_win's 
-    "game_won": "Well done you won!", ## Lackluster as hell, content pls fix this
-    "game_not_won": "You don't have enough <<KEYS>> yet.", ## Again, fix this to fit the story
-    "game_lost": "Unfortunately you've run out of time. Whatever terrible thing happens is slow and painful."
+    # did_user_win's
+    "intro": """
+-------------------------------------------------------
+
+Everyone in the world is affected by a the CM1101
+virus a.k.a Krillian. You have been sent on a mission
+to an abandoned hospital in the hope of finding a cure.
+Rumour has it they were close, bottling potential
+remedies in vials. You seek to obtain these at any cost.
+
+Your preperation was swift, to the point where you now
+rely upon a defective gas mask as key to your survival.
+There are a total of 6 rooms in the hospital that may
+contain vials, within these rooms are items that can
+be picked up and used to help you collect the vials.
+Items can be both used on their own or with another
+appropriate item.
+
+Your time is limited. The way is lit. The path is clear.
+You require only the strength to follow it.
+
+-------------------------------------------------------""",
+    "game_won": """"
+-------------------------------------------------------
+
+██╗   ██╗██╗ ██████╗████████╗ ██████╗ ██████╗ ██╗   ██╗
+██║   ██║██║██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗╚██╗ ██╔╝
+██║   ██║██║██║        ██║   ██║   ██║██████╔╝ ╚████╔╝ 
+╚██╗ ██╔╝██║██║        ██║   ██║   ██║██╔══██╗  ╚██╔╝  
+ ╚████╔╝ ██║╚██████╗   ██║   ╚██████╔╝██║  ██║   ██║   
+  ╚═══╝  ╚═╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝   ╚═╝
+
+-------------------------------------------------------
+
+You escape the forgotten tomb, vials clutched in hand.
+You withdraw you cracked mask to view your own heroics.
+Many fall in the face of chaos; but not this one, not
+today. With this you can create the cure, the promise 
+of safety! A moment of valour shines brightest against
+the backdrop of dispair. As the light gains purchase,
+spirits are lifted and purpose is made clear.
+
+-------------------------------------------------------
+
+""",
+    "game_not_won": "You don't have enough vials yet. To leave would be to surrender hope.",
+    "game_lost": "Slowly. Gently. This is how a life is taken."
 }   
