@@ -41,26 +41,25 @@ import sys # Credit to Reddit user /u/cpt_fwiffo
 sys.path.append('..')
 from en_map import rooms
 from en_translation import translation
-
+from en_items import *
 
 class surgery:
 
     def __init__(self):
         self.linked_rooms = [rooms["Surgery Room"]]
         self.completed = False
-        self.needed = False
-
-        
 
     def puzzle_process(self, itemx, itemy, command, player, game): # The more if statements here, the more parts to the puzzle there are
-    	self.needed = True
+
     	try:
-    		print()
+    		if command == translation["inspect"] and itemx == item_patient:
+    			# new item: needle +-> add it to user's inventory
+    			print("You just received a needle!")
+    		if command == translation["use"] and itemx == item_medicine and item_needle in player.current_room["items"]:
+    			print()
+
     	except:
     		print("You can't do that!")
-
-    	
-
 
 
 
