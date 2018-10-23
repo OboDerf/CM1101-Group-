@@ -45,4 +45,4 @@ The hammer head launches, breaking a breaker vital to the alarm.
 You dash out the room as the automatic security doors wake from their slumber.
 The box, and with it a shred of hope, is lost to history.
 """)# needs translating
-            if needed and command != translation["inspect"]: print("This action has no effect") # needs translating
+            #if needed and command != translation["inspect"]: print("This action has no effect") # needs translating
