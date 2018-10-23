@@ -9,7 +9,7 @@ from random import randint
 class exam:
 
     def __init__(self):
-        self.linked_rooms = [rooms["Examination Room"]]
+        self.linked_rooms = [rooms["Ystafell Archwiliad"]]
         self.completed = False
         self.needed = True
         self.chair_puzzle = False

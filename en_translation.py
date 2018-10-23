@@ -38,7 +38,7 @@ translation = {
     "drop": "drop",
     "use": "use",
     "inventory": "inventory",
-    "keys": "keys",
+    "keys": "vials",
     "inspect": "inspect",
     "move": "move",
     "turns": "turns",
