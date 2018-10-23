@@ -340,10 +340,30 @@ item_medicine = {
     "id" : "medicine",
     "name" : "Medicine",
     "description" : "Medicine could even bring a dead man back to life",
-    "pick_up" : False,
+    "pick_up" : True,
     "move" : False,
     "moved" : False
 }
+
+
+item_needle = {
+    "id" : "needle",
+    "name" : "Needle",
+    "description" : "Needle can be used to open hack things and gain access",
+    "pick_up" : True,
+    "move" : False,
+    "moved" : False
+}
+
+item_staffPass = {
+    "id" : "passCard",
+    "name" : "Pass card",
+    "description" : "You can use it to open doors",
+    "pick_up" : True,
+    "move" : False,
+    "moved" : False
+}
+
 
 item_lockers = {
     "id" : "lockers",

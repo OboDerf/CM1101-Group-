@@ -71,7 +71,7 @@ As you approach into the room, you hear the automatic doors behind you closing. 
 
     "exits": {"north":"Waiting Room"},
 
-    "items": [item_patient, item_doctorBody, item_medicine, item_lockers],
+    "items": [item_patient, item_doctorBody, item_lockers],
 
     "completed" : False,
 
