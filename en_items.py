@@ -316,6 +316,45 @@ item_full_jar = {
     
 }
 
+
+# items for surgery
+item_patient = {
+    "id" : "patient",
+    "name" : "The patient",
+    "description" : "The patient might reveal more items, worth checking",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_doctorBody = {
+    "id" : "doctor",
+    "name" : "The doctor's body",
+    "description" : "Be careful with the doctor's body, he might be dead already",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_medicine = {
+    "id" : "medicine",
+    "name" : "Medicine",
+    "description" : "Medicine could even bring a dead man back to life",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_lockers = {
+    "id" : "lockers",
+    "name" : "Lockers",
+    "description" : "Lockers are locked for a reason",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+
 # Any new item combinations are added here in this format
 items_combinations = {
     "bandaged walking cane": {

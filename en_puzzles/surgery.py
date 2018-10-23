@@ -57,16 +57,20 @@ class surgery:
         
 
     def puzzle_process(self, itemx, itemy, command, player, game): # The more if statements here, the more parts to the puzzle there are
-        needed = True
-        if not self.puzzle_one:
-            puzzle_one(self, itemx, command, player)
-        # Add in more 'if' statements here for each part of the puzzle
-
+        try:
+            needed = True
+            if not self.puzzle_one:
+                needed = self.puzzle_one(itemx, command, player)
+                # Add in more 'if' statements here for each part of the puzzle
 
         
-        elif self.temp and self.puzzle_one and needed == True: # This check should be your last
-            puzzle_final(self, itemx, command, game, player)
-        if needed: print("That had no effect") # This is just an error message
+            elif self.temp and self.puzzle_one and needed: # This check should be your last
+                puzzle_final(self, itemx, command, game, player)
+            
+            if needed: print("That had no effect") # This is just an error message            
+
+        except Exception as e:
+            print("this had no effect")
 
     def puzzle_one(self, itemx, command, player):
         if itemx["id"] == "example" and command == translation["use"]: # How do they complete the task? 

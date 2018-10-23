@@ -63,11 +63,15 @@ room_waiting_room = {
 
 room_surgery = {
     "name" : "Surgery Room",
-    "description": "",
+    "description": """The pungent smell coming out of the room sparked your interest and chose to enter. You have now entered the surgery room. 
+
+Lights are flickering. Looks like the virus hit them during an operation. The room is covered with surgical equipment but mostly in blood and as it seems it came from the patient lying down on the bed with his stomach opened up”. 
+There is a doctor on the floor against the wall. Strangely he does not look infected nor hurt. On the other side of the room there are lockers. Others are open and empty with broken vials below them covered in spilled medicine, others are just closed. Hopefully, there is still something left inside.
+As you approach into the room, you hear the automatic doors behind you closing. You try to open the doors again without results. It seems like only staff could use this room and the doors once closed can only be opened by a staff card. """,
 
     "exits": {"north":"Waiting Room"},
 
-    "items": [],
+    "items": [item_patient, item_doctorBody, item_medicine, item_lockers],
 
     "completed" : False,
 
