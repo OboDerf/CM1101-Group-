@@ -180,7 +180,141 @@ item_machines = {
     "moved" : False
 }
 
+item_jar = {
+    "id": "jar",
+    
+    "name": "A small jar",
 
+    "description": "An empty vial like glass jar, looks like something a chemist would use",
+
+    "pick_up": True,
+
+    "move": False,
+
+    "moved": False
+    
+}
+
+item_head = {
+    "id": "head",
+    
+    "name": "A human head",
+
+    "description": "a severed human head...someone really didn’t like him",
+
+    "pick_up": True,
+
+    "move": False,
+
+    "moved": False
+    
+}
+
+item_hammer = {
+    "id": "hammer",
+    
+    "name": "A hammer",
+
+    "description": "a regular hammer with a wooden handle and a shiny big head",
+
+    "pick_up": True,
+
+    "move": False,
+
+    "moved": False
+    
+}
+
+item_saw = {
+    "id": "saw",
+    
+    "name": "A bonesaw",
+
+    "description": "a saw for cutting bones, strangely the only old, rusty thing in the room",
+
+    "pick_up": True,
+
+    "move": False,
+
+    "moved": False
+    
+}
+
+item_wedge = {
+    "id": "wedge",
+    
+    "name": "A doorwedge",
+
+    "description": "A small metal wedge, usually used for wedging doors open",
+
+    "pick_up": True,
+
+    "move": False,
+
+    "moved": False
+    
+}
+
+item_table = {
+    "id": "table",
+    
+    "name": "An examination table",
+
+    "description": "An old fashioned doctors examination table for patients while the doctor worked",
+
+    "pick_up": False,
+
+    "move": False,
+
+    "moved": False
+    
+}
+
+item_chair = {
+    "id": "chair",
+    
+    "name": "A chair",
+
+    "description": "A small chair with some tools placed on it",
+
+    "pick_up": False,
+
+    "move": False,
+
+    "moved": False
+    
+}
+
+
+item_hammerwedge = {
+    "id": "hammerwedge",
+    
+    "name": "A hammerwedge",
+
+    "description": "Your weird looking creation...sounds helpful",
+
+    "pick_up": True,
+
+    "move": False,
+
+    "moved": False
+    
+}
+
+item_full_jar = {
+    "id": "fluid",
+    
+    "name": "A full jar",
+
+    "description": "A jar filled with some strange fluid",
+
+    "pick_up": True,
+
+    "move": False,
+
+    "moved": False
+    
+}
 
 # Any new item combinations are added here in this format
 items_combinations = {
@@ -207,4 +341,10 @@ items_combinations = {
 
         "output": item_make_shift_hammer,
     },
+	
+    "hammer_wedge": {
+        "components": [item_hammer, item_wedge],
+
+        "output": item_hammerwedge,
+    }	
 }
