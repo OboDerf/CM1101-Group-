@@ -122,12 +122,11 @@ class doctors:
             42 = 2A 
             B = 11
             F = 15
-                    the rest of the board is illegible
-            """        
+                    the rest of the board is illegible        
             self.puzzle_part_two = True
             return False
         else:
-            return True
+            return True"""
 
     def puzzle_final(self, itemx, itemy, player, game):
         if itemx["id"] == "examplecombined" and itemy["id"] == "exampletwo" and itemy in player.inventory and itemx in player.inventory:
