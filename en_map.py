@@ -183,7 +183,7 @@ I have cities, but no houses. I have mountains, but no trees. I have water, but 
 
     "exits" : {"south" : "Waiting Room"},
 
-    "items" : [item_Cabinet, item_computer, item_map, item_machines],
+    "items" : [item_Cabinet, item_computer, item_map, item_glasses, item_desk, item_instrumunts, item_machines],
 
     "completed" : False,
 

@@ -41,7 +41,7 @@ import sys # Credit to Reddit user /u/cpt_fwiffo
 sys.path.append('..')
 from en_map import rooms
 from en_translation import translation
-
+from en_items import *
 
 class xray:
 
@@ -51,36 +51,32 @@ class xray:
 
         ## Any progress checks would go here EG:
         self.puzzle_one = False
-
+        self.puzzle_part_one = False
         self.temp = False
 
         
 
-    def puzzle_process(self, itemx, itemy, command, player, game): # The more if statements here, the more parts to the puzzle there are
-        needed = True
-        if not self.puzzle_one:
-            puzzle_one(self, itemx, command, player)
-        # Add in more 'if' statements here for each part of the puzzle
-
-
-        
-        elif self.temp and self.puzzle_one and needed == True: # This check should be your last
-            puzzle_final(self, itemx, command, game, player)
-        if needed: print("That had no effect") # This is just an error message
-
-    def puzzle_one(self, itemx, command, player):
-        if itemx["id"] == "example" and command == translation["use"]: # How do they complete the task? 
-            print("Some fluff about how well they're doing, tell them what they just did")
-            self.puzzle_one = True #(Or whatever you end up calling it)
-            return False # This means you no longer need to tell the user they did nothing
-        else:
-            # If you want a custom error message, put a print here and return False
-            return True # This means they failed the check and may still need a message saying 'did nothing'
     
+    def puzzle_process(self, itemx, itemy, command, player, game):
+        #There will only be two functions that call puzzle_process: Use and Move.
+        
+        try:
+            
+            
+            if command == translation["inspect"] and itemx == item_map:
+                
+                print("You disloged a key and it has droped onto the floor.")# needs translating
+                player.current_room["items"].append(item_xray_key)
+                self.needed = False
 
-    def puzzle_final(self, game, player): # This is the final part of the puzzle. After this the player will be awarded a key.
-        if command == translation["example"] and itemx == example and player.current_room in self.linked_rooms: # Another example of what a room condition looks like
-            self.completed = True # These are all important. One tells the puzzle that it's completed
-            player.current_room["complete"] = True # This tells the rooms it's completed
-            needed = False # This keeps an error message from appearing
-            player.add_key(game) # Finally, this adds the key
+        except:
+            print("What are you trying to do?")# needs translating
+        else:
+            if command == translation["use"] and itemx == item_xray_key and item_xray_key in player.inventory:
+                print("You have unlocked the cabinet.")# needs translating
+                self.completed = True 
+                player.current_room["complete"] = True 
+                player.add_key(game)
+                self.needed = False
+                 # needs translating
+           

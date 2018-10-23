@@ -144,7 +144,7 @@ item_bookshelf = {
 
 # X-ray room
 item_Cabinet = {
-	"id" : "cabinet",
+    "id" : "cabinet",
     "name" : "A cabinet",
     "description" : "There's something valuable in the cabinet, find the key first, my friend...",
     "pick_up" : False,
@@ -153,32 +153,65 @@ item_Cabinet = {
 }
 
 item_computer = {
-	"id" : "computer",
+    "id" : "computer",
     "name" : "An advanced computer",
-    "description" : "There's something valuable in the cabinet, find the key first, my friend...",
+    "description" : "Computers are a wonderful thing, so is the internet.",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
 item_map = {
-	"id" : "map",
+    "id" : "map",
     "name" : "A map",
-    "description" : "You can explore a lot of new things with a map.",
+    "description" : "You can explore a lot of new things with a map, there appears to be something behind it...",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
-
+item_glasses = {
+    "id" : "glasses",
+    "name" : "Glasses",
+    "description" : "Glasses allow for people to see better, most of the time..",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+item_desk = {
+    "id" : "desk",
+    "name" : "Desk",
+    "description" : "A lovely desk filled to the brim with clutter.",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+item_instrumunts = {
+    "id" : "instrumunts",
+    "name" : "instrumunts",
+    "description" : "Various medical instrumunts, although having musical instrumunts playing in an X-ray room would be fun.",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
 item_machines = {
-	"id" : "machines",
+    "id" : "machines",
     "name" : "Machines",
     "description" : "Machines play an important role in our hospitals.",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
+item_xray_key = {
+    "id" : "key",
+    "name" : "key",
+    "description" : "This key is small and looks like it would be used on something.",
+    "pick_up" : True,
+    "move" : False,
+    "moved" : False
+}
+
+
 
 item_jar = {
     "id": "jar",
