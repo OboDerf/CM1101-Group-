@@ -136,15 +136,15 @@ def room_print_items(items):
         print()
 
 
-def room_print_items_no_entry(items):
+def room_print_no_entry(current_room):
     print("\n" + current_room["name"] + "\n\n"
-          + current_room["description"] + "\n-------------------------------------------------------n")
+          + current_room["description"] + "\n" + "-" * 55 +"\n")
     room_print_items(current_room["items"])
         
 
 def room_print(current_room):
     print("\n" + translation["entry_message"] + current_room["name"] + "\n\n"
-          + current_room["description"] + "\n-------------------------------------------------------\n")
+          + current_room["description"] + "\n" + "-" * 55 +"\n")
     room_print_items(current_room["items"])
 
 
@@ -173,6 +173,7 @@ def process_move(direction, player, game):
             try_Exit(game, player)
         elif move(player.current_room["exits"], direction)["completed"]:
             print(translation["already_completed"])
+            print("-" * 55 + "\n")
         else:
             playerGoingToRoom = player.current_room["exits"][direction]
             if playerGoingToRoom == translation["Hospital Reception"] or playerGoingToRoom == translation["Hallway"] or playerGoingToRoom == translation["Waiting Room"]:
@@ -192,7 +193,7 @@ def print_inventory(player):
         print(translation["player_print_inventory_one"])
         for a in player.inventory:  print(" - " + a["id"] + ", " + a["name"])
     else: print(translation["player_print_inventory_none"])
-    print("-------------------------------------------------------\n")
+    print("-" * 55 +"\n")
     
 
 def print_keys(game, player): 
@@ -232,11 +233,13 @@ def process_inspect(item, player, game):
             needed = False
             print(a["description"])
             puzzles[player.current_room["puzzle"]].puzzle_process(item_id_to_item(item, player), "none", translation["inspect"], player, game)
+            print("-" * 55)
     for b in player.current_room["items"]:
         if item in b["id"]:
             needed = False
             print(b["description"])
             puzzles[player.current_room["puzzle"]].puzzle_process(item_id_to_item(item, player), "none", translation["inspect"], player, game)
+            print("-" * 55)
     if needed: print(translation["cannot_inspect"])
 
 
@@ -249,6 +252,7 @@ def process_move_item(item, player, game):
             a["moved"] = True
             print(translation["moving_item"] + a["name"])
             puzzles[player.current_room["puzzle"]].puzzle_process(item_id_to_item(item, player), "none", translation["move"], player, game)
+            print("-" * 55)
             break
         elif item in a["id"] and a["move"] and a ["moved"]:
             needed = False
@@ -292,6 +296,7 @@ def process_use(itemx, itemy, player, game):
     if itemy != "none":
         itemy = item_id_to_item(itemy, player)
     puzzles[player.current_room["puzzle"]].puzzle_process(itemx, itemy, translation["use"], player, game)
+    print("-" * 55)
     
 
 def print_turns(game):
@@ -304,8 +309,9 @@ def process_input_command(item, player, game):
 
 
 def menu_process(game, player):
+    print("\n" + "-" * 55)
     user_input = normalise_input(input("\n> "))
-    print("-------------------------------------------------------")
+    print("\n" + "-" * 55)
     if user_input:
         if user_input[0] == translation["help"]: print(translation["help_print"]) 
         elif user_input[0] == translation["inventory"]: print_inventory(player) 
