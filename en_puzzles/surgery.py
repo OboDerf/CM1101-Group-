@@ -76,6 +76,8 @@ class surgery:
         else:
             # If you want a custom error message, put a print here and return False
             return True # This means they failed the check and may still need a message saying 'did nothing'
+
+    
     
 
     def puzzle_final(self, game, player): # This is the final part of the puzzle. After this the player will be awarded a key.

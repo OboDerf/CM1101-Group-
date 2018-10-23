@@ -142,6 +142,44 @@ item_bookshelf = {
     "moved" : False
 }
 
+# X-ray room
+item_Cabinet = {
+	"id" : "cabinet",
+    "name" : "A cabinet",
+    "description" : "There's something valuable in the cabinet, find the key first, my friend...",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_computer = {
+	"id" : "computer",
+    "name" : "An advanced computer",
+    "description" : "There's something valuable in the cabinet, find the key first, my friend...",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_map = {
+	"id" : "map",
+    "name" : "A map",
+    "description" : "You can explore a lot of new things with a map.",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+
+item_machines = {
+	"id" : "machines",
+    "name" : "Machines",
+    "description" : "Machines play an important role in our hospitals.",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
 
 
 # Any new item combinations are added here in this format

@@ -339,7 +339,7 @@ def did_User_Win(isWinner, game): # Made translation compatable and send back to
     if isWinner:
         print(translation["game_won"])
         game.game_won = True
-    else: print(translation["game_not_won"])
+    else: print(translation["game_not_won"]); print()
 
 
 def main():

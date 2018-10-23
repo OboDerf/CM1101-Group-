@@ -161,11 +161,16 @@ room_doctors_lounge = {
 room_xray = {
     "name" : "X-Ray Room",
 
-    "description" : "",
+    "description" : """You are in a Bright white room with white walls and blue floors.
+There is a computer with a glass screen around it.
+There is a wooden bed where patients can lie during the x ray procedure. There are no windows in this room.
+
+The key is behind an item which is the answer to the following riddle:
+I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?""",
 
     "exits" : {"south" : "Waiting Room"},
 
-    "items" : [],
+    "items" : [item_Cabinet, item_computer, item_map, item_machines],
 
     "completed" : False,
 
