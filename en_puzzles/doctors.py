@@ -41,6 +41,7 @@ import sys # Credit to Reddit user /u/cpt_fwiffo
 sys.path.append('..')
 from en_map import rooms
 from en_translation import translation
+#import en_items
 
 
 class doctors:
@@ -50,37 +51,91 @@ class doctors:
         self.completed = False
 
         ## Any progress checks would go here EG:
-        self.puzzle_one = False
-
-        self.temp = False
-
-        
+        self.puzzle_part_one = False
+        self.puzzle_part_two = False
+        self.puzzle_final = False
+        self.temp = False                                           
 
     def puzzle_process(self, itemx, itemy, command, player, game): # The more if statements here, the more parts to the puzzle there are
-        needed = True
-        if not self.puzzle_one:
-            puzzle_one(self, itemx, command, player)
-        # Add in more 'if' statements here for each part of the puzzle
+        #There will only be two functions that call puzzle_process: Use and Move.
+        #If you want anything else, speak to me but be quick about it
+        try:
+            needed = True
 
+            if not self.puzzle_part_one:
+                needed = self.puzzle_one(itemx, player, command)
+                
+            if not self.puzzle_part_two and needed:
+                # Every call after the first one check if needed. This will make sure we don't accidently send more error messages then needed
+                needed = self.puzzle_two(itemx, command)
 
+            if self.puzzle_part_one and self.puzzle_part_two and not self.completed and needed:
+                needed = self.puzzle_final(itemx, itemy, player, game)
+            # This prints only if none of the puzzles were completed
+            if needed: print("That had no effect")
+        except TypeError:
+            print("That had no effect.")
+                    
+    #This puzzle is a move command puzzle. Once examplemove is moved, exampletwo is added to the room
+    def puzzle_one(self, itemx, player, command):
+        blue_sofa = False
+        white_sofa = False
+        black_sofa = False
         
-        elif self.temp and self.puzzle_one and needed == True: # This check should be your last
-            puzzle_final(self, itemx, command, game, player)
-        if needed: print("That had no effect") # This is just an error message
+        if (itemx["id"] == "bluesofa" or itemx["id"] == "whitesofa" or itemx["id"] == "blacksofa" or itemx["id"] == "coffeetable") and itemx["moved"]:
+            
+            #Saying the puzzle is now completed
+            print("Moving the item revealed the floor beneath it!")
+            
+            if itemx["id"] == "bluesofa":
+                print("there is a B scratched into the floor under the sofa")
+                itemx["description"] += ", there is a B scratched into the floor under the sofa"
+                blue_sofa = True
 
-    def puzzle_one(self, itemx, command, player):
-        if itemx["id"] == "example" and command == translation["use"]: # How do they complete the task? 
-            print("Some fluff about how well they're doing, tell them what they just did")
-            self.puzzle_one = True #(Or whatever you end up calling it)
-            return False # This means you no longer need to tell the user they did nothing
+            if itemx["id"] == "whitesofa":
+                print("there is a A scratched into the floor under the sofa")
+                itemx["description"] += ", there is a A scratched into the floor under the sofa"
+                white_sofa = True        
+
+            if itemx["id"] == "blacksofa":
+                print("there is a D scratched into the floor under the sofa")
+                itemx["description"] += ", there is a D scratched into the floor under the sofa"          
+                black_sofa = True  
+
+            if itemx["id"] == "coffeetable":
+                print("there is nothing under the table")
+                itemx["description"] += ", there is nothing under the table"                              
+            
+
+
+            #Adding in any fluff with the action
+            if blue_sofa == True and white_sofa == True and black_sofa == True:
+                self.puzzle_part_one = True
+            return False # The return is to see if the error message is needed
         else:
-            # If you want a custom error message, put a print here and return False
-            return True # This means they failed the check and may still need a message saying 'did nothing'
-    
+            return True
 
-    def puzzle_final(self, game, player): # This is the final part of the puzzle. After this the player will be awarded a key.
-        if command == translation["example"] and itemx == example and player.current_room in self.linked_rooms: # Another example of what a room condition looks like
-            self.completed = True # These are all important. One tells the puzzle that it's completed
-            player.current_room["complete"] = True # This tells the rooms it's completed
-            needed = False # This keeps an error message from appearing
-            player.add_key(game) # Finally, this adds the key
+    def puzzle_two(self, itemx, command):
+       """if command == "inspect" and itemx["id"] == "whiteboard":
+            itemx["description"] += upon inspection the white board reveals
+            6 = 6
+            42 = 2A 
+            B = 11
+            F = 15
+                    the rest of the board is illegible
+            """        
+            self.puzzle_part_two = True
+            return False
+        else:
+            return True
+
+    def puzzle_final(self, itemx, itemy, player, game):
+        if itemx["id"] == "examplecombined" and itemy["id"] == "exampletwo" and itemy in player.inventory and itemx in player.inventory:
+            player.current_room["completed"] = True
+            player.add_key(game)
+            print("Wow, you completed the test room!")
+            return False
+        else:
+            return True
+"""player.current_room["completed"] = True
+    player.add_key(game)"""
