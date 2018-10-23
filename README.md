@@ -6,7 +6,6 @@
 - Connor is coding <b>X-ray</b> room
 - Marton is coding <b>Surgery</b> room
 - Kai is coding <b>Pharmacy</b>
-- Kai will code <b>Exam</b> room
  
 
 # Github Help
