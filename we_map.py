@@ -18,7 +18,7 @@ room_exit = {
 room_reception = {
     "name": "Prif Derbynfa yr Ysbyty",
 
-    "description": "",
+    "description": "Even in its with its lights cold and facilities, \nthere still glows the faintest amount of hope",# Needs Translation
 
     "exits": {"gogledd": "Fferyllfa", "de":"Ystafell Archwiliad", "dwyrain":"Coridor", "gorllewin":"ALLANFA"},
 
@@ -93,11 +93,22 @@ room_patients = {
 room_pharmacy = {
     "name" : "Fferyllfa",
 
-    "description" : "",
+    "description" : """As you enter the pharmacy you are greeted by a gigantic mass of plastic containers that had clearly been emptied
+in a hurry. The room is dark and dirty, with a single lightbulb flickering occasionally. Broken shelves on both
+sides of the room hold the remains of the merchandise that was previously sold at the pharmacy. A snapped pair
+of scissors hold up a sign that reads. “NO LOOTING”. This sign had obviously been ignored at the start of the
+outbreak. You take note of the ALARM system, which looks to not yet have been triggered. Tread cautious. 
+
+Across the room from the sign was the pharmacy counter, on the counter is a small roll of bandages that look like
+they’ve been knotted together. Beyond the counter is where the containers for the pharmacy’s prescription
+medicines were stored. All but one of the plastic boxes have been broken into using the head of a hammer that
+lies on the floor next in the remnants of the boxes.  A single half of a walking cane lies on a hook behind the
+counter, shards of wood pepper the flood around the counter.  
+""", # Needs Translation
 
     "exits": {"de":"Prif Derbynfa yr Ysbyty"},
 
-    "items" : [],
+    "items" : [item_scissors, item_hammer_head, item_bandages, item_walking_cane],
 
     "completed" : False,
 

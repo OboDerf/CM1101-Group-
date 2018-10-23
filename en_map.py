@@ -18,7 +18,7 @@ room_exit = {
 room_reception = {
     "name": "Hospital Reception",
 
-    "description": "",
+    "description": "Even in its with its lights cold and facilities, \nthere still glows the faintest amount of hope",
 
     "exits": {"north": "Pharmacy", "south":"Examination Room", "east":"Hallway", "west" : "EXIT"},
 
@@ -51,7 +51,7 @@ room_waiting_room = {
     
     "description": "",
 
-    "exits": {"north":"X-Ray Room", "south":"Surgery Room", "west":"Hallway", "east": "Example Room"},
+    "exits": {"north":"X-Ray Room", "south":"Surgery Room", "west":"Hallway"},
 
     "items": [],
 
@@ -104,11 +104,22 @@ have gotten used to the smell of this forsaken place.
 room_pharmacy = {
     "name" : "Pharmacy",
 
-    "description" : "",
+    "description" : """As you enter the pharmacy you are greeted by a gigantic mass of plastic containers that had clearly been emptied
+in a hurry. The room is dark and dirty, with a single lightbulb flickering occasionally. Broken shelves on both
+sides of the room hold the remains of the merchandise that was previously sold at the pharmacy. A snapped pair
+of scissors hold up a sign that reads. “NO LOOTING”. This sign had obviously been ignored at the start of the
+outbreak. You take note of the ALARM system, which looks to not yet have been triggered. Tread cautious. 
+
+Across the room from the sign was the pharmacy counter, on the counter is a small roll of bandages that look like
+they’ve been knotted together. Beyond the counter is where the containers for the pharmacy’s prescription
+medicines were stored. All but one of the plastic boxes have been broken into using the head of a hammer that
+lies on the floor next in the remnants of the boxes.  A single half of a walking cane lies on a hook behind the
+counter, shards of wood pepper the flood around the counter.  
+""",
 
     "exits": {"south":"Hospital Reception"},
 
-    "items" : [],
+    "items" : [item_scissors, item_hammer_head, item_bandages, item_walking_cane],
 
     "completed" : False,
 
@@ -160,26 +171,6 @@ room_xray = {
 
 }
 
-room_example = { # A temp room for a temp puzzle
-    "name" : "Example Room",
-
-    "description" : """This is a test room with three simple puzzle.
-First you must move examplemove,
-Then you must combine example and exampletwo,
-Then you must use examplecombine on the room,
-You'll notice there's still an exampletwo. User example combine on it for the key
-""",
-
-    "exits" : {"west" : "Waiting Room"},
-
-    "items" : [item_example, item_example_two, item_example_move],
-
-    "completed" : False,
-
-    "puzzle" : "example"
-
-}
-
 rooms = {
     "EXIT" : room_exit,
     "Hospital Reception" : room_reception,
@@ -190,6 +181,5 @@ rooms = {
     "Pharmacy" : room_pharmacy,
     "Examination Room" : room_exam,
     "Doctors Lounge" : room_doctors_lounge,
-    "X-Ray Room" : room_xray,
-    "Example Room" : room_example
+    "X-Ray Room" : room_xray
     }
