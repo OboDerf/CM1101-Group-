@@ -1,7 +1,8 @@
 # CM1101-Group-
 
 # Tasks to do 
-- Leo is coding <b>Doctor's Lounge</b> room
+ - Count the amount of steps and edit difficulties accourdingly
+ - Finish presentation (with script) and assign roles
  
 
 # Github Help
