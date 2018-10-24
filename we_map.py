@@ -183,7 +183,7 @@ rhwbio allan.
 
     "exits" : {"gogledd":"Coridor"},
 
-    "items" : [item_blue_sofa, item_white_sofa, item_black_sofa, item_coffee_table],
+    "items" : [item_blue_sofa, item_white_sofa, item_black_sofa, item_coffee_table, item_combolock, item_white_board],
 
     "completed" : False,
 

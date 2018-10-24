@@ -397,7 +397,7 @@ item_coffee_table = {
 
 item_combolock = {
 	"id": "lock",
-	"name": "Combonation Lock",
+	"name": "Combination Lock",
 	"description": "A small 4 keyed padlock.",
 	"pick_up": False,
 	"move": True,

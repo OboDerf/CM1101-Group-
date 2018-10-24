@@ -378,6 +378,23 @@ item_coffee_table = {
 	"moved": False
 }
 
+item_combolock = {
+	"id": "clo",
+	"name": "Clo cyfunol",
+	"description": "Clo bach, sydd angen cyfuniad 4 digid.",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+item_white_board = {
+	"id": "bwrddgwyn",
+	"name": "Bwrdd gwyn",
+	"description": "Rydych yn sylweddoli siap ar wedi cael ei dorri i fewn i'r bwrdd gwyn. Mae'n fformiwla ysgerbydol! Ond beth ydy o'n cynrychioli?",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
 
 
 ## Combonations
