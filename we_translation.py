@@ -46,10 +46,10 @@ translation = {
     "input": "mewnbwn",
 
     # surgery
-    "surgery_patient": "You just received a needle!",
-    "surgery_needle": "You just unlocked the lockers. You got a medicine now",
-    "surgery_medicine": "You just brought the doctor back to life. He gave you his pass card",
-    "surgery_pass": "Congrats, you solved the puzzle, you got the key now!",
+    "surgery_patient": "Rydych newydd derbyn nodwydd!",
+    "surgery_needle": "Rydych newydd agor yr cloirau. Mae gennych yr ffisig nawr",
+    "surgery_medicine": "Rydych newydd dod a'r doctor nol i fyw. Rhodd o ei cardyn staff iddych chi.",
+    "surgery_pass": "Llongyfarchiadau! datryswyd yr tasg, mae gennych yr goriad nawr!",
 
     # menu_main's 
     "main_menu_one": """
@@ -140,7 +140,7 @@ Nodwch i:
     "combine_fail": "Dydych methu cyfuno'r ddwy eitem yma",
     "combine_no_item": "Mathu ddod o hyd i'r eitemau yna",
     
-    # did_user_win's (Needs translation)
+    # did_user_win's 
     "intro": """
 -------------------------------------------------------
 
