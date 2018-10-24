@@ -65,7 +65,7 @@ class doctors:
             
 
     def puzzle_two(self, itemx, command):
-       if command == tranlsation["inspect"] and itemx == item_white_board:
+       if command == translation["inspect"] and itemx == item_white_board:
             itemx["description"] += """
 Ar ol archwilio'r bwrdd gwyn, gwelwyd:
             6 = 6
@@ -79,11 +79,11 @@ Mae gweddill yr bwrdd gwyn yn annarllenadwy."""
 
     def puzzle_final(self, user_input, command, player, game):
         if command == translation["input"] and user_input == "2989":
-            print("Rydch yn mewnbynnu'r cod %s. Mae'r clo yn agor.") % user_input
+            print("Rydch yn mewnbynnu'r cod "+user_input+". Mae'r clo yn agor.")
             self.completed = True 
             player.current_room["complete"] = True 
             player.add_key(game)
             self.needed = False
         elif command == translation["input"]:
             self.needed = False
-            print("Rydch yn mewnbynnu'r cod %s. Nad ydy'r clo yn agor.") % user_input
+            print("Rydch yn mewnbynnu'r cod "+user_input+". Nad ydy'r clo yn agor.")

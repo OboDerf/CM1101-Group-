@@ -65,7 +65,7 @@ class doctors:
             
 
     def puzzle_two(self, itemx, command):
-       if command == tranlsation["inspect"] and itemx == item_white_board:
+       if command == translation["inspect"] and itemx == item_white_board:
             itemx["description"] += """
 upon inspection the white board reveals
             6 = 6
@@ -79,11 +79,11 @@ the rest of the board is illegible."""
 
     def puzzle_final(self, user_input, command, player, game):
         if command == translation["input"] and user_input == "2989":
-            print("You enter the code %s. The lock pops open.") % user_input
+            print("You enter the code "+user_input+". The lock pops open.")
             self.completed = True 
             player.current_room["complete"] = True 
             player.add_key(game)
             self.needed = False
         elif command == translation["input"]:
             self.needed = False
-            print("You enter the code %s. The lock doesn't open.") % user_input 
+            print("You enter the code "+user_input+". The lock doesn't open.") 

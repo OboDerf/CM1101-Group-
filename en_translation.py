@@ -139,7 +139,7 @@ COMBINE <ITEMX> <ITEMY> - Attempts to combine two items together,
     "surgery_patient": "You just received a needle!",
     "surgery_needle": "You just unlocked the lockers. You got a medicine now",
     "surgery_medicine": "You just brought the doctor back to life. He gave you his pass card",
-    "surgery_pass": "Congrats, you solved the puzzle, you got the key now!",
+    "surgery_pass": "Congrats, you solved the puzzle, you got the vial now!",
 
     # did_user_win's
     "intro": """

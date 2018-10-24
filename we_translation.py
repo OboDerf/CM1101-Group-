@@ -49,7 +49,7 @@ translation = {
     "surgery_patient": "Rydych newydd derbyn nodwydd!",
     "surgery_needle": "Rydych newydd agor yr cloirau. Mae gennych yr ffisig nawr",
     "surgery_medicine": "Rydych newydd dod a'r doctor nol i fyw. Rhodd o ei cardyn staff iddych chi.",
-    "surgery_pass": "Llongyfarchiadau! datryswyd yr tasg, mae gennych yr goriad nawr!",
+    "surgery_pass": "Llongyfarchiadau! datryswyd yr tasg, mae gennych yr ffiol nawr!",
 
     # menu_main's 
     "main_menu_one": """

@@ -69,7 +69,7 @@ class Game:
                     'keys_needed': 4},
 
                 3 : {
-                    'attempts_max': 50,
+                    'attempts_max': 43,
                     'keys_max': 6,
                     'keys_avaliable': 6,
                     'keys_needed': 6}        
@@ -323,7 +323,7 @@ def menu_process(game, player):
         elif len(user_input) > 1:
             if game.difficulty == 3: game.turn_ticker()
             if user_input[0] == translation["go"]: process_move(user_input[1], player, game)
-            elif user_input[0] == translation["input"]: process_take(user_input[1], player, game)
+            elif user_input[0] == translation["input"]: process_input_command(user_input[1], player, game)
             elif user_input[0] == translation["take"]: process_take(user_input[1], player, game) 
             elif user_input[0] == translation["drop"]: process_drop(user_input[1], player, game) 
             elif user_input[0] == translation["use"] and len(user_input) == 2: process_use(user_input[1], "none", player, game) 
