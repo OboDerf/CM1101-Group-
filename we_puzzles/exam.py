@@ -19,26 +19,29 @@ class exam:
       
 
     def puzzle_process(self, itemx, itemy, command, player, game):
-        self.needed = True
-        if not self.completed:
-            if not self.chair_puzzle and self.needed:
-                self.puzzle_one(itemx, game, command, player)
-            if self.chair_puzzle and not self.hammer_puzzle and self.needed:
-                self.puzzle_two(itemx, game, command, player)
-            if not self.table_puzzle and self.needed:
-                self.puzzle_three(itemx, game, command, player)
-            if self.table_puzzle and not self.fluid_puzzle and self.needed:
-                self.puzzle_four(itemx, game, command, player) 
-            if self.fluid_puzzle and self.needed:
-                self.puzzle_final(itemx, game, command, player)
-            if self.needed:
-                error = ["Dwi ddim yn gwybod beth rydych yn trio gwneud, ond doedd o ddim yn gweithio",
-                         "hmmm..triwch rhywbeth arall",
-                         "beth oedd hwnna?",
-                         "Beth roeddwch chi'n meddwl?"]
-                print(error[randint(0,3)])
-        else:
-            print("Dim byd i weld...")
+        try:
+            self.needed = True
+            if not self.completed:
+                if not self.chair_puzzle and self.needed:
+                    self.puzzle_one(itemx, game, command, player)
+                if self.chair_puzzle and not self.hammer_puzzle and self.needed:
+                    self.puzzle_two(itemx, game, command, player)
+                if not self.table_puzzle and self.needed:
+                    self.puzzle_three(itemx, game, command, player)
+                if self.table_puzzle and not self.fluid_puzzle and self.needed:
+                    self.puzzle_four(itemx, game, command, player) 
+                if self.fluid_puzzle and self.needed:
+                    self.puzzle_final(itemx, game, command, player)
+                if self.needed:
+                    error = ["Dwi ddim yn gwybod beth rydych yn trio gwneud, ond doedd o ddim yn gweithio",
+                             "hmmm..triwch rhywbeth arall",
+                             "beth oedd hwnna?",
+                             "Beth roeddwch chi'n meddwl?"]
+                    print(error[randint(0,3)])
+            else:
+                print("Dim byd i weld...")
+        except TypeError:
+            print("hmmm..triwch rhywbeth arall")
         
 
     def puzzle_one(self, itemx, game, command, player):

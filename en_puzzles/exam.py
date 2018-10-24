@@ -19,26 +19,29 @@ class exam:
       
 
     def puzzle_process(self, itemx, itemy, command, player, game):
-        self.needed = True
-        if not self.completed:
-            if not self.chair_puzzle and self.needed:
-                self.puzzle_one(itemx, game, command, player)
-            if self.chair_puzzle and not self.hammer_puzzle and self.needed:
-                self.puzzle_two(itemx, game, command, player)
-            if not self.table_puzzle and self.needed:
-                self.puzzle_three(itemx, game, command, player)
-            if self.table_puzzle and not self.fluid_puzzle and self.needed:
-                self.puzzle_four(itemx, game, command, player) 
-            if self.fluid_puzzle and self.needed:
-                self.puzzle_final(itemx, game, command, player)
-            if self.needed:
-                error = ["I don't know what you were trying to do... but it didn't work",
-                         "hmmm..try something else",
-                         "what was that?",
-                         "What were you thinking"]
-                print(error[randint(0,3)])
-        else:
-            print("Nothing to see here...")
+        try:
+            self.needed = True
+            if not self.completed:
+                if not self.chair_puzzle and self.needed:
+                    self.puzzle_one(itemx, game, command, player)
+                if self.chair_puzzle and not self.hammer_puzzle and self.needed:
+                    self.puzzle_two(itemx, game, command, player)
+                if not self.table_puzzle and self.needed:
+                    self.puzzle_three(itemx, game, command, player)
+                if self.table_puzzle and not self.fluid_puzzle and self.needed:
+                    self.puzzle_four(itemx, game, command, player) 
+                if self.fluid_puzzle and self.needed:
+                    self.puzzle_final(itemx, game, command, player)
+                if self.needed:
+                    error = ["I don't know what you were trying to do... but it didn't work",
+                             "hmmm..try something else",
+                             "what was that?",
+                             "What were you thinking"]
+                    print(error[randint(0,3)])
+            else:
+                print("Nothing to see here...")
+        except TypeError:
+            print("hmmm..try something else")
         
 
     def puzzle_one(self, itemx, game, command, player):
