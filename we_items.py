@@ -340,6 +340,46 @@ item_lockers = {
     "moved" : False
 }
 
+#Doctors lounge
+
+item_blue_sofa = {
+	"id": "soffaglas",
+	"name": "Soffa glas",
+	"description": "Soffa glas, gallu dal 2 person",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+item_white_sofa = {
+	"id": "soffagwyn",
+	"name": "Soffa gwyn",
+	"description": " Soffa gwyn, gallu dal 2 person ",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+item_black_sofa = {
+	"id": "soffadu",
+	"name": "Soffa du",
+	"description": " Soffa du, gallu dal 2 person ",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+item_coffee_table = {
+	"id": "bwrddcoffi",
+	"name": "Bwrdd coffi",
+	"description": "Bwrdd coffi bach pren",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+
+
 ## Combonations
 
 items_combinations = {

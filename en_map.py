@@ -160,11 +160,19 @@ Something can’t be right here…
 room_doctors_lounge = {
     "name" : "Doctors Lounge",
 
-    "description" : "",
+    "description" : """
+As you enter the dr’s lounge you are greeted by the aroma of old coffee. A semi circle of three
+multicoloured sofa’s surround a solidary coffee table. On the coffee table is a rusted metal
+combination box. Upon further inspection the combination box requires 4 digits to unlock it.
+
+You notice that there are scratch marks under the blue sofa, it looks light enough to move. In
+the corner of the room is a white board that appears to have faded text and numbers on it. 
+
+""",
 
     "exits" : {"north":"Hallway"},
 
-    "items" : [],
+    "items" : [item_blue_sofa, item_white_sofa, item_black_sofa, item_coffee_table],
 
     "completed" : False,
 

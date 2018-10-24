@@ -170,11 +170,20 @@ Dydy rhywbeth ddim yn iawn yma...
 room_doctors_lounge = {
     "name" : "Lolfa Doctoriaid",
 
-    "description" : "",
+    "description" : """
+Fel rydych yn cerdded mewn i'r lolfa doctoriaid, rydych yn cwrdd a olga coffi. Hanner cylch o
+dri soffa o gwahanol lliwiau yn amgylchu un bwrdd coffi. Ar y bwrdd coffi, mae yna bocs metal
+wedi rhydu, mae angen cyfuniad sbesiffig, mae angen 4 digid i'w agor.
+
+Rydych yn sylweddoli bod yno marciau ar yr llawr odan y soffa glas, mae'n edrych digon ysgafn i symyd... Yn
+y cornel o'r ystafell, mae yna bwrdd gwyn. Mae'r bwrdd gwyn efo hoelion o rhifau ac llythrennau wedi cael ei
+rhwbio allan. 
+
+""",
 
     "exits" : {"gogledd":"Coridor"},
 
-    "items" : [],
+    "items" : [item_blue_sofa, item_white_sofa, item_black_sofa, item_coffee_table],
 
     "completed" : False,
 
