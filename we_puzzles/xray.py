@@ -14,6 +14,7 @@ class xray:
 
 
     def puzzle_process(self, itemx, itemy, command, player, game):
+        self.needed = True
         try:
             if command == translation["inspect"] and itemx == item_map:          
                 print("Mae'r goriad yn syrthio ar y llawr.")
@@ -22,10 +23,12 @@ class xray:
         except:
             print("Beth ydych yn trio gwneud?")
         else:
-            if command == translation["use"] and itemx == item_xray_key and item_xray_key in player.inventory:
+            if command == translation["use"] and itemx == item_xray_key and item_xray_key in player.inventory and not self.completed:
                 print("Rydych wedi agor yr cabinet.")
                 self.completed = True 
-                player.current_room["complete"] = True 
+                player.current_room["completed"] = True 
                 player.add_key(game)
                 self.needed = False
+            elif self.needed:
+                print("Dydy hyh heb unrhyw effaith")
                  

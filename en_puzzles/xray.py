@@ -14,6 +14,7 @@ class xray:
 
 
     def puzzle_process(self, itemx, itemy, command, player, game):
+        self.needed = True
         try:
             if command == translation["inspect"] and itemx == item_map:          
                 print("You disloged a key and it has droped onto the floor.")# needs translating
@@ -22,10 +23,12 @@ class xray:
         except:
             print("What are you trying to do?")# needs translating
         else:
-            if command == translation["use"] and itemx == item_xray_key and item_xray_key in player.inventory:
+            if command == translation["use"] and itemx == item_xray_key and item_xray_key in player.inventory and not self.completed:
                 print("You have unlocked the cabinet.")# needs translating
                 self.completed = True 
-                player.current_room["complete"] = True 
+                player.current_room["completed"] = True 
                 player.add_key(game)
                 self.needed = False
+            elif self.needed:
+                print("This action has no effect.")
                  # needs translating
