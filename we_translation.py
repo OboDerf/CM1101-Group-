@@ -31,13 +31,13 @@ translation = {
     "west": "gorllewin",
 
     # commands
-    "go": "mynd i'r",
+    "go": "mynd",
     "help": "help",
     "combine": "cyfuno",
     "take": "cymryd",
     "drop": "gollwng",
     "use": "defnyddio",
-    "inventory": "rhestr eiddo",
+    "inventory": "eiddo",
     "keys": "ffiolau",
     "inspect": "archwilio",
     "move": "symud",

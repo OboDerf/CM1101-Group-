@@ -357,6 +357,63 @@ item_lockers = {
     "moved" : False
 }
 
+## Dr Lounge
+
+item_blue_sofa = {
+	"id": "bluesofa",
+	"name": "Blue sofa",
+	"description": "A small blue two seater sofa",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+item_white_sofa = {
+	"id": "whitesofa",
+	"name": "White sofa",
+	"description": "A small white two seater sofa",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+item_black_sofa = {
+	"id": "blacksofa",
+	"name": "Black sofa",
+	"description": "A small black two seater sofa",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+item_coffee_table = {
+	"id": "coffeetable",
+	"name": "Coffee table",
+	"description": "A small wooden table",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+item_combolock = {
+	"id": "lock",
+	"name": "Combonation Lock",
+	"description": "A small 4 keyed padlock.",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+item_white_board = {
+	"id": "whiteboard",
+	"name": "Coffee table",
+	"description": "There's a scratched shape. You recognise that its skeletal formula but what its representing.",
+	"pick_up": False,
+	"move": True,
+	"moved": False
+}
+
+
 ## Combonations
 
 items_combinations = {
