@@ -5,7 +5,7 @@ translation = {
     # game.difficulty 
     "difficulty": ['hawdd', 'canolig', 'anodd', 'amhosibl'],
 
-    "difficulty_change": "Pa anhawster yr hoffech chi?\n - Hawdd\n - Canolig\n - Anodd\n - Amhosibl\n",
+    "difficulty_change": "Pa anhawster yr hoffech chi?\n 1. Hawdd\n 2. Canolig\n 3. Anodd\n 4. Amhosibl\n",
 
     # add_key's
     "key_gained": "\nRydych wedi cael ffiol am eich gwaith.\n",
@@ -22,7 +22,7 @@ translation = {
     "Pharmacy" : "Fferyllfa",
     "Examination Room" : "Ystafell Archwiliad",
     "Doctors Lounge" : "Lolfa Doctoriaid",
-    "X-Ray Room" : "Ystafell Peledr X",
+    "X-Ray Room" : "Ystafell Pelydr X",
 
     # direction 
     "north": "gogledd",

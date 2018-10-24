@@ -157,7 +157,7 @@ dod trwy eich mwgwd nwy, mae'r arogl yn edrych fel bod yn dod o'r dror odan. Mae
 Dydy rhywbeth ddim yn iawn yma...
 """,
 
-    "exits" : {"gogledd" : "Ptif Derbynfa yr Ysbyty"},
+    "exits" : {"gogledd" : "Prif Derbynfa yr Ysbyty"},
 
     "items" : [item_jar, item_chair, item_table],
 
@@ -222,6 +222,6 @@ rooms = {
     "Fferyllfa" : room_pharmacy,
     "Ystafell Archwiliad" : room_exam,
     "Lolfa Doctoriaid" : room_doctors_lounge,
-    "Ystafell Peledr X" : room_xray,
+    "Ystafell Pelydr X" : room_xray,
     }
     
