@@ -100,7 +100,7 @@ class Game:
 ## Main Code
 
 def toggle_lang(player): # Does what it says on the tin. Takes the defined globals and toggles them between versions
-    global eng_lang, rooms, translation, puzzles
+    global eng_lang, rooms, translation, puzzles, items_combinations
     if eng_lang:
         eng_lang = False
         rooms = we_map.rooms
