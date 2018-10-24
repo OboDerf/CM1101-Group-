@@ -19,30 +19,30 @@ class pharmacy:
             if itemx == item_scissors and itemy == item_bandaged_hammer and command == translation["use"]:
                 player.inventory.remove(item_bandaged_hammer)
                 player.inventory.append(item_bandages, item_hammer_head)
-                print("A few cuts has freed the head from it's enprisonment.")# needs translating
+                print("Gwnaeth cwpl o doriadau ryddhau yr pen.")
                 self.needed = False
             elif itemx == item_scissors and itemy == item_bandaged_cane and command == translation["use"]:
                 player.inventory.remove(item_bandaged_cane)
                 player.inventory.append(item_bandages, item_walking_cane)
-                print("With the bandages removed, the cane's wounds are left to fester.")# needs translating
+                print("Efo'r rhwymyn wedi cael ei ddiswyddo, roedd yr ffon wedi torri unwaith eto.")
                 self.needed = False
         except:
-            print("What are you trying to cut?")# needs translating
+            print("Beth ydych yn trio torri?")
         else:
             if command == translation["use"] and itemx == item_improvised_hammer and item_improvised_hammer in player.inventory:
                 self.completed = True 
                 player.current_room["complete"] = True 
                 player.add_key(game)
                 self.needed = False
-                print("\nThe hammer holds and the box is broken.\n What lies inside may be the keys to salvation") # needs translating
+                print("\nMae'r morthwyl yn digon cryf, ac mae'r bocs yn torri.\n Beth sydd yn disgwyl ty mewn gallu bod yn ein ateb i achyb y byd")
             elif command == translation["use"] and itemx == item_make_shift_hammer and item_make_shift_hammer in player.inventory:
                 self.completed = True 
                 player.current_room["complete"] = True
                 self.needed = False
                 print("""
-The swing at the box ends only in failour.
-The hammer head launches, breaking a breaker vital to the alarm.
-You dash out the room as the automatic security doors wake from their slumber.
-The box, and with it a shred of hope, is lost to history.
-""")# needs translating
-            if needed and command != translation["inspect"]: print("This action has no effect") # needs translating
+Rydych yn taflu'r bocs, nid yw'n gweithio.
+Mae pen y morthwyl yn hedfan ac yn gosod yr larwm.
+Rydych yn rhedeg allan o'r ystafell fel mae'r drysau yn cau yn awtomatig.
+Mae pob dim wedi cael ei golli.
+""")
+            if needed and command != translation["inspect"]: print("Dydy hyn heb unrhyw effaith")

@@ -32,19 +32,19 @@ class exam:
             if self.fluid_puzzle and self.needed:
                 self.puzzle_final(itemx, game, command, player)
             if self.needed:
-                error = ["I don't know what you were trying to do... but it didn't work", # needs traslation
-                         "hmmm..try something else",# needs traslation
-                         "what was that?",# needs traslation
-                         "What were you thinking"]# needs traslation
+                error = ["Dwi ddim yn gwybod beth rydych yn trio gwneud, ond doedd o ddim yn gweithio",
+                         "hmmm..triwch rhywbeth arall",
+                         "beth oedd hwnna?",
+                         "Beth roeddwch chi'n meddwl?"]
                 print(error[randint(0,3)])
         else:
-            print("Nothing to see here...")# needs traslation
+            print("Dim byd i weld...")
         
 
     def puzzle_one(self, itemx, game, command, player):
         if itemx["id"] == "chair" and command == "inspect":
-            print("""Inspecting the tools you notice that there is a bonesaw, hammer, and some kind of metal wedge... How can that be helpful?
-                  """)# needs traslation
+            print("""Gan archwilio'r offer, rydych yn sylweddoli bod yno llif asgwrn, morthwyl ac rhyw fath o lletem... Sut bydd rhain yn gallu bod yn defnyddiol?
+                  """)
             player.current_room["items"].extend([item_hammer, item_saw, item_wedge])
             player.current_room["items"].remove(item_chair)
             self.chair_puzzle = True
@@ -53,7 +53,7 @@ class exam:
     
     def puzzle_two(self, itemx, game, command, player):
         if itemx["id"] == "hammerwedge" and command == "use":
-            print("Using your fancy new hammerwedge you attempt to pry and bash the locked drawer and...it opens! but wait is that a human head?")# needs traslation
+            print("Gan defnyddio eich lletem morthwyl newydd, rydych yn trio agor yr drôr ac... mae'n agor! Ond beth yw'r pen yna?")
             player.current_room["items"].append(item_head)
             self.hammer_puzzle = True
             self.needed = False
@@ -61,7 +61,7 @@ class exam:
             
     def puzzle_three(self, itemx, game, command, player):
         if itemx["id"] == "table" and command == "inspect":
-            print("Hmmm… at first glance the examination table looked clean but now you can see it’s coated in some weird liquid")# needs traslation
+            print("Hmmm… oedd yr bwrdd archwilio yn edrych yn glan, ond nawr rwyn sylweddoli rhyw fath o hylif arno")
             item_table["pick_up"] = True
             self.table_puzzle  = True
             self.needed = False
@@ -70,14 +70,14 @@ class exam:
     def puzzle_four(self, itemx, game, command, player):
         if itemx["id"] == "jar" and command == "use":
             if item_table in player.inventory:
-                print("You struggle but manage so fill the jar with the strangely warm liquid from the chair")# needs traslation
+                print("Rydych yn llwyddo i llenwi'r jar efo'r hylif o'r cadair")
                 player.inventory.remove(item_jar)
                 player.inventory.remove(item_table)
                 player.inventory.append(item_full_jar)
                 self.fluid_puzzle = True
                 self.needed = False
             else:
-                print("You can't do that...yet")# needs traslation
+                print("Dydych methu gwneud hyn eto...")
                 self.needed = False            
         
 
@@ -85,7 +85,7 @@ class exam:
         if command == "use" and itemx["id"] == "fluid": 
             self.completed = True 
             player.current_room["completed"] = True 
-            print("You notice some of the top of the head melting so decide to pour all of it onto the head and look inside...It’s a vial!")# needs traslation
+            print("Rydych yn sylweddoli rhyw faint or pen yn dadmar, felly rydych yn penderfynu i tollti gweddill o'r hylif. Rydych yn edrych o fewn yr pen ac yn syldweddoli... Ffiol!")
             player.inventory.remove(item_full_jar)
             player.add_key(game)
             player.current_room = rooms[translation["Hospital Reception"]]

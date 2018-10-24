@@ -16,16 +16,16 @@ class xray:
     def puzzle_process(self, itemx, itemy, command, player, game):
         try:
             if command == translation["inspect"] and itemx == item_map:          
-                print("You disloged a key and it has droped onto the floor.")# needs translating
+                print("Mae'r goriad yn syrthio ar y llawr.")
                 player.current_room["items"].append(item_xray_key)
                 self.needed = False
         except:
-            print("What are you trying to do?")# needs translating
+            print("Beth ydych yn trio gwneud?")
         else:
             if command == translation["use"] and itemx == item_xray_key and item_xray_key in player.inventory:
-                print("You have unlocked the cabinet.")# needs translating
+                print("Rydych wedi agor yr cabinet.")
                 self.completed = True 
                 player.current_room["complete"] = True 
                 player.add_key(game)
                 self.needed = False
-                 # needs translating
+                 
