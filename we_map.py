@@ -195,7 +195,7 @@ Mae gen i ddinasoedd, ond dim tai. Mae gen i mynyddoedd, ond dim coed. Mae gen i
 
     "exits" : {"de" : "Ystafell Disgwyl"},
 
-    "items" : [item_Cabinet, item_computer, item_map, item_machines],
+    "items" : [item_Cabinet, item_computer, item_map, item_glasses, item_desk, item_instrumunts, item_machines],
 
     "completed" : False,
 
