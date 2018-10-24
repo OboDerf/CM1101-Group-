@@ -62,16 +62,24 @@ room_waiting_room = {
     
 }
 
-# needs translation
 room_surgery = {
     "name" : "Ystafell Llawdriniaeth",
+    "description":
+    """
+Mae'r arogl ofnadwy sydd yn dod allan o'r ystafell yn cynyddu eich ddiddordeb i fynd i fewn. Rydych chi bellach
+wedi mynd i fewn i'r ystafell llawdriniaeth.
 
-    "description": """The pungent smell coming out of the room sparked your interest and chose to enter. You have now entered the surgery room. 
+Mae'r goleuadau yn diflanu ar adegau. Mae'n edrych fel bod yr firws wedi effeithio'r ystafell yma yn ystod llawdriniaeth. Mae'r
+ystafell efo niferoedd o offer llawdriniaeth, ond mae mwy afrif efo gwaed arno ac mae'n edrych fel bod yr gwaed wedi ddod o'r corff
+sydd ar yr bwrdd, efo'i stumog ar agor.
 
-Lights are flickering. Looks like the virus hit them during an operation. The room is covered with surgical equipment but mostly in blood and as it seems it came from the patient lying down on the bed with his stomach opened up”. 
-There is a doctor on the floor against the wall. Strangely he does not look infected nor hurt. On the other side of the room there are lockers. Others are open and empty with broken vials below them covered in spilled medicine, others are just closed. Hopefully, there is still something left inside.
-As you approach into the room, you hear the automatic doors behind you closing. You try to open the doors again without results. It seems like only staff could use this room and the doors once closed can only be opened by a staff card. """,
+Mae yna doctor ar y llawr yn pwyso yn erbyn yr wal. Mae'n od, ond nad yw'r doctor yn edrych fel bod o wedi cael ei effeithio neu ei niwedu gan
+y firws. Ar yr ochr arall o'r ystafell mae yna cloirau. Mae rhai ar agor efo ffialau wedi cael ei dorri, ac mae rhei eraill dal wedi cloi. Gobeithio
+bod yna dal rhyw beth ty fewn.
 
+Fel rydych yn cerddef i fewn i'r ystafell, rydych yn clywed yr drysau awtomatig cau ty ol iddych. Rydych yn trio agor nhw ond does dim gobaith. Mae'n
+edrych fel bod yr unig ffordd i agor y drysau yw gan defnyddio cardyn staff.
+""",
 
     "exits": {"gogledd":"Ystafell Disgwyl"},
 
@@ -136,15 +144,26 @@ forthwyl sydd ar y llawr o flaenach. Mae yna un hanner o ffon cerdded sydd yn ho
 room_exam = {
     "name" : "Ystafell Archwiliad",
 
-    "description" : "",
+    "description" : """
+Gan cerdded mewn i'r ystafell, rydych yn cael sioc i weld bod yr ystafell yn edrych fel dydy o heb cael ei effeithio,
+bron iawn fel ystafell newydd. Mae'r ystafell yn fach iawn, ond mae pob dim yn taclus iawn, bydd yn gallu cael ei
+ddefnyddio gan doctor rwan… efo tipyn back o waith tynnu llwch.
+
+Mae'r bwrdd archwilio wedi cael ei leoli yn gannol yr ystafell, mae'n edrych yn llwchlud on ddim yn budr nac wedi cael ei
+ddifrodi. Mae yna bwrdd sydd efo offer canoloesol sydd wedi cael ei leoli mewn ordor ar y bwrdd.
+
+Fel rydych yn symyd mewn i'r ystafell rydych yn gweld silff efo gwydrau bach arnynt. Rydych yn sylweddoli ogla drewchyd yn
+dod trwy eich mwgwd nwy, mae'r arogl yn edrych fel bod yn dod o'r dror odan. Mae'n arogli fel cyrff person wedi marw.
+Dydy rhywbeth ddim yn iawn yma...
+""",
 
     "exits" : {"gogledd" : "Ptif Derbynfa yr Ysbyty"},
 
-    "items" : [],
+    "items" : [item_jar, item_chair, item_table],
 
     "completed" : False,
 
-    "puzzle" : "pharmacy"
+    "puzzle" : "exam"
 
 }
 
@@ -165,11 +184,18 @@ room_doctors_lounge = {
 room_xray = {
     "name" : "Ystafell Pelydr X",
 
-    "description" : "",
+    "description" : """
+Rydych mewn ystafell gwyn llachr efo waliau gwyn ac llawr glas.
+MAe yna cyfrifiadur efo sgrin gwydr o amgylch.
+Mae yna gwely pren lle bydd yr claf yn gorwedd pan yn cael eu scan. Does yna ddim ffenestri yn yr ystafell.
+
+Mae'r ffiol ty ol i'r ateb i'r rhidyll:
+Mae gen i ddinasoedd, ond dim tai. Mae gen i mynyddoedd, ond dim coed. Mae gen i dwr, ond dim pysgod. Beth ydw i?
+""",
 
     "exits" : {"de" : "Ystafell Disgwyl"},
 
-    "items" : [],
+    "items" : [item_Cabinet, item_computer, item_map, item_machines],
 
     "completed" : False,
 

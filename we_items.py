@@ -1,5 +1,4 @@
-## Pharmacy
-
+#pharmacy
 item_make_shift_hammer = {
     "id": "drosdro",
     "name": "Morthwyl dros dro",
@@ -128,184 +127,185 @@ item_bookshelf = {
     "moved" : False
 }
 
-## X-ray room
+# X-ray room
 
 item_Cabinet = {
-    "id" : "cabinet", # needs translation
-    "name" : "A cabinet",# needs translation
-    "description" : "There's something valuable in the cabinet, find the key first, my friend...",# needs translation
+    "id" : "cabinet",
+    "name" : "Cabinet",
+    "description" : "Mae yna rhywbeth gwerthfawr o fewn yr cabinet, ond yn cyntaf bydd angen goriad...",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
 item_computer = {
-    "id" : "computer",# needs translation
-    "name" : "An advanced computer",# needs translation
-    "description" : "Computers are a wonderful thing, so is the internet.",# needs translation
+    "id" : "cyfrifiadur",
+    "name" : "Cyfrifiadur datblygedig",
+    "description" : "Mae yna rhywbeth gwerthgset ty fewn i'r cabinet, bydd rhaid ddod o hyd i'r goriad cyntaf...",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
 item_map = {
-    "id" : "map",# needs translation
-    "name" : "A map",# needs translation
-    "description" : "You can explore a lot of new things with a map, there appears to be something behind it...",# needs translation
+    "id" : "map",
+    "name" : "Map",
+    "description" : "Mae'n bosib i ddod o hyd i lot o bethau newydd efo map.",
+    "pick_up" : False,
+    "move" : False,
+    "moved" : False
+}
+
+item_machines = {
+    "id" : "peiriannau",
+    "name" : "Peiriannau",
+    "description" : "Mae peiriannau yn chwarae rhan mawr yn ein ysbytai.",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
 item_glasses = {
-    "id" : "glasses",# needs translation
-    "name" : "Glasses",# needs translation
-    "description" : "Glasses allow for people to see better, most of the time..",# needs translation
+    "id" : "sbectol",
+    "name" : "Sbectol",
+    "description" : "Mae sbectol yn galluogi pobl i gweld yn gwell",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 item_desk = {
-    "id" : "desk",# needs translation
-    "name" : "Desk",# needs translation
-    "description" : "A lovely desk filled to the brim with clutter.",# needs translation
+    "id" : "desg",
+    "name" : "Desg",
+    "description" : "Desg sydd yn boddi o dan pethau ddiangen.",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 item_instrumunts = {
-    "id" : "instrumunts",# needs translation
-    "name" : "instrumunts",# needs translation
-    "description" : "Various medical instrumunts, although having musical instrumunts playing in an X-ray room would be fun.",# needs translation
+    "id" : "offer",
+    "name" : "Offer meddygol",
+    "description" : "Offer meddygol",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
-item_machines = {
-    "id" : "machines",# needs translation
-    "name" : "Machines",# needs translation
-    "description" : "Machines play an important role in our hospitals.",# needs translation
-    "pick_up" : False,
-    "move" : False,
-    "moved" : False
-}
+
 item_xray_key = {
-    "id" : "key",# needs translation
-    "name" : "key",# needs translation
-    "description" : "This key is small and looks like it would be used on something.",# needs translation
+    "id" : "goriad",
+    "name" : "Goriad",
+    "description" : "Mae'r goriad yma yn edrych fel bod yn bosib i'w ddefnyddio ar rhywbeth.",
     "pick_up" : True,
     "move" : False,
     "moved" : False
 }
 
-## Examination Room
+#examination room
 
 item_jar = {
-    "id": "jar",# needs translation
-    "name": "A small jar",# needs translation
-    "description": "An empty vial like glass jar, looks like something a chemist would use",# needs translation
+    "id": "jar",    
+    "name": "Jar bach",
+    "description": "Mae'n edrych fel rhywbeth bydd cemegwr yn ddefnyddio",
     "pick_up": True,
     "move": False,
     "moved": False
 }
 
 item_head = {
-    "id": "head",# needs translation
-    "name": "A human head",# needs translation
-    "description": "a severed human head...someone really didn’t like him",# needs translation
+    "id": "pen",    
+    "name": "Pen person",
+    "description": "Pen person... mae rhaid bod nad oedd un person yn hoff iawn o'r person yma",
     "pick_up": True,
     "move": False,
     "moved": False
 }
 
 item_hammer = {
-    "id": "hammer",# needs translation
-    "name": "A hammer",# needs translation
-    "description": "a regular hammer with a wooden handle and a shiny big head",# needs translation
+    "id": "morthwyl",    
+    "name": "Morthwyl",
+    "description": "morthwyl arferol, efo'r dolen wedi cael ei greu allan o bren",
     "pick_up": True,
     "move": False,
-    "moved": False
+    "moved": False    
 }
 
 item_saw = {
-    "id": "saw",# needs translation
-    "name": "A bonesaw",# needs translation
-    "description": "a saw for cutting bones, strangely the only old, rusty thing in the room",# needs translation
+    "id": "llif",    
+    "name": "Llif asgwrn",
+    "description": "llif sydd yn cael ei ddefnyddio i dorri esgyrn, hwn yw'r unig peth sydd wedi rhydu yn yr ystafell",
     "pick_up": True,
     "move": False,
-    "moved": False
+    "moved": False    
 }
 
 item_wedge = {
-    "id": "wedge",# needs translation
-    "name": "A doorwedge",# needs translation
-    "description": "A small metal wedge, usually used for wedging doors open",# needs translation
+    "id": "lletem",    
+    "name": "Lletem drws",
+    "description": "lletem drws bach metal",
     "pick_up": True,
     "move": False,
-    "moved": False
+    "moved": False    
 }
 
 item_table = {
-    "id": "table",# needs translation
-    "name": "An examination table",# needs translation
-    "description": "An old fashioned doctors examination table for patients while the doctor worked",# needs translation
+    "id": "bwrdd",    
+    "name": "Bwrdd archwilio",
+    "description": "Hen fwrdd i cleifion gorwedd arno wrth i'r doctor gweithio",
     "pick_up": False,
     "move": False,
-    "moved": False
+    "moved": False    
 }
 
 item_chair = {
-    "id": "chair",# needs translation
-    "name": "A chair",# needs translation
-    "description": "A small chair with some tools placed on it",# needs translation
+    "id": "cadair",    
+    "name": "Cadair",
+    "description": "Cadair bach efo rhai offer wedi cael ei adael arno",
     "pick_up": False,
     "move": False,
     "moved": False
 }
 
-
 item_hammerwedge = {
-    "id": "hammerwedge",# needs translation
-    "name": "A hammerwedge",# needs translation
-    "description": "Your weird looking creation...sounds helpful",# needs translation
+    "id": "lletemmorthwyl",    
+    "name": "Lletem morthwyl",
+    "description": "Mae hyn yn edrych yn defnyddiol iawn",
     "pick_up": True,
     "move": False,
-    "moved": False
+    "moved": False    
 }
 
 item_full_jar = {
-    "id": "fluid",# needs translation
-    "name": "A full jar",# needs translation
-    "description": "A jar filled with some strange fluid",# needs translation
+    "id": "hylif",    
+    "name": "Jar llawn",
+    "description": "Jar sydd wedi cael ei lenwi efo rhyw math o hylif",
     "pick_up": True,
     "move": False,
     "moved": False
 }
 
-## Surgery
+#Surgery
 
 item_patient = {
-    "id" : "patient",# needs translation
-    "name" : "The patient",# needs translation
-    "description" : "The patient might reveal more items, worth checking",# needs translation
-    "pick_up" : False,
-    "move" : False,
-    "moved" : False
+    "id" : "claf",
+    "name" : "Y claf",
+    "description" : "Efallai bydd yr claf yn dangos mwy o eitemau, werth edrych...",
+    "pick_up": False,
+    "move": False,
+    "moved": False
 }
 
 item_doctorBody = {
-    "id" : "doctor",# needs translation
-    "name" : "The doctor's body",# needs translation
-    "description" : "Be careful with the doctor's body, he might be dead already",# needs translation
+    "id" : "doctor",
+    "name" : "Corff y doctor",
+    "description" : "Bod yn ofalus efo corff y doctor, efallai mae o wedi marw'n barod",
     "pick_up" : False,
     "move" : False,
     "moved" : False
 }
 
 item_medicine = {
-    "id" : "medicine",# needs translation
-    "name" : "Medicine",# needs translation
-    "description" : "Medicine could even bring a dead man back to life",# needs translation
+    "id" : "ffisig",
+    "name" : "Ffisig",
+    "description" : "Ffisig sydd yn gallu dod a person nol i fyw",
     "pick_up" : True,
     "move" : False,
     "moved" : False
@@ -313,18 +313,18 @@ item_medicine = {
 
 
 item_needle = {
-    "id" : "needle",# needs translation
-    "name" : "Needle",# needs translation
-    "description" : "Needle can be used to open hack things and gain access",# needs translation
+    "id" : "nodwydd",
+    "name" : "Nodwydd",
+    "description" : "Mae'r nodwydd yn gallu cael ei ddefnyddio i agor pethau i gael mynediad iddyn",
     "pick_up" : True,
     "move" : False,
     "moved" : False
 }
 
 item_staffPass = {
-    "id" : "passcard",# needs translation
-    "name" : "Pass card",# needs translation
-    "description" : "You can use it to open doors",# needs translation
+    "id" : "cardynstaff",
+    "name" : "Cardyn staff",
+    "description" : "Mae hyn yn gallu cael ei ddefnyddio i agor drysau",
     "pick_up" : True,
     "move" : False,
     "moved" : False
@@ -332,9 +332,9 @@ item_staffPass = {
 
 
 item_lockers = {
-    "id" : "lockers",# needs translation
-    "name" : "Lockers",# needs translation
-    "description" : "Lockers are locked for a reason",# needs translation
+    "id" : "cloeriau",
+    "name" : "Cloeriau",
+    "description" : "Efallai bod y cloeriau wedi cael ei gloi am rheswm",
     "pick_up" : False,
     "move" : False,
     "moved" : False
@@ -343,27 +343,33 @@ item_lockers = {
 ## Combonations
 
 items_combinations = {
-    "bandaged walking cane": {
+    "ffon cerdded a rhwymynnau": {
         "components": [item_walking_cane, item_bandages],
 
         "output": item_bandaged_cane,
     },
 
-    "improvised hammer": {
+    "Morthwyl byrfyfyr": {
         "components": [item_bandaged_cane, item_hammer_head],
 
         "output": item_improvised_hammer,
     },
 
-    "bandaged hammer head": {
+    "pen morthwyl rhwymyn": {
         "components": [item_bandages, item_hammer_head],
 
         "output": item_bandaged_hammer,
     },
 
-    "make shift hammer": {
+    "morthwyl dros dro": {
         "components": [item_bandaged_hammer, item_walking_cane],
 
         "output": item_make_shift_hammer,
     },
+
+    "lletem morthwyl": {
+        "components": [item_hammer, item_wedge],
+
+        "output": item_hammerwedge,
+    }
 }
