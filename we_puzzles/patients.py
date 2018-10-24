@@ -39,7 +39,7 @@ class patients:
 
 
     def error_safe(self, itemx, game, command, player):
-        if item_lamp in player.inventory and command == "use" and  itemx == item_lamp:
+        if item_lamp in player.inventory and command == "defnyddio" and  itemx == item_lamp:
             print ("Rydych yn hitio'r person yn anymwybodol!")
             self.needed = False
             self.completed = True 

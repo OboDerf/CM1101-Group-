@@ -42,7 +42,7 @@ class exam:
         
 
     def puzzle_one(self, itemx, game, command, player):
-        if itemx["id"] == "chair" and command == "inspect":
+        if itemx == item_chair and command == "archwilio":
             print("""Gan archwilio'r offer, rydych yn sylweddoli bod yno llif asgwrn, morthwyl ac rhyw fath o lletem... Sut bydd rhain yn gallu bod yn defnyddiol?
                   """)
             player.current_room["items"].extend([item_hammer, item_saw, item_wedge])
@@ -52,7 +52,7 @@ class exam:
             
     
     def puzzle_two(self, itemx, game, command, player):
-        if itemx["id"] == "hammerwedge" and command == "use":
+        if itemx == item_hammerwedge and command == "defnyddio":
             print("Gan defnyddio eich lletem morthwyl newydd, rydych yn trio agor yr drôr ac... mae'n agor! Ond beth yw'r pen yna?")
             player.current_room["items"].append(item_head)
             self.hammer_puzzle = True
@@ -60,7 +60,7 @@ class exam:
 
             
     def puzzle_three(self, itemx, game, command, player):
-        if itemx["id"] == "table" and command == "inspect":
+        if itemx == item_table and command == "archwilio":
             print("Hmmm… oedd yr bwrdd archwilio yn edrych yn glan, ond nawr rwyn sylweddoli rhyw fath o hylif arno")
             item_table["pick_up"] = True
             self.table_puzzle  = True
@@ -68,7 +68,7 @@ class exam:
 
             
     def puzzle_four(self, itemx, game, command, player):
-        if itemx["id"] == "jar" and command == "use":
+        if itemx == item_jar and command == "defnyddio":
             if item_table in player.inventory:
                 print("Rydych yn llwyddo i llenwi'r jar efo'r hylif o'r cadair")
                 player.inventory.remove(item_jar)
@@ -82,7 +82,7 @@ class exam:
         
 
     def puzzle_final(self, itemx, game, command, player):
-        if command == "use" and itemx["id"] == "fluid": 
+        if command == "defnyddio" and itemx == item_full_jar: 
             self.completed = True 
             player.current_room["completed"] = True 
             print("Rydych yn sylweddoli rhyw faint or pen yn dadmar, felly rydych yn penderfynu i tollti gweddill o'r hylif. Rydych yn edrych o fewn yr pen ac yn syldweddoli... Ffiol!")
