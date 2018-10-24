@@ -189,8 +189,8 @@ def drop_all_items(player):
     del player.inventory[:]
 
 def print_inventory(player):
-    if player.current_room["inventory"]:
-        print_room_items(player.current_room["inventory"])
+    if player.current_room["items"]:
+        room_print_items(player.current_room["items"])
     if player.inventory:
         print(translation["player_print_inventory_one"])
         for a in player.inventory:  print(" - " + a["id"] + ", " + a["name"])
