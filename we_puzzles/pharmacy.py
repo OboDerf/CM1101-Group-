@@ -30,11 +30,11 @@ class pharmacy:
             print("Beth ydych yn trio torri?")
         else:
             if command == translation["use"] and itemx == item_improvised_hammer and item_improvised_hammer in player.inventory:
+                print("\nMae'r morthwyl yn digon cryf, ac mae'r bocs yn torri.\n Beth sydd yn disgwyl ty mewn gallu bod yn ein ateb i achyb y byd")
                 self.completed = True 
                 player.current_room["complete"] = True 
                 player.add_key(game)
                 self.needed = False
-                print("\nMae'r morthwyl yn digon cryf, ac mae'r bocs yn torri.\n Beth sydd yn disgwyl ty mewn gallu bod yn ein ateb i achyb y byd")
             elif command == translation["use"] and itemx == item_make_shift_hammer and item_make_shift_hammer in player.inventory:
                 self.completed = True 
                 player.current_room["complete"] = True

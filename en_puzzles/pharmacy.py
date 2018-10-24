@@ -30,11 +30,11 @@ class pharmacy:
             print("What are you trying to cut?")# needs translating
         else:
             if command == translation["use"] and itemx == item_improvised_hammer and item_improvised_hammer in player.inventory:
+                print("\nThe hammer holds and the box is broken.\n What lies inside may be the keys to salvation") # needs translating
                 self.completed = True 
                 player.current_room["complete"] = True 
                 player.add_key(game)
                 self.needed = False
-                print("\nThe hammer holds and the box is broken.\n What lies inside may be the keys to salvation") # needs translating
             elif command == translation["use"] and itemx == item_make_shift_hammer and item_make_shift_hammer in player.inventory:
                 self.completed = True 
                 player.current_room["complete"] = True
